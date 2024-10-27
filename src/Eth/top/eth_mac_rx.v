@@ -1,4 +1,4 @@
-module eth_mac_tx(
+module eth_mac_rx(
     input           rst_n,
     input           logic_clk,
     input           gtx_clk,
@@ -13,6 +13,7 @@ module eth_mac_tx(
     output          port_udp_rx_hdr_valid,
     input           port_udp_rx_hdr_ready,
     output [9:0]    port_udp_rx_length,
+    input           port_udp_rx_source_ip,
     output          port_udp_rx_axis_valid,
     input           port_udp_rx_axis_ready,
     output [7:0]    port_udp_rx_axis_payload_data,
@@ -28,11 +29,13 @@ module eth_mac_tx(
     input [7:0]     port_udp_tx_axis_payload_data,
     input           port_udp_tx_axis_payload_user,
     input           port_udp_tx_axis_payload_last,
-    output          port_eth_tx_axis_valid,
-    input           port_eth_tx_axis_ready,
-    output [7:0]    port_eth_tx_axis_payload_data,
-    output          port_eth_tx_axis_payload_user,
-    output          port_eth_tx_axis_payload_last
+    input           port_eth_rx_hdr_valid,
+    output          port_eth_rx_hdr_ready,
+    input           port_eth_rx_axis_valid,
+    output          port_eth_rx_axis_ready,
+    input [7:0]     port_eth_rx_axis_payload_data,
+    input           port_eth_rx_axis_payload_user,
+    input           port_eth_rx_axis_payload_last
 );
 
 // target ("SIM", "GENERIC", "XILINX", "ALTERA")
@@ -209,6 +212,8 @@ wire tx_udp_payload_axis_tuser;
 
 // Configuration
 wire [47:0] local_mac   = 48'h11_22_33_44_55_66;
+wire [47:0] dest_mac    = 48'h11_22_33_44_55_66;
+wire [15:0] eth_type    = 16'h08_00;
 wire [31:0] local_ip    = {8'd192, 8'd168, 8'd1,   8'd128};
 wire [31:0] gateway_ip  = {8'd192, 8'd168, 8'd1,   8'd1};
 wire [31:0] subnet_mask = {8'd255, 8'd255, 8'd255, 8'd0};
@@ -271,7 +276,6 @@ assign port_udp_tx_hdr_ready = tx_udp_hdr_ready;
 assign rx_udp_hdr_ready = port_udp_rx_hdr_ready;
 assign port_udp_rx_hdr_valid = rx_udp_hdr_valid;
 
-assign rx_udp_hdr_ready = (tx_eth_hdr_ready && match_cond) || no_match;
 assign tx_udp_ip_dscp = 0;
 assign tx_udp_ip_ecn = 0;
 assign tx_udp_ip_ttl = 64;
@@ -284,9 +288,10 @@ assign tx_udp_checksum = 0;
 
 assign tx_udp_payload_axis_tdata = port_udp_tx_axis_payload_data;
 assign tx_udp_payload_axis_tvalid = port_udp_tx_axis_valid;
-assign port_udp_rx_axis_ready = tx_udp_payload_axis_tready;
-assign tx_udp_payload_axis_tlast = port_udp_rx_axis_payload_last;
-assign tx_udp_payload_axis_tuser = port_udp_rx_axis_payload_user;
+assign port_udp_tx_axis_ready = tx_udp_payload_axis_tready;
+assign tx_udp_payload_axis_tlast = port_udp_tx_axis_payload_last;
+assign tx_udp_payload_axis_tuser = port_udp_tx_axis_payload_user;
+
 
 assign port_udp_rx_axis_payload_data = rx_udp_payload_axis_tdata;
 assign port_udp_rx_axis_valid = rx_udp_payload_axis_tvalid && match_cond_reg;
@@ -294,13 +299,15 @@ assign rx_udp_payload_axis_tready = (port_udp_rx_axis_ready && match_cond_reg) |
 assign port_udp_rx_axis_payload_last = rx_udp_payload_axis_tlast;
 assign port_udp_rx_axis_payload_user = rx_udp_payload_axis_tuser;
 assign port_udp_rx_length = rx_udp_length - 4'd9;
+assign port_udp_rx_source_ip = rx_udp_ip_source_ip;
 
-
-assign port_eth_tx_axis_valid = tx_eth_payload_axis_tvalid;
-assign tx_eth_payload_axis_tready = port_eth_tx_axis_ready;
-assign port_eth_tx_axis_payload_data = tx_eth_payload_axis_tdata;
-assign port_eth_tx_axis_payload_user = tx_eth_payload_axis_tuser;
-assign port_eth_tx_axis_payload_last = tx_eth_payload_axis_tlast;
+assign rx_eth_hdr_valid = port_eth_rx_hdr_valid;
+assign port_eth_rx_hdr_ready = rx_eth_hdr_ready;
+assign rx_eth_payload_axis_tvalid = port_eth_rx_axis_valid;
+assign port_eth_rx_axis_ready = rx_eth_payload_axis_tready;
+assign rx_eth_payload_axis_tdata = port_eth_rx_axis_payload_data;
+assign rx_eth_payload_axis_tuser = port_eth_rx_axis_payload_user;
+assign rx_eth_payload_axis_tlast = port_eth_rx_axis_payload_last;
 
 eth_mac_1g_rgmii_fifo #
 (
@@ -382,16 +389,16 @@ eth_axis_rx_inst (
     .s_axis_tlast(rx_axis_tlast),
     .s_axis_tuser(rx_axis_tuser),
     // Ethernet frame output
-    .m_eth_hdr_valid(rx_eth_hdr_valid),
+    .m_eth_hdr_valid(),
     .m_eth_hdr_ready(rx_eth_hdr_ready),
     .m_eth_dest_mac(rx_eth_dest_mac),
     .m_eth_src_mac(rx_eth_src_mac),
     .m_eth_type(rx_eth_type),
-    .m_eth_payload_axis_tdata(rx_eth_payload_axis_tdata),
-    .m_eth_payload_axis_tvalid(rx_eth_payload_axis_tvalid),
+    .m_eth_payload_axis_tdata(),
+    .m_eth_payload_axis_tvalid(),
     .m_eth_payload_axis_tready(rx_eth_payload_axis_tready),
-    .m_eth_payload_axis_tlast(rx_eth_payload_axis_tlast),
-    .m_eth_payload_axis_tuser(rx_eth_payload_axis_tuser),
+    .m_eth_payload_axis_tlast(),
+    .m_eth_payload_axis_tuser(),
     // Status signals
     .busy(),
     .error_header_early_termination()
@@ -430,9 +437,9 @@ udp_complete_inst (
     // Ethernet frame input
     .s_eth_hdr_valid(rx_eth_hdr_valid),
     .s_eth_hdr_ready(rx_eth_hdr_ready),
-    .s_eth_dest_mac(rx_eth_dest_mac),
-    .s_eth_src_mac(rx_eth_src_mac),
-    .s_eth_type(rx_eth_type),
+    .s_eth_dest_mac(dest_mac),
+    .s_eth_src_mac(local_mac),
+    .s_eth_type(eth_type),
     .s_eth_payload_axis_tdata(rx_eth_payload_axis_tdata),
     .s_eth_payload_axis_tvalid(rx_eth_payload_axis_tvalid),
     .s_eth_payload_axis_tready(rx_eth_payload_axis_tready),

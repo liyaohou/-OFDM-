@@ -33,9 +33,9 @@ module TxTop (
   output wire [15:0]   dacData
 );
 
+  reg                 workClockArea_ethMac_port_udp_rx_hdr_ready;
   wire       [0:0]    workClockArea_ethMac_port_udp_tx_axis_payload_user;
   wire       [0:0]    workClockArea_configRx_io_udpAxisIn_payload_user;
-  wire       [9:0]    workClockArea_configRx_io_lengtnIn;
   wire       [0:0]    workClockArea_harMatch_io_axiIn_payload_user;
   wire       [0:0]    workClockArea_ddr3AxisTxIf_io_axisWr_payload_user;
   wire       [0:0]    workClockArea_axisTxRateCtrl_io_axiIn_payload_user;
@@ -50,6 +50,7 @@ module TxTop (
   wire       [3:0]    workClockArea_ethMac_rgmii_txd;
   wire                workClockArea_ethMac_rgmii_tx_ctl;
   wire                workClockArea_ethMac_rgmii_rst_n;
+  wire                workClockArea_ethMac_port_udp_rx_hdr_valid;
   wire                workClockArea_ethMac_port_udp_rx_axis_valid;
   wire       [7:0]    workClockArea_ethMac_port_udp_rx_axis_payload_data;
   wire                workClockArea_ethMac_port_udp_rx_axis_payload_last;
@@ -106,6 +107,14 @@ module TxTop (
   wire                workClockArea_axisTxRateCtrl_io_cfgStart;
   wire                workClockArea_axisTxRateCtrl_io_txEnd;
   wire                rstN;
+  wire                workClockArea_rxHdr_valid;
+  wire                workClockArea_rxHdr_ready;
+  wire                port_udp_rx_hdr_m2sPipe_valid;
+  wire                port_udp_rx_hdr_m2sPipe_ready;
+  reg                 port_udp_rx_hdr_rValid;
+  wire                when_Stream_l393;
+  wire                workClockArea_rxHdr_fire;
+  reg        [9:0]    workClockArea_lengthIn;
 
   pll_clk pll_clk_1 (
     .resetn   (sys_rst_n         ), //i
@@ -130,6 +139,8 @@ module TxTop (
     .rgmii_txd                     (workClockArea_ethMac_rgmii_txd[3:0]                    ), //o
     .rgmii_tx_ctl                  (workClockArea_ethMac_rgmii_tx_ctl                      ), //o
     .rgmii_rst_n                   (workClockArea_ethMac_rgmii_rst_n                       ), //o
+    .port_udp_rx_hdr_valid         (workClockArea_ethMac_port_udp_rx_hdr_valid             ), //o
+    .port_udp_rx_hdr_ready         (workClockArea_ethMac_port_udp_rx_hdr_ready             ), //i
     .port_udp_rx_axis_valid        (workClockArea_ethMac_port_udp_rx_axis_valid            ), //o
     .port_udp_rx_axis_ready        (workClockArea_ddr3AxisTxIf_io_axisWr_ready             ), //i
     .port_udp_rx_axis_payload_data (workClockArea_ethMac_port_udp_rx_axis_payload_data[7:0]), //o
@@ -162,7 +173,7 @@ module TxTop (
     .io_udpAxisOut_payload_data (workClockArea_configRx_io_udpAxisOut_payload_data[7:0]), //o
     .io_udpAxisOut_payload_last (workClockArea_configRx_io_udpAxisOut_payload_last     ), //o
     .io_udpAxisOut_payload_user (workClockArea_configRx_io_udpAxisOut_payload_user     ), //o
-    .io_lengtnIn                (workClockArea_configRx_io_lengtnIn[9:0]               ), //i
+    .io_lengtnIn                (workClockArea_ddr3AxisTxIf_io_lengthOut[9:0]          ), //i
     .io_config                  (workClockArea_configRx_io_config[20:0]                ), //o
     .io_end                     (workClockArea_configRx_io_end                         ), //o
     .clk_out1                   (pll_clk_1_clk_out1                                    ), //i
@@ -194,7 +205,7 @@ module TxTop (
     .io_axisWr_payload_data (workClockArea_ethMac_port_udp_rx_axis_payload_data[7:0]), //i
     .io_axisWr_payload_last (workClockArea_ethMac_port_udp_rx_axis_payload_last     ), //i
     .io_axisWr_payload_user (workClockArea_ddr3AxisTxIf_io_axisWr_payload_user      ), //i
-    .io_lengthIn            (workClockArea_ethMac_port_udp_rx_length[9:0]           ), //i
+    .io_lengthIn            (workClockArea_lengthIn[9:0]                            ), //i
     .io_lengthOut           (workClockArea_ddr3AxisTxIf_io_lengthOut[9:0]           ), //o
     .io_axisRd_valid        (workClockArea_ddr3AxisTxIf_io_axisRd_valid             ), //o
     .io_axisRd_ready        (workClockArea_configRx_io_udpAxisIn_ready              ), //i
@@ -249,10 +260,23 @@ module TxTop (
     .rstN                   (rstN                                                    )  //i
   );
   assign rstN = (sys_rst_n && pll_clk_1_locked);
+  assign workClockArea_rxHdr_ready = 1'b1;
   assign rgmii_txc = workClockArea_ethMac_rgmii_txc;
   assign rgmii_txd = workClockArea_ethMac_rgmii_txd;
   assign rgmii_tx_ctl = workClockArea_ethMac_rgmii_tx_ctl;
   assign rgmii_rst_n = workClockArea_ethMac_rgmii_rst_n;
+  always @(*) begin
+    workClockArea_ethMac_port_udp_rx_hdr_ready = port_udp_rx_hdr_m2sPipe_ready;
+    if(when_Stream_l393) begin
+      workClockArea_ethMac_port_udp_rx_hdr_ready = 1'b1;
+    end
+  end
+
+  assign when_Stream_l393 = (! port_udp_rx_hdr_m2sPipe_valid);
+  assign port_udp_rx_hdr_m2sPipe_valid = port_udp_rx_hdr_rValid;
+  assign workClockArea_rxHdr_valid = port_udp_rx_hdr_m2sPipe_valid;
+  assign port_udp_rx_hdr_m2sPipe_ready = workClockArea_rxHdr_ready;
+  assign workClockArea_rxHdr_fire = (workClockArea_rxHdr_valid && workClockArea_rxHdr_ready);
   assign workClockArea_harMatch_io_axiIn_payload_user[0 : 0] = workClockArea_configRx_io_udpAxisOut_payload_user[0 : 0];
   assign workClockArea_ethMac_port_udp_tx_axis_payload_user[0 : 0] = workClockArea_harMatch_io_axiOut_payload_user[0 : 0];
   assign workClockArea_ddr3AxisTxIf_io_axisWr_payload_user[0 : 0] = workClockArea_ethMac_port_udp_rx_axis_payload_user[0 : 0];
@@ -273,6 +297,22 @@ module TxTop (
   assign txEnd = workClockArea_axisTxRateCtrl_io_txEnd;
   assign dacClk = rgmii_rxc;
   assign dacData = 16'h0;
+  always @(posedge pll_clk_1_clk_out1 or negedge rstN) begin
+    if(!rstN) begin
+      port_udp_rx_hdr_rValid <= 1'b0;
+    end else begin
+      if(workClockArea_ethMac_port_udp_rx_hdr_ready) begin
+        port_udp_rx_hdr_rValid <= workClockArea_ethMac_port_udp_rx_hdr_valid;
+      end
+    end
+  end
+
+  always @(posedge pll_clk_1_clk_out1) begin
+    if(workClockArea_rxHdr_fire) begin
+      workClockArea_lengthIn <= workClockArea_ethMac_port_udp_rx_length;
+    end
+  end
+
 
 endmodule
 
