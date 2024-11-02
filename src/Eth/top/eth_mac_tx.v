@@ -209,9 +209,12 @@ wire tx_udp_payload_axis_tuser;
 
 // Configuration
 wire [47:0] local_mac   = 48'h11_22_33_44_55_66;
-wire [31:0] local_ip    = {8'd192, 8'd168, 8'd1,   8'd128};
+wire [47:0] dest_mac    = 48'h66_55_44_33_22_11;
+wire [31:0] local_ip    = {8'd192, 8'd168, 8'd1, 8'd128};
+wire [31:0] dest_ip     = {8'd192, 8'd168, 8'd1, 8'd128};
 wire [31:0] gateway_ip  = {8'd192, 8'd168, 8'd1,   8'd1};
 wire [31:0] subnet_mask = {8'd255, 8'd255, 8'd255, 8'd0};
+wire [15:0] port_id = 16'd1234;
 
 // IP ports not used
 assign rx_ip_hdr_ready = 1;
@@ -271,7 +274,7 @@ assign port_udp_tx_hdr_ready = tx_udp_hdr_ready;
 assign rx_udp_hdr_ready = port_udp_rx_hdr_ready;
 assign port_udp_rx_hdr_valid = rx_udp_hdr_valid;
 
-assign rx_udp_hdr_ready = (tx_eth_hdr_ready && match_cond) || no_match;
+// assign rx_udp_hdr_ready = (tx_eth_hdr_ready && match_cond) || no_match;
 assign tx_udp_ip_dscp = 0;
 assign tx_udp_ip_ecn = 0;
 assign tx_udp_ip_ttl = 64;
@@ -284,9 +287,9 @@ assign tx_udp_checksum = 0;
 
 assign tx_udp_payload_axis_tdata = port_udp_tx_axis_payload_data;
 assign tx_udp_payload_axis_tvalid = port_udp_tx_axis_valid;
-assign port_udp_rx_axis_ready = tx_udp_payload_axis_tready;
-assign tx_udp_payload_axis_tlast = port_udp_rx_axis_payload_last;
-assign tx_udp_payload_axis_tuser = port_udp_rx_axis_payload_user;
+assign port_udp_tx_axis_ready = tx_udp_payload_axis_tready;
+assign tx_udp_payload_axis_tlast = port_udp_tx_axis_payload_last;
+assign tx_udp_payload_axis_tuser = port_udp_tx_axis_payload_user;
 
 assign port_udp_rx_axis_payload_data = rx_udp_payload_axis_tdata;
 assign port_udp_rx_axis_valid = rx_udp_payload_axis_tvalid && match_cond_reg;
@@ -408,11 +411,11 @@ eth_axis_tx_inst (
     .s_eth_dest_mac(tx_eth_dest_mac),
     .s_eth_src_mac(tx_eth_src_mac),
     .s_eth_type(tx_eth_type),
-    .s_eth_payload_axis_tdata(tx_eth_payload_axis_tdata),
-    .s_eth_payload_axis_tvalid(tx_eth_payload_axis_tvalid),
-    .s_eth_payload_axis_tready(tx_eth_payload_axis_tready),
-    .s_eth_payload_axis_tlast(tx_eth_payload_axis_tlast),
-    .s_eth_payload_axis_tuser(tx_eth_payload_axis_tuser),
+    .s_eth_payload_axis_tdata(0),
+    .s_eth_payload_axis_tvalid(0),
+    .s_eth_payload_axis_tready(),
+    .s_eth_payload_axis_tlast(0),
+    .s_eth_payload_axis_tuser(0),
     // AXI output
     .m_axis_tdata(tx_axis_tdata),
     .m_axis_tvalid(tx_axis_tvalid),
@@ -494,10 +497,10 @@ udp_complete_inst (
     .s_udp_ip_dscp(tx_udp_ip_dscp),
     .s_udp_ip_ecn(tx_udp_ip_ecn),
     .s_udp_ip_ttl(tx_udp_ip_ttl),
-    .s_udp_ip_source_ip(tx_udp_ip_source_ip),
-    .s_udp_ip_dest_ip(tx_udp_ip_dest_ip),
-    .s_udp_source_port(tx_udp_source_port),
-    .s_udp_dest_port(tx_udp_dest_port),
+    .s_udp_ip_source_ip(local_ip),
+    .s_udp_ip_dest_ip(dest_ip),
+    .s_udp_source_port(port_id),
+    .s_udp_dest_port(port_id),
     .s_udp_length(tx_udp_length),
     .s_udp_checksum(tx_udp_checksum),
     .s_udp_payload_axis_tdata(tx_udp_payload_axis_tdata),

@@ -1,0 +1,2 @@
+pilot_ram.v,verilog,xil_defaultlib,../../../../tb.gen/sources_1/ip/pilot_ram/sim/pilot_ram.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

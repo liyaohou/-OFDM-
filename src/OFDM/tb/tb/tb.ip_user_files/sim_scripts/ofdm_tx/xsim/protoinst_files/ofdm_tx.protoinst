@@ -1,0 +1,223 @@
+{
+	"version": "1.0",
+	"modules": {
+		"ofdm_tx": {
+			"proto_instances": {
+				"/convenc_0/m_axis_conv": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "conv_dout"},
+						"TID": { "actual": "conv_dout_rate_con"},
+						"TREADY": { "actual": "conv_din_rdy"},
+						"TSTRB": { "actual": "conv_dout_sig_flag"},
+						"TVALID": { "actual": "conv_dout_vld"}
+					}
+				},
+				"/convenc_0/s_axis_conv": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "conv_din"},
+						"TID": { "actual": "conv_din_rate_con"},
+						"TREADY": { "actual": "conv_dout_rdy"},
+						"TSTRB": { "actual": "conv_din_sig_flag"},
+						"TVALID": { "actual": "conv_din_vld"}
+					}
+				},
+				"/dac_0/s_axis_ifft_dac": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "dac_ifft_din"},
+						"TLAST": { "actual": "dac_ifft_din_last"},
+						"TREADY": { "actual": "dac_ifft_dout_rdy"},
+						"TUSER": { "actual": "dac_ifft_din_Index"},
+						"TVALID": { "actual": "dac_ifft_din_vld"}
+					}
+				},
+				"/dac_0/s_axis_train_dac": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "dac_train_din"},
+						"TLAST": { "actual": "dac_train_din_last"},
+						"TREADY": { "actual": "dac_train_dout_rdy"},
+						"TUSER": { "actual": "dac_train_din_Index"},
+						"TVALID": { "actual": "dac_train_din_vld"}
+					}
+				},
+				"/ifft_0/m_axis_ifft": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "ifft_dout"},
+						"TLAST": { "actual": "ifft_dout_last"},
+						"TREADY": { "actual": "ifft_din_rdy"},
+						"TUSER": { "actual": "ifft_dout_Index"},
+						"TVALID": { "actual": "ifft_dout_vld"}
+					}
+				},
+				"/ifft_0/s_axis_ifft": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "ifft_din"},
+						"TLAST": { "actual": "ifft_din_last"},
+						"TREADY": { "actual": "ifft_dout_rdy"},
+						"TVALID": { "actual": "ifft_din_vld"}
+					}
+				},
+				"/interleaver_1_0/m_axis_intv1": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "intv1_dout"},
+						"TID": { "actual": "intv1_dout_Map_Type"},
+						"TREADY": { "actual": "intv1_din_rdy"},
+						"TSTRB": { "actual": "intv1_dout_sig_flag"},
+						"TVALID": { "actual": "intv1_dout_vld"}
+					}
+				},
+				"/interleaver_1_0/s_axis_intv1": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "intv1_din"},
+						"TID": { "actual": "intv1_din_Map_Type"},
+						"TREADY": { "actual": "intv1_dout_rdy"},
+						"TSTRB": { "actual": "intv1_din_sig_flag"},
+						"TVALID": { "actual": "intv1_din_vld"}
+					}
+				},
+				"/interleaver_2_0/m_axis_intv2": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "intv2_dout"},
+						"TID": { "actual": "intv2_dout_Map_Type"},
+						"TREADY": { "actual": "intv2_din_rdy"},
+						"TVALID": { "actual": "intv2_dout_vld"}
+					}
+				},
+				"/interleaver_2_0/s_axis_intv2": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "intv2_din"},
+						"TID": { "actual": "intv2_din_Map_Type"},
+						"TREADY": { "actual": "intv2_dout_rdy"},
+						"TSTRB": { "actual": "intv2_din_sig_flag"},
+						"TVALID": { "actual": "intv2_din_vld"}
+					}
+				},
+				"/maping_0/m_axis_map": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "map_dout"},
+						"TREADY": { "actual": "map_din_rdy"},
+						"TUSER": { "actual": "map_dout_Index"},
+						"TVALID": { "actual": "map_dout_vld"}
+					}
+				},
+				"/maping_0/s_axis_map": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "map_din"},
+						"TID": { "actual": "map_din_Map_Type"},
+						"TREADY": { "actual": "map_dout_rdy"},
+						"TVALID": { "actual": "map_din_vld"}
+					}
+				},
+				"/pilot_0/m_axis_pilot": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "pilot_dout"},
+						"TLAST": { "actual": "pilot_dout_last"},
+						"TREADY": { "actual": "pilot_din_rdy"},
+						"TVALID": { "actual": "pilot_dout_vld"}
+					}
+				},
+				"/pilot_0/s_axis_pilot": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "pilot_din"},
+						"TREADY": { "actual": "pilot_dout_rdy"},
+						"TUSER": { "actual": "pilot_din_Index"},
+						"TVALID": { "actual": "pilot_din_vld"}
+					}
+				},
+				"/puncture_0/m_axis_punt": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "punt_dout"},
+						"TID": { "actual": "punt_dout_Map_Type"},
+						"TREADY": { "actual": "punt_din_rdy"},
+						"TSTRB": { "actual": "punt_dout_sig_flag"},
+						"TVALID": { "actual": "punt_dout_vld"}
+					}
+				},
+				"/puncture_0/s_axis_punt": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "punt_din"},
+						"TID": { "actual": "punt_din_rate_con"},
+						"TREADY": { "actual": "punt_dout_rdy"},
+						"TSTRB": { "actual": "punt_din_sig_flag"},
+						"TVALID": { "actual": "punt_din_vld"}
+					}
+				},
+				"/scramler_0/m_axis_scram": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "scram_dout"},
+						"TID": { "actual": "scram_dout_rate_con"},
+						"TREADY": { "actual": "scram_din_rdy"},
+						"TSTRB": { "actual": "scram_dout_sig_flag"},
+						"TVALID": { "actual": "scram_dout_vld"}
+					}
+				},
+				"/scramler_0/s_axis_scram": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "scram_din"},
+						"TID": { "actual": "scram_din_rate_con"},
+						"TREADY": { "actual": "scram_dout_rdy"},
+						"TSTRB": { "actual": "scram_din_sig_flag"},
+						"TVALID": { "actual": "scram_din_vld"}
+					}
+				},
+				"/symbol_train_0/m_axis_train": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "train_dout"},
+						"TLAST": { "actual": "train_dout_last"},
+						"TREADY": { "actual": "train_din_rdy"},
+						"TUSER": { "actual": "train_dout_Index"},
+						"TVALID": { "actual": "train_dout_vld"}
+					}
+				},
+				"/tx_mcu_0/m_axis_mcu": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"TDATA": { "actual": "mcu_dout"},
+						"TID": { "actual": "mcu_dout_rate_con"},
+						"TREADY": { "actual": "mcu_din_rdy"},
+						"TSTRB": { "actual": "mcu_dout_sig_flag"},
+						"TVALID": { "actual": "mcu_dout_vld"}
+					}
+				}
+			}
+		}
+	}
+}

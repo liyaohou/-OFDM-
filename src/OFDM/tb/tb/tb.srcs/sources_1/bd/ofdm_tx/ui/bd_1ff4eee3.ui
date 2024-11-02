@@ -1,0 +1,361 @@
+{
+   "ActiveEmotionalView":"Color Coded",
+   "Color Coded_ExpandedHierarchyInLayout":"",
+   "Color Coded_Layout":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port port-id_mcu_config_din_start -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port port-id_mcu_config_din_vld -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace port port-id_mcu_config_dout_rdy -pg 1 -lvl 12 -x 3750 -y 20 -defaultsOSRD
+preplace port port-id_mcu_mac_din_vld -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace port port-id_mcu_mac_dout_rdy -pg 1 -lvl 12 -x 3750 -y 510 -defaultsOSRD
+preplace port port-id_tx_end -pg 1 -lvl 0 -x 0 -y 300 -defaultsOSRD
+preplace port port-id_dac_dout_last -pg 1 -lvl 12 -x 3750 -y 610 -defaultsOSRD
+preplace port port-id_dac_dout_vld -pg 1 -lvl 12 -x 3750 -y 650 -defaultsOSRD
+preplace port port-id_dac_din_rdy -pg 1 -lvl 0 -x 0 -y 730 -defaultsOSRD
+preplace port port-id_clk_125m -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace port port-id_clk_20m -pg 1 -lvl 0 -x 0 -y 650 -defaultsOSRD
+preplace port port-id_locked -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
+preplace portBus mcu_config_din -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace portBus mcu_mac_din -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace portBus TxPWR -pg 1 -lvl 12 -x 3750 -y 90 -defaultsOSRD
+preplace portBus dac_dout -pg 1 -lvl 12 -x 3750 -y 590 -defaultsOSRD
+preplace portBus dac_dout_Index -pg 1 -lvl 12 -x 3750 -y 630 -defaultsOSRD
+preplace inst interleaver_2_0 -pg 1 -lvl 7 -x 2300 -y 270 -defaultsOSRD
+preplace inst tx_mcu_0 -pg 1 -lvl 2 -x 620 -y 190 -defaultsOSRD
+preplace inst interleaver_1_0 -pg 1 -lvl 6 -x 1990 -y 250 -defaultsOSRD
+preplace inst convenc_0 -pg 1 -lvl 4 -x 1370 -y 210 -defaultsOSRD
+preplace inst scramler_0 -pg 1 -lvl 3 -x 1040 -y 190 -defaultsOSRD
+preplace inst maping_0 -pg 1 -lvl 8 -x 2610 -y 290 -defaultsOSRD
+preplace inst puncture_0 -pg 1 -lvl 5 -x 1680 -y 230 -defaultsOSRD
+preplace inst symbol_train_0 -pg 1 -lvl 10 -x 3220 -y 580 -defaultsOSRD
+preplace inst pilot_0 -pg 1 -lvl 9 -x 2920 -y 310 -defaultsOSRD
+preplace inst dac_0 -pg 1 -lvl 11 -x 3550 -y 620 -swap {6 1 2 3 4 5 0 7 8 9 10 11 12 13 14 15 16 17 19 18 20} -defaultsOSRD
+preplace inst ifft_0 -pg 1 -lvl 10 -x 3220 -y 330 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 2 -x 620 -y 440 -defaultsOSRD
+preplace netloc clk_0_1 1 0 11 N 260 390 10 880 70 1220 120 1530 150 1830 330 2140 350 2450 370 2760 390 3070 500 3360J
+preplace netloc clk_dac_0_1 1 0 11 NJ 650 N 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 3370J
+preplace netloc dac_0_dac_dout 1 11 1 NJ 590
+preplace netloc dac_0_dac_dout_Index 1 11 1 NJ 630
+preplace netloc dac_0_dac_dout_last 1 11 1 NJ 610
+preplace netloc dac_0_dac_dout_vld 1 11 1 NJ 650
+preplace netloc dac_din_rdy_0_1 1 0 12 NJ 730 N 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ 730 3730
+preplace netloc mcu_config_din_0_1 1 0 2 NJ 100 N
+preplace netloc mcu_config_din_start_0_1 1 0 2 NJ 120 N
+preplace netloc mcu_config_din_vld_0_1 1 0 2 NJ 140 N
+preplace netloc mcu_mac_din_0_1 1 0 2 NJ 200 N
+preplace netloc mcu_mac_din_vld_0_1 1 0 2 NJ 220 N
+preplace netloc rst_n_0_1 1 0 2 N 280 390
+preplace netloc tx_end_0_1 1 0 2 NJ 300 N
+preplace netloc tx_mcu_0_TxPWR 1 2 10 840J 80 1210J 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ
+preplace netloc tx_mcu_0_mcu_config_dout_rdy 1 1 11 410 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ
+preplace netloc tx_mcu_0_mcu_dout_scram_load 1 2 1 850 190n
+preplace netloc tx_mcu_0_mcu_dout_scram_seed 1 2 1 860 170n
+preplace netloc tx_mcu_0_mcu_mac_dout_rdy 1 1 11 410 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ 510 NJ
+preplace netloc tx_mcu_0_phy_rst_n 1 1 2 400 0 830
+preplace netloc util_vector_logic_0_Res 1 2 9 870 90 1200 130 1520 310 1840 340 2150 360 2460 380 2770 400 3080 660 NJ
+preplace netloc convenc_0_m_axis_conv 1 4 1 N 210
+preplace netloc ifft_0_m_axis_ifft 1 10 1 3370 330n
+preplace netloc interleaver_1_0_m_axis_intv1 1 6 1 N 250
+preplace netloc interleaver_2_0_m_axis_intv2 1 7 1 N 270
+preplace netloc maping_0_m_axis_map 1 8 1 N 290
+preplace netloc pilot_0_m_axis_pilot 1 9 1 N 310
+preplace netloc puncture_0_m_axis_punt 1 5 1 N 230
+preplace netloc scramler_0_m_axis_scram 1 3 1 N 190
+preplace netloc symbol_train_0_m_axis_train 1 10 1 N 580
+preplace netloc tx_mcu_0_m_axis_mcu 1 2 1 N 150
+levelinfo -pg 1 0 170 620 1040 1370 1680 1990 2300 2610 2920 3220 3550 3750
+pagesize -pg 1 -db -bbox -sgen -190 -280 3940 750
+",
+   "Color Coded_ScaleFactor":"0.207988",
+   "Color Coded_TopLeft":"-303,-1452",
+   "Default View_ScaleFactor":"1.71757",
+   "Default View_TopLeft":"-385,-48",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Grouping and No Loops_ExpandedHierarchyInLayout":"",
+   "Grouping and No Loops_Layout":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port port-id_mcu_config_din_start_0 -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port port-id_mcu_config_din_vld_0 -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace port port-id_mcu_config_dout_rdy_0 -pg 1 -lvl 12 -x 3640 -y 20 -defaultsOSRD
+preplace port port-id_mcu_mac_din_vld_0 -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace port port-id_mcu_mac_dout_rdy_0 -pg 1 -lvl 12 -x 3640 -y 140 -defaultsOSRD
+preplace port port-id_resetn_0 -pg 1 -lvl 0 -x 0 -y 400 -defaultsOSRD
+preplace port port-id_clk_in1_0 -pg 1 -lvl 0 -x 0 -y 420 -defaultsOSRD
+preplace port port-id_tx_end_0 -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace port port-id_dac_dout_last_0 -pg 1 -lvl 12 -x 3640 -y 520 -defaultsOSRD
+preplace port port-id_dac_dout_vld_0 -pg 1 -lvl 12 -x 3640 -y 560 -defaultsOSRD
+preplace port port-id_dac_din_rdy_0 -pg 1 -lvl 0 -x 0 -y 720 -defaultsOSRD
+preplace portBus mcu_config_din_0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace portBus mcu_mac_din_0 -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace portBus TxPWR_0 -pg 1 -lvl 12 -x 3640 -y 80 -defaultsOSRD
+preplace portBus dac_dout_0 -pg 1 -lvl 12 -x 3640 -y 500 -defaultsOSRD
+preplace portBus dac_dout_Index_0 -pg 1 -lvl 12 -x 3640 -y 540 -defaultsOSRD
+preplace inst interleaver_2_0 -pg 1 -lvl 7 -x 2130 -y 320 -defaultsOSRD -pinDir s_axis_intv2 left -pinY s_axis_intv2 20L -pinDir m_axis_intv2 right -pinY m_axis_intv2 60R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 60L
+preplace inst tx_mcu_0 -pg 1 -lvl 2 -x 420 -y 60 -swap {18 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 17 19 20 16 0} -defaultsOSRD -pinBusDir group_1 right -pinBusY group_1 220R -pinDir s_axis_mcu_config left -pinY s_axis_mcu_config 20L -pinDir s_axis_mcu_config.mcu_config_din left -pinY s_axis_mcu_config.mcu_config_din 40L -pinDir s_axis_mcu_config.mcu_config_din_start left -pinY s_axis_mcu_config.mcu_config_din_start 60L -pinDir s_axis_mcu_config.mcu_config_din_vld left -pinY s_axis_mcu_config.mcu_config_din_vld 80L -pinDir s_axis_mcu_config.mcu_config_dout_rdy left -pinY s_axis_mcu_config.mcu_config_dout_rdy 100L -pinDir s_axis_mcu_mac left -pinY s_axis_mcu_mac 120L -pinDir s_axis_mcu_mac.mcu_mac_din left -pinY s_axis_mcu_mac.mcu_mac_din 140L -pinDir s_axis_mcu_mac.mcu_mac_din_vld left -pinY s_axis_mcu_mac.mcu_mac_din_vld 160L -pinDir s_axis_mcu_mac.mcu_mac_dout_rdy left -pinY s_axis_mcu_mac.mcu_mac_dout_rdy 180L -pinDir m_axis_mcu right -pinY m_axis_mcu 200R -pinDir clk left -pinY clk 220L -pinDir rst_n left -pinY rst_n 240L -pinDir phy_rst_n right -pinY phy_rst_n 240R -pinDir tx_end left -pinY tx_end 200L -pinBusDir TxPWR right -pinBusY TxPWR 20R
+preplace inst interleaver_1_0 -pg 1 -lvl 6 -x 1810 -y 280 -defaultsOSRD -pinDir s_axis_intv1 left -pinY s_axis_intv1 20L -pinDir m_axis_intv1 right -pinY m_axis_intv1 60R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 60L
+preplace inst convenc_0 -pg 1 -lvl 4 -x 1170 -y 220 -defaultsOSRD -pinDir s_axis_conv left -pinY s_axis_conv 20L -pinDir m_axis_conv right -pinY m_axis_conv 40R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 60L
+preplace inst scramler_0 -pg 1 -lvl 3 -x 840 -y 220 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 14 13} -defaultsOSRD -pinBusDir group_1 left -pinBusY group_1 20L -pinDir s_axis_scram left -pinY s_axis_scram 40L -pinDir m_axis_scram right -pinY m_axis_scram 20R -pinDir clk left -pinY clk 80L -pinDir rst_n left -pinY rst_n 60L
+preplace inst maping_0 -pg 1 -lvl 8 -x 2450 -y 360 -defaultsOSRD -pinDir s_axis_map left -pinY s_axis_map 20L -pinDir m_axis_map right -pinY m_axis_map 100R -pinDir clk left -pinY clk 80L -pinDir rst_n left -pinY rst_n 100L
+preplace inst puncture_0 -pg 1 -lvl 5 -x 1490 -y 240 -defaultsOSRD -pinDir s_axis_punt left -pinY s_axis_punt 20L -pinDir m_axis_punt right -pinY m_axis_punt 60R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 60L
+preplace inst symbol_train_0 -pg 1 -lvl 10 -x 3080 -y 440 -defaultsOSRD -pinDir m_axis_train right -pinY m_axis_train 40R -pinDir clk left -pinY clk 20L -pinDir rst_n left -pinY rst_n 40L
+preplace inst pilot_0 -pg 1 -lvl 9 -x 2770 -y 440 -defaultsOSRD -pinDir s_axis_pilot left -pinY s_axis_pilot 20L -pinDir m_axis_pilot right -pinY m_axis_pilot 160R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 120L
+preplace inst dac_0 -pg 1 -lvl 11 -x 3440 -y 460 -swap {6 1 2 3 4 5 0 7 8 9 10 11 12 13 14 15 16 17 19 18 20} -defaultsOSRD -pinDir s_axis_ifft_dac left -pinY s_axis_ifft_dac 140L -pinDir s_axis_train_dac left -pinY s_axis_train_dac 20L -pinDir m_axis_dac right -pinY m_axis_dac 20R -pinDir m_axis_dac.dac_dout right -pinY m_axis_dac.dac_dout 40R -pinDir m_axis_dac.dac_dout_last right -pinY m_axis_dac.dac_dout_last 60R -pinDir m_axis_dac.dac_dout_Index right -pinY m_axis_dac.dac_dout_Index 80R -pinDir m_axis_dac.dac_dout_vld right -pinY m_axis_dac.dac_dout_vld 100R -pinDir m_axis_dac.dac_din_rdy right -pinY m_axis_dac.dac_din_rdy 200R -pinDir clk left -pinY clk 180L -pinDir clk_dac left -pinY clk_dac 160L -pinDir rst_n left -pinY rst_n 200L
+preplace inst ifft_0 -pg 1 -lvl 10 -x 3080 -y 580 -defaultsOSRD -pinDir s_axis_ifft left -pinY s_axis_ifft 20L -pinDir m_axis_ifft right -pinY m_axis_ifft 20R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 60L
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 380 -defaultsOSRD -pinDir resetn left -pinY resetn 20L -pinDir clk_in1 left -pinY clk_in1 40L -pinDir clk_out1 right -pinY clk_out1 20R -pinDir locked right -pinY locked 40R -pinDir clk_out2 right -pinY clk_out2 140R
+preplace inst util_vector_logic_0 -pg 1 -lvl 2 -x 420 -y 400 -defaultsOSRD -pinBusDir Op1 left -pinBusY Op1 20L -pinBusDir Op2 right -pinBusY Op2 20R -pinBusDir Res right -pinBusY Res 40R
+preplace netloc netgroup_1 1 2 1 640 240n
+preplace netloc clk_wiz_0_clk_out1 1 1 10 200 500 660 160 1020 340 1340 360 1640 400 1960 440 2300 540 2620 400 2920 400 3240
+preplace netloc clk_wiz_0_locked 1 1 1 220 300n
+preplace netloc tx_mcu_0_phy_rst_n 1 2 1 600 300n
+preplace netloc util_vector_logic_0_Res 1 2 9 680 180 1000 360 1320 380 1660 420 1980 460 2280 560 2600 660 2940 540 3220
+preplace netloc clk_wiz_0_clk_out2 1 1 10 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 2600J 380 NJ 380 3260
+preplace netloc mcu_config_din_0_1 1 0 2 NJ 100 NJ
+preplace netloc mcu_config_din_start_0_1 1 0 2 NJ 120 NJ
+preplace netloc mcu_config_din_vld_0_1 1 0 2 NJ 140 NJ
+preplace netloc tx_mcu_0_mcu_config_dout_rdy 1 1 11 240 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ
+preplace netloc mcu_mac_din_0_1 1 0 2 NJ 200 NJ
+preplace netloc mcu_mac_din_vld_0_1 1 0 2 NJ 220 NJ
+preplace netloc tx_mcu_0_mcu_mac_dout_rdy 1 1 11 240 360 620J 140 NJ 140 NJ 140 NJ 140 NJ 140 NJ 140 NJ 140 NJ 140 NJ 140 NJ
+preplace netloc tx_mcu_0_TxPWR 1 2 10 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ 80 NJ
+preplace netloc resetn_0_1 1 0 1 NJ 400
+preplace netloc clk_in1_0_1 1 0 1 NJ 420
+preplace netloc tx_end_0_1 1 0 2 NJ 260 NJ
+preplace netloc dac_0_dac_dout 1 11 1 NJ 500
+preplace netloc dac_0_dac_dout_last 1 11 1 NJ 520
+preplace netloc dac_0_dac_dout_Index 1 11 1 NJ 540
+preplace netloc dac_0_dac_dout_vld 1 11 1 NJ 560
+preplace netloc dac_din_rdy_0_1 1 0 12 NJ 720 NJ 720 NJ 720 NJ 720 NJ 720 NJ 720 NJ 720 NJ 720 NJ 720 NJ 720 NJ 720 3620
+preplace netloc tx_mcu_0_m_axis_mcu 1 2 1 N 260
+preplace netloc scramler_0_m_axis_scram 1 3 1 N 240
+preplace netloc convenc_0_m_axis_conv 1 4 1 N 260
+preplace netloc puncture_0_m_axis_punt 1 5 1 N 300
+preplace netloc interleaver_1_0_m_axis_intv1 1 6 1 N 340
+preplace netloc interleaver_2_0_m_axis_intv2 1 7 1 N 380
+preplace netloc maping_0_m_axis_map 1 8 1 N 460
+preplace netloc pilot_0_m_axis_pilot 1 9 1 N 600
+preplace netloc ifft_0_m_axis_ifft 1 10 1 N 600
+preplace netloc symbol_train_0_m_axis_train 1 10 1 N 480
+levelinfo -pg 1 0 110 420 840 1170 1490 1810 2130 2450 2770 3080 3440 3640
+pagesize -pg 1 -db -bbox -sgen -210 0 3850 740
+",
+   "Grouping and No Loops_ScaleFactor":"0.694685",
+   "Grouping and No Loops_TopLeft":"-202,-560",
+   "Interfaces View_Layers":"/clk_in1_0_1:false|/tx_mcu_0_phy_rst_n:false|/clk_wiz_0_clk_out2:false|/clk_wiz_0_clk_out1:false|/resetn_0_1:false|",
+   "Interfaces View_ScaleFactor":"0.8",
+   "Interfaces View_TopLeft":"-448,-466",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port port-id_mcu_config_din_start_0 -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace port port-id_mcu_config_din_vld_0 -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
+preplace port port-id_mcu_config_dout_rdy_0 -pg 1 -lvl 12 -x 3640 -y 20 -defaultsOSRD
+preplace port port-id_mcu_mac_din_vld_0 -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
+preplace port port-id_mcu_mac_dout_rdy_0 -pg 1 -lvl 12 -x 3640 -y 540 -defaultsOSRD
+preplace port port-id_resetn_0 -pg 1 -lvl 0 -x 0 -y 580 -defaultsOSRD
+preplace port port-id_clk_in1_0 -pg 1 -lvl 0 -x 0 -y 600 -defaultsOSRD
+preplace port port-id_tx_end_0 -pg 1 -lvl 0 -x 0 -y 400 -defaultsOSRD
+preplace port port-id_dac_dout_last_0 -pg 1 -lvl 12 -x 3640 -y 400 -defaultsOSRD
+preplace port port-id_dac_dout_vld_0 -pg 1 -lvl 12 -x 3640 -y 440 -defaultsOSRD
+preplace port port-id_dac_din_rdy_0 -pg 1 -lvl 0 -x 0 -y 520 -defaultsOSRD
+preplace portBus mcu_config_din_0 -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
+preplace portBus mcu_mac_din_0 -pg 1 -lvl 0 -x 0 -y 340 -defaultsOSRD
+preplace portBus TxPWR_0 -pg 1 -lvl 12 -x 3640 -y 40 -defaultsOSRD
+preplace portBus dac_dout_0 -pg 1 -lvl 12 -x 3640 -y 380 -defaultsOSRD
+preplace portBus dac_dout_Index_0 -pg 1 -lvl 12 -x 3640 -y 420 -defaultsOSRD
+preplace inst interleaver_2_0 -pg 1 -lvl 7 -x 2150 -y 220 -defaultsOSRD -pinDir s_axis_intv2 left -pinY s_axis_intv2 20L -pinDir m_axis_intv2 right -pinY m_axis_intv2 20R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 60L
+preplace inst tx_mcu_0 -pg 1 -lvl 2 -x 450 -y 200 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 16 20 18 19 21 15 17} -defaultsOSRD -pinDir s_axis_mcu_config left -pinY s_axis_mcu_config 20L -pinDir s_axis_mcu_config.mcu_config_din left -pinY s_axis_mcu_config.mcu_config_din 40L -pinDir s_axis_mcu_config.mcu_config_din_start left -pinY s_axis_mcu_config.mcu_config_din_start 60L -pinDir s_axis_mcu_config.mcu_config_din_vld left -pinY s_axis_mcu_config.mcu_config_din_vld 80L -pinDir s_axis_mcu_config.mcu_config_dout_rdy left -pinY s_axis_mcu_config.mcu_config_dout_rdy 100L -pinDir s_axis_mcu_mac left -pinY s_axis_mcu_mac 120L -pinDir s_axis_mcu_mac.mcu_mac_din left -pinY s_axis_mcu_mac.mcu_mac_din 140L -pinDir s_axis_mcu_mac.mcu_mac_din_vld left -pinY s_axis_mcu_mac.mcu_mac_din_vld 160L -pinDir s_axis_mcu_mac.mcu_mac_dout_rdy left -pinY s_axis_mcu_mac.mcu_mac_dout_rdy 180L -pinDir m_axis_mcu right -pinY m_axis_mcu 60R -pinDir clk left -pinY clk 220L -pinDir rst_n left -pinY rst_n 240L -pinBusDir mcu_dout_scram_seed right -pinBusY mcu_dout_scram_seed 100R -pinDir mcu_dout_scram_load right -pinY mcu_dout_scram_load 220R -pinDir phy_rst_n right -pinY phy_rst_n 240R -pinDir tx_end left -pinY tx_end 200L -pinBusDir TxPWR right -pinBusY TxPWR 80R
+preplace inst interleaver_1_0 -pg 1 -lvl 6 -x 1830 -y 220 -defaultsOSRD -pinDir s_axis_intv1 left -pinY s_axis_intv1 20L -pinDir m_axis_intv1 right -pinY m_axis_intv1 20R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 60L
+preplace inst convenc_0 -pg 1 -lvl 4 -x 1190 -y 220 -defaultsOSRD -pinDir s_axis_conv left -pinY s_axis_conv 40L -pinDir m_axis_conv right -pinY m_axis_conv 20R -pinDir clk left -pinY clk 60L -pinDir rst_n left -pinY rst_n 80L
+preplace inst scramler_0 -pg 1 -lvl 3 -x 860 -y 240 -swap {0 1 2 3 4 5 6 7 8 9 10 11 14 15 12 13} -defaultsOSRD -pinDir s_axis_scram left -pinY s_axis_scram 20L -pinDir m_axis_scram right -pinY m_axis_scram 20R -pinDir clk left -pinY clk 200L -pinDir rst_n left -pinY rst_n 220L -pinBusDir scram_seed left -pinBusY scram_seed 60L -pinDir scram_load left -pinY scram_load 180L
+preplace inst maping_0 -pg 1 -lvl 8 -x 2470 -y 220 -defaultsOSRD -pinDir s_axis_map left -pinY s_axis_map 20L -pinDir m_axis_map right -pinY m_axis_map 20R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 60L
+preplace inst puncture_0 -pg 1 -lvl 5 -x 1510 -y 220 -defaultsOSRD -pinDir s_axis_punt left -pinY s_axis_punt 20L -pinDir m_axis_punt right -pinY m_axis_punt 20R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 60L
+preplace inst symbol_train_0 -pg 1 -lvl 10 -x 3100 -y 60 -defaultsOSRD -pinDir m_axis_train right -pinY m_axis_train 40R -pinDir clk left -pinY clk 20L -pinDir rst_n left -pinY rst_n 40L
+preplace inst pilot_0 -pg 1 -lvl 9 -x 2790 -y 220 -defaultsOSRD -pinDir s_axis_pilot left -pinY s_axis_pilot 20L -pinDir m_axis_pilot right -pinY m_axis_pilot 20R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 60L
+preplace inst dac_0 -pg 1 -lvl 11 -x 3440 -y 80 -swap {6 1 2 3 4 5 0 7 8 9 10 11 12 13 14 15 16 17 18 20 19} -defaultsOSRD -pinDir s_axis_ifft_dac left -pinY s_axis_ifft_dac 160L -pinDir s_axis_train_dac left -pinY s_axis_train_dac 20L -pinDir m_axis_dac right -pinY m_axis_dac 280R -pinDir m_axis_dac.dac_dout right -pinY m_axis_dac.dac_dout 300R -pinDir m_axis_dac.dac_dout_last right -pinY m_axis_dac.dac_dout_last 320R -pinDir m_axis_dac.dac_dout_Index right -pinY m_axis_dac.dac_dout_Index 340R -pinDir m_axis_dac.dac_dout_vld right -pinY m_axis_dac.dac_dout_vld 360R -pinDir m_axis_dac.dac_din_rdy right -pinY m_axis_dac.dac_din_rdy 380R -pinDir clk left -pinY clk 260L -pinDir clk_dac left -pinY clk_dac 380L -pinDir rst_n left -pinY rst_n 280L
+preplace inst ifft_0 -pg 1 -lvl 10 -x 3100 -y 220 -defaultsOSRD -pinDir s_axis_ifft left -pinY s_axis_ifft 20L -pinDir m_axis_ifft right -pinY m_axis_ifft 20R -pinDir clk left -pinY clk 40L -pinDir rst_n left -pinY rst_n 60L
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 560 -defaultsOSRD -pinDir resetn left -pinY resetn 20L -pinDir clk_in1 left -pinY clk_in1 40L -pinDir clk_out1 right -pinY clk_out1 20R -pinDir locked right -pinY locked 40R -pinDir clk_out2 right -pinY clk_out2 60R
+preplace inst util_vector_logic_0 -pg 1 -lvl 2 -x 450 -y 660 -defaultsOSRD -pinBusDir Op1 left -pinBusY Op1 20L -pinBusDir Op2 right -pinBusY Op2 20R -pinBusDir Res right -pinBusY Res 40R
+preplace netloc clk_wiz_0_clk_out1 1 1 10 200 500 680 200 1020 360 1340 340 1660 340 1980 340 2300 340 2620 340 2940 340 N
+preplace netloc tx_mcu_0_mcu_dout_scram_seed 1 2 1 N 300
+preplace netloc tx_mcu_0_mcu_dout_scram_load 1 2 1 N 420
+preplace netloc clk_wiz_0_locked 1 1 1 220 440n
+preplace netloc tx_mcu_0_phy_rst_n 1 2 1 660 440n
+preplace netloc util_vector_logic_0_Res 1 2 9 700 560 1040 380 1360 360 1680 360 2000 360 2320 360 2640 360 2960 360 N
+preplace netloc clk_wiz_0_clk_out2 1 1 10 NJ 620 NJ 620 NJ 620 NJ 620 NJ 620 NJ 620 NJ 620 NJ 620 NJ 620 3240
+preplace netloc mcu_config_din_0_1 1 0 2 NJ 240 NJ
+preplace netloc mcu_config_din_start_0_1 1 0 2 NJ 260 NJ
+preplace netloc mcu_config_din_vld_0_1 1 0 2 NJ 280 NJ
+preplace netloc tx_mcu_0_mcu_config_dout_rdy 1 1 11 240 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 3240J 20 NJ
+preplace netloc mcu_mac_din_0_1 1 0 2 NJ 340 NJ
+preplace netloc mcu_mac_din_vld_0_1 1 0 2 NJ 360 NJ
+preplace netloc tx_mcu_0_mcu_mac_dout_rdy 1 1 11 240 540 NJ 540 NJ 540 NJ 540 NJ 540 NJ 540 NJ 540 NJ 540 NJ 540 NJ 540 NJ
+preplace netloc tx_mcu_0_TxPWR 1 2 10 660J 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 3260J 40 NJ
+preplace netloc resetn_0_1 1 0 1 NJ 580
+preplace netloc clk_in1_0_1 1 0 1 NJ 600
+preplace netloc tx_end_0_1 1 0 2 NJ 400 NJ
+preplace netloc dac_0_dac_dout 1 11 1 NJ 380
+preplace netloc dac_0_dac_dout_last 1 11 1 NJ 400
+preplace netloc dac_0_dac_dout_Index 1 11 1 NJ 420
+preplace netloc dac_0_dac_dout_vld 1 11 1 NJ 440
+preplace netloc dac_din_rdy_0_1 1 0 12 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 3620
+preplace netloc tx_mcu_0_m_axis_mcu 1 2 1 N 260
+preplace netloc scramler_0_m_axis_scram 1 3 1 N 260
+preplace netloc convenc_0_m_axis_conv 1 4 1 N 240
+preplace netloc puncture_0_m_axis_punt 1 5 1 N 240
+preplace netloc interleaver_1_0_m_axis_intv1 1 6 1 N 240
+preplace netloc interleaver_2_0_m_axis_intv2 1 7 1 N 240
+preplace netloc maping_0_m_axis_map 1 8 1 N 240
+preplace netloc pilot_0_m_axis_pilot 1 9 1 N 240
+preplace netloc ifft_0_m_axis_ifft 1 10 1 N 240
+preplace netloc symbol_train_0_m_axis_train 1 10 1 N 100
+levelinfo -pg 1 0 110 450 860 1190 1510 1830 2150 2470 2790 3100 3440 3640
+pagesize -pg 1 -db -bbox -sgen -210 0 3850 760
+",
+   "No Loops_ScaleFactor":"0.694685",
+   "No Loops_TopLeft":"-202,-551",
+   "Reduced Jogs_ExpandedHierarchyInLayout":"",
+   "Reduced Jogs_Layers":"/clk_in1_0_1:true|/tx_mcu_0_phy_rst_n:true|/clk_wiz_0_clk_out2:true|/clk_wiz_0_clk_out1:true|/resetn_0_1:true|",
+   "Reduced Jogs_Layout":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port port-id_mcu_config_din_start_0 -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port port-id_mcu_config_din_vld_0 -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace port port-id_mcu_config_dout_rdy_0 -pg 1 -lvl 12 -x 3640 -y 20 -defaultsOSRD
+preplace port port-id_mcu_mac_din_vld_0 -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace port port-id_mcu_mac_dout_rdy_0 -pg 1 -lvl 12 -x 3640 -y 400 -defaultsOSRD
+preplace port port-id_resetn_0 -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
+preplace port port-id_clk_in1_0 -pg 1 -lvl 0 -x 0 -y 380 -defaultsOSRD
+preplace port port-id_tx_end_0 -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace port port-id_dac_dout_last_0 -pg 1 -lvl 12 -x 3640 -y 500 -defaultsOSRD
+preplace port port-id_dac_dout_vld_0 -pg 1 -lvl 12 -x 3640 -y 540 -defaultsOSRD
+preplace port port-id_dac_din_rdy_0 -pg 1 -lvl 0 -x 0 -y 760 -defaultsOSRD
+preplace portBus mcu_config_din_0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace portBus mcu_mac_din_0 -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace portBus TxPWR_0 -pg 1 -lvl 12 -x 3640 -y 160 -defaultsOSRD
+preplace portBus dac_dout_0 -pg 1 -lvl 12 -x 3640 -y 480 -defaultsOSRD
+preplace portBus dac_dout_Index_0 -pg 1 -lvl 12 -x 3640 -y 520 -defaultsOSRD
+preplace inst interleaver_2_0 -pg 1 -lvl 7 -x 2170 -y 320 -defaultsOSRD -pinY s_axis_intv2 20L -pinY m_axis_intv2 60R -pinY clk 40L -pinY rst_n 60L
+preplace inst tx_mcu_0 -pg 1 -lvl 2 -x 470 -y 60 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 16 20 18 19 21 15 17} -defaultsOSRD -pinY s_axis_mcu_config 20L -pinY s_axis_mcu_config.mcu_config_din 40L -pinY s_axis_mcu_config.mcu_config_din_start 60L -pinY s_axis_mcu_config.mcu_config_din_vld 80L -pinY s_axis_mcu_config.mcu_config_dout_rdy 100L -pinY s_axis_mcu_mac 120L -pinY s_axis_mcu_mac.mcu_mac_din 140L -pinY s_axis_mcu_mac.mcu_mac_din_vld 160L -pinY s_axis_mcu_mac.mcu_mac_dout_rdy 180L -pinY m_axis_mcu 160R -pinY clk 220L -pinY rst_n 240L -pinBusY mcu_dout_scram_seed 200R -pinY mcu_dout_scram_load 220R -pinY phy_rst_n 240R -pinY tx_end 200L -pinBusY TxPWR 180R
+preplace inst interleaver_1_0 -pg 1 -lvl 6 -x 1850 -y 300 -defaultsOSRD -pinY s_axis_intv1 20L -pinY m_axis_intv1 40R -pinY clk 40L -pinY rst_n 60L
+preplace inst convenc_0 -pg 1 -lvl 4 -x 1210 -y 300 -defaultsOSRD -pinY s_axis_conv 20L -pinY m_axis_conv 20R -pinY clk 40L -pinY rst_n 60L
+preplace inst scramler_0 -pg 1 -lvl 3 -x 880 -y 200 -swap {0 1 2 3 4 5 6 7 8 9 10 11 14 15 12 13} -defaultsOSRD -pinY s_axis_scram 20L -pinY m_axis_scram 120R -pinY clk 140L -pinY rst_n 160L -pinBusY scram_seed 60L -pinY scram_load 80L
+preplace inst maping_0 -pg 1 -lvl 8 -x 2490 -y 360 -defaultsOSRD -pinY s_axis_map 20L -pinY m_axis_map 60R -pinY clk 40L -pinY rst_n 60L
+preplace inst puncture_0 -pg 1 -lvl 5 -x 1530 -y 300 -defaultsOSRD -pinY s_axis_punt 20L -pinY m_axis_punt 20R -pinY clk 40L -pinY rst_n 60L
+preplace inst symbol_train_0 -pg 1 -lvl 10 -x 3120 -y 580 -defaultsOSRD -pinY m_axis_train 20R -pinY clk 20L -pinY rst_n 40L
+preplace inst pilot_0 -pg 1 -lvl 9 -x 2810 -y 400 -defaultsOSRD -pinY s_axis_pilot 20L -pinY m_axis_pilot 20R -pinY clk 40L -pinY rst_n 60L
+preplace inst dac_0 -pg 1 -lvl 11 -x 3440 -y 440 -defaultsOSRD -pinY s_axis_ifft_dac 20L -pinY s_axis_train_dac 160L -pinY m_axis_dac 20R -pinY m_axis_dac.dac_dout 40R -pinY m_axis_dac.dac_dout_last 60R -pinY m_axis_dac.dac_dout_Index 80R -pinY m_axis_dac.dac_dout_vld 100R -pinY m_axis_dac.dac_din_rdy 260R -pinY clk 180L -pinY clk_dac 240L -pinY rst_n 260L
+preplace inst ifft_0 -pg 1 -lvl 10 -x 3120 -y 400 -defaultsOSRD -pinY s_axis_ifft 20L -pinY m_axis_ifft 60R -pinY clk 40L -pinY rst_n 60L
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 340 -defaultsOSRD -pinY resetn 20L -pinY clk_in1 40L -pinY clk_out1 20R -pinY locked 40R -pinY clk_out2 340R
+preplace inst util_vector_logic_0 -pg 1 -lvl 2 -x 470 -y 420 -swap {1 0 2} -defaultsOSRD -pinBusY Op1 40L -pinBusY Op2 20L -pinBusY Res 20R
+preplace netloc clk_wiz_0_clk_out1 1 1 10 200 360 700 420 1040 420 1360 420 1680 420 2020 440 2320 480 2640 540 2960 540 3260
+preplace netloc tx_mcu_0_mcu_dout_scram_seed 1 2 1 N 260
+preplace netloc tx_mcu_0_mcu_dout_scram_load 1 2 1 N 280
+preplace netloc clk_wiz_0_locked 1 1 1 220 300n
+preplace netloc tx_mcu_0_phy_rst_n 1 1 2 260 380 680
+preplace netloc util_vector_logic_0_Res 1 2 9 720 440 1060 440 1380 440 1700 440 2000 460 2340 500 2660 560 2980 700 NJ
+preplace netloc clk_wiz_0_clk_out2 1 1 10 N 680 NJ 680 NJ 680 NJ 680 NJ 680 NJ 680 NJ 680 NJ 680 NJ 680 NJ
+preplace netloc mcu_config_din_0_1 1 0 2 NJ 100 NJ
+preplace netloc mcu_config_din_start_0_1 1 0 2 NJ 120 NJ
+preplace netloc mcu_config_din_vld_0_1 1 0 2 NJ 140 NJ
+preplace netloc tx_mcu_0_mcu_config_dout_rdy 1 1 11 260 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ
+preplace netloc mcu_mac_din_0_1 1 0 2 NJ 200 NJ
+preplace netloc mcu_mac_din_vld_0_1 1 0 2 NJ 220 NJ
+preplace netloc tx_mcu_0_mcu_mac_dout_rdy 1 1 11 240 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 NJ 520 3260J 400 NJ
+preplace netloc tx_mcu_0_TxPWR 1 2 10 680J 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ
+preplace netloc resetn_0_1 1 0 1 NJ 360
+preplace netloc clk_in1_0_1 1 0 1 NJ 380
+preplace netloc tx_end_0_1 1 0 2 NJ 260 NJ
+preplace netloc dac_0_dac_dout 1 11 1 NJ 480
+preplace netloc dac_0_dac_dout_last 1 11 1 NJ 500
+preplace netloc dac_0_dac_dout_Index 1 11 1 NJ 520
+preplace netloc dac_0_dac_dout_vld 1 11 1 NJ 540
+preplace netloc dac_din_rdy_0_1 1 0 12 NJ 760 NJ 760 NJ 760 NJ 760 NJ 760 NJ 760 NJ 760 NJ 760 NJ 760 NJ 760 NJ 760 3620
+preplace netloc tx_mcu_0_m_axis_mcu 1 2 1 N 220
+preplace netloc scramler_0_m_axis_scram 1 3 1 N 320
+preplace netloc convenc_0_m_axis_conv 1 4 1 N 320
+preplace netloc puncture_0_m_axis_punt 1 5 1 N 320
+preplace netloc interleaver_1_0_m_axis_intv1 1 6 1 N 340
+preplace netloc interleaver_2_0_m_axis_intv2 1 7 1 N 380
+preplace netloc maping_0_m_axis_map 1 8 1 N 420
+preplace netloc pilot_0_m_axis_pilot 1 9 1 N 420
+preplace netloc ifft_0_m_axis_ifft 1 10 1 N 460
+preplace netloc symbol_train_0_m_axis_train 1 10 1 N 600
+levelinfo -pg 1 0 110 470 880 1210 1530 1850 2170 2490 2810 3120 3440 3640
+pagesize -pg 1 -db -bbox -sgen -210 0 3850 780
+",
+   "Reduced Jogs_ScaleFactor":"0.694685",
+   "Reduced Jogs_TopLeft":"-202,-540",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port port-id_mcu_config_din_start_0 -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port port-id_mcu_config_din_vld_0 -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace port port-id_mcu_config_dout_rdy_0 -pg 1 -lvl 12 -x 3580 -y 20 -defaultsOSRD
+preplace port port-id_mcu_mac_din_vld_0 -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace port port-id_mcu_mac_dout_rdy_0 -pg 1 -lvl 12 -x 3580 -y 410 -defaultsOSRD
+preplace port port-id_resetn_0 -pg 1 -lvl 0 -x 0 -y 540 -defaultsOSRD
+preplace port port-id_clk_in1_0 -pg 1 -lvl 0 -x 0 -y 560 -defaultsOSRD
+preplace port port-id_tx_end_0 -pg 1 -lvl 0 -x 0 -y 300 -defaultsOSRD
+preplace port port-id_dac_dout_last_0 -pg 1 -lvl 12 -x 3580 -y 510 -defaultsOSRD
+preplace port port-id_dac_dout_vld_0 -pg 1 -lvl 12 -x 3580 -y 550 -defaultsOSRD
+preplace port port-id_dac_din_rdy_0 -pg 1 -lvl 0 -x 0 -y 630 -defaultsOSRD
+preplace portBus mcu_config_din_0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace portBus mcu_mac_din_0 -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace portBus TxPWR_0 -pg 1 -lvl 12 -x 3580 -y 90 -defaultsOSRD
+preplace portBus dac_dout_0 -pg 1 -lvl 12 -x 3580 -y 490 -defaultsOSRD
+preplace portBus dac_dout_Index_0 -pg 1 -lvl 12 -x 3580 -y 530 -defaultsOSRD
+preplace inst interleaver_2_0 -pg 1 -lvl 7 -x 2110 -y 270 -defaultsOSRD
+preplace inst tx_mcu_0 -pg 1 -lvl 2 -x 440 -y 190 -defaultsOSRD
+preplace inst interleaver_1_0 -pg 1 -lvl 6 -x 1800 -y 250 -defaultsOSRD
+preplace inst convenc_0 -pg 1 -lvl 4 -x 1180 -y 210 -defaultsOSRD
+preplace inst scramler_0 -pg 1 -lvl 3 -x 860 -y 190 -defaultsOSRD
+preplace inst maping_0 -pg 1 -lvl 8 -x 2420 -y 290 -defaultsOSRD
+preplace inst puncture_0 -pg 1 -lvl 5 -x 1490 -y 230 -defaultsOSRD
+preplace inst symbol_train_0 -pg 1 -lvl 10 -x 3040 -y 500 -defaultsOSRD
+preplace inst pilot_0 -pg 1 -lvl 9 -x 2740 -y 310 -defaultsOSRD
+preplace inst dac_0 -pg 1 -lvl 11 -x 3380 -y 520 -defaultsOSRD
+preplace inst ifft_0 -pg 1 -lvl 10 -x 3040 -y 330 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 550 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 2 -x 440 -y 440 -defaultsOSRD
+preplace netloc clk_wiz_0_clk_out1 1 1 10 200 10 690 290 1020 290 1330 310 1650 170 1950 190 2260 210 2580 230 2890 570 3180
+preplace netloc tx_mcu_0_mcu_dout_scram_seed 1 2 1 670 170n
+preplace netloc tx_mcu_0_mcu_dout_scram_load 1 2 1 680 190n
+preplace netloc clk_wiz_0_locked 1 1 1 210 280n
+preplace netloc tx_mcu_0_phy_rst_n 1 1 2 230 360 650
+preplace netloc util_vector_logic_0_Res 1 2 9 700 300 1030 300 1340 320 1640 160 1960 180 2270 200 2590 390 2900 590 3200J
+preplace netloc clk_wiz_0_clk_out2 1 1 10 220 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 3190J
+preplace netloc mcu_config_din_0_1 1 0 2 NJ 100 NJ
+preplace netloc mcu_config_din_start_0_1 1 0 2 NJ 120 NJ
+preplace netloc mcu_config_din_vld_0_1 1 0 2 NJ 140 NJ
+preplace netloc tx_mcu_0_mcu_config_dout_rdy 1 1 11 220 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ
+preplace netloc mcu_mac_din_0_1 1 0 2 NJ 200 NJ
+preplace netloc mcu_mac_din_vld_0_1 1 0 2 NJ 220 NJ
+preplace netloc tx_mcu_0_mcu_mac_dout_rdy 1 1 11 220 370 NJ 370 NJ 370 1330J 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ 410 NJ
+preplace netloc tx_mcu_0_TxPWR 1 2 10 660J 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ
+preplace netloc resetn_0_1 1 0 1 NJ 540
+preplace netloc clk_in1_0_1 1 0 1 NJ 560
+preplace netloc tx_end_0_1 1 0 2 NJ 300 NJ
+preplace netloc dac_0_dac_dout 1 11 1 NJ 490
+preplace netloc dac_0_dac_dout_last 1 11 1 NJ 510
+preplace netloc dac_0_dac_dout_Index 1 11 1 NJ 530
+preplace netloc dac_0_dac_dout_vld 1 11 1 NJ 550
+preplace netloc dac_din_rdy_0_1 1 0 12 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 3560
+preplace netloc tx_mcu_0_m_axis_mcu 1 2 1 N 150
+preplace netloc scramler_0_m_axis_scram 1 3 1 N 190
+preplace netloc convenc_0_m_axis_conv 1 4 1 N 210
+preplace netloc puncture_0_m_axis_punt 1 5 1 N 230
+preplace netloc interleaver_1_0_m_axis_intv1 1 6 1 N 250
+preplace netloc interleaver_2_0_m_axis_intv2 1 7 1 N 270
+preplace netloc maping_0_m_axis_map 1 8 1 N 290
+preplace netloc pilot_0_m_axis_pilot 1 9 1 N 310
+preplace netloc ifft_0_m_axis_ifft 1 10 1 3180 330n
+preplace netloc symbol_train_0_m_axis_train 1 10 1 N 500
+levelinfo -pg 1 0 110 440 860 1180 1490 1800 2110 2420 2740 3040 3380 3580
+pagesize -pg 1 -db -bbox -sgen -210 0 3790 650
+"
+}
+{
+   "da_board_cnt":"4",
+   "da_clkrst_cnt":"21"
+}

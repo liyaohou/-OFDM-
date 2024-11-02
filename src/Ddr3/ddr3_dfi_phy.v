@@ -80,21 +80,21 @@ module ddr3_dfi_phy
     ,inout [ 15:0]  ddr3_dq_io
 );
 
-`ifdef ILA
-    ila_0 u_ila_0(
-    	 .clk		    (clk_ref_i)
-        ,.probe0		(ddr3_cs_n_o)
-        ,.probe1		(ddr3_ras_n_o)
-        ,.probe2		(ddr3_cas_n_o)
-        ,.probe3		(ddr3_we_n_o)
-        ,.probe4		(dfi_wrdata_en_i)
-        ,.probe5		(dfi_rddata_valid_o)
-        ,.probe6		(dfi_rddata_o)
-        ,.probe7		(dfi_wrdata_i)
-        // ,.probe8		(ddr3_addr_o)
-        // ,.probe9		(16'd0)
-    );
-`endif
+// `ifdef ILA
+//     ila_1 u_ila_1(
+//     	 .clk		    (clk_ref_i)
+//         ,.probe0		(ddr3_cs_n_o)
+//         ,.probe1		(ddr3_ras_n_o)
+//         ,.probe2		(ddr3_cas_n_o)
+//         ,.probe3		(ddr3_we_n_o)
+//         ,.probe4		(dfi_wrdata_en_i)
+//         ,.probe5		(dfi_rddata_valid_o)
+//         ,.probe6		(dfi_rddata_o)
+//         ,.probe7		(dfi_wrdata_i)
+//         // ,.probe8		(ddr3_addr_o)
+//         // ,.probe9		(16'd0)
+//     );
+// `endif
 
 //-----------------------------------------------------------------
 // Configuration

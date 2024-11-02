@@ -1,0 +1,1446 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Nov  2 21:41:42 2024" VIVADOVERSION="2023.1">
+
+  <SYSTEMINFO ARCH="kintex7" DEVICE="7k325t" NAME="ofdm_tx" PACKAGE="ffg676" SPEEDGRADE="-2"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" LEFT="20" NAME="mcu_config_din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_mcu_config_din">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_config_din"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="mcu_config_din_start" SIGIS="undef" SIGNAME="External_Ports_mcu_config_din_start">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_config_din_start"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="mcu_config_din_vld" SIGIS="undef" SIGNAME="External_Ports_mcu_config_din_vld">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_config_din_vld"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="mcu_config_dout_rdy" SIGIS="undef" SIGNAME="tx_mcu_0_mcu_config_dout_rdy">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_config_dout_rdy"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="mcu_mac_din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_mcu_mac_din">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_mac_din"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="mcu_mac_din_vld" SIGIS="undef" SIGNAME="External_Ports_mcu_mac_din_vld">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_mac_din_vld"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="mcu_mac_dout_rdy" SIGIS="undef" SIGNAME="tx_mcu_0_mcu_mac_dout_rdy">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_mac_dout_rdy"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="2" NAME="TxPWR" RIGHT="0" SIGIS="undef" SIGNAME="tx_mcu_0_TxPWR">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="TxPWR"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="tx_end" SIGIS="undef" SIGNAME="External_Ports_tx_end">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="tx_end"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="15" NAME="dac_dout" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_dout">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dac_0" PORT="dac_dout"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="dac_dout_last" SIGIS="undef" SIGNAME="dac_0_dac_dout_last">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dac_0" PORT="dac_dout_last"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="8" NAME="dac_dout_Index" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_dout_Index">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dac_0" PORT="dac_dout_Index"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="dac_dout_vld" SIGIS="undef" SIGNAME="dac_0_dac_dout_vld">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dac_0" PORT="dac_dout_vld"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="dac_din_rdy" SIGIS="undef" SIGNAME="External_Ports_dac_din_rdy">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dac_0" PORT="dac_din_rdy"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk_125m" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="clk"/>
+        <CONNECTION INSTANCE="convenc_0" PORT="clk"/>
+        <CONNECTION INSTANCE="scramler_0" PORT="clk"/>
+        <CONNECTION INSTANCE="puncture_0" PORT="clk"/>
+        <CONNECTION INSTANCE="ifft_0" PORT="clk"/>
+        <CONNECTION INSTANCE="pilot_0" PORT="clk"/>
+        <CONNECTION INSTANCE="dac_0" PORT="clk"/>
+        <CONNECTION INSTANCE="interleaver_1_0" PORT="clk"/>
+        <CONNECTION INSTANCE="interleaver_2_0" PORT="clk"/>
+        <CONNECTION INSTANCE="maping_0" PORT="clk"/>
+        <CONNECTION INSTANCE="symbol_train_0" PORT="clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="clk_20m" SIGIS="undef" SIGNAME="External_Ports_clk_20m">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="dac_0" PORT="clk_dac"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="locked" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_locked">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="rst_n"/>
+        <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/convenc_0" HWVERSION="1.0" INSTANCE="convenc_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="convenc" VLNV="xilinx.com:module_ref:convenc:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_convenc_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_125m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="conv_din" SIGIS="undef" SIGNAME="convenc_0_conv_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="conv_din_vld" SIGIS="undef" SIGNAME="convenc_0_conv_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_dout_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="conv_din_rdy" SIGIS="undef" SIGNAME="convenc_0_conv_din_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="puncture_0" PORT="punt_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="conv_din_sig_flag" SIGIS="undef" SIGNAME="convenc_0_conv_din_sig_flag">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_dout_sig_flag"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="conv_din_rate_con" RIGHT="0" SIGIS="undef" SIGNAME="convenc_0_conv_din_rate_con">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_dout_rate_con"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="conv_dout" RIGHT="0" SIGIS="undef" SIGNAME="convenc_0_conv_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="puncture_0" PORT="punt_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="conv_dout_vld" SIGIS="undef" SIGNAME="convenc_0_conv_dout_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="puncture_0" PORT="punt_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="conv_dout_rdy" SIGIS="undef" SIGNAME="convenc_0_conv_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_din_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="conv_dout_sig_flag" SIGIS="undef" SIGNAME="convenc_0_conv_dout_sig_flag">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="puncture_0" PORT="punt_din_sig_flag"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="conv_dout_rate_con" RIGHT="0" SIGIS="undef" SIGNAME="convenc_0_conv_dout_rate_con">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="puncture_0" PORT="punt_din_rate_con"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="scramler_0_m_axis_scram" NAME="s_axis_conv" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="4"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="conv_din_rate_con"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="conv_din"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="conv_din_sig_flag"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="conv_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="conv_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="convenc_0_m_axis_conv" NAME="m_axis_conv" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="4"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="conv_dout_rate_con"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="conv_dout"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="conv_dout_sig_flag"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="conv_dout_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="conv_din_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/dac_0" HWVERSION="1.0" INSTANCE="dac_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dac" VLNV="xilinx.com:module_ref:dac:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_dac_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_125m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_dac" SIGIS="undef" SIGNAME="External_Ports_clk_20m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_20m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="dac_ifft_din" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_ifft_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ifft_0" PORT="ifft_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="dac_ifft_din_vld" SIGIS="undef" SIGNAME="dac_0_dac_ifft_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ifft_0" PORT="ifft_dout_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="dac_ifft_din_last" SIGIS="undef" SIGNAME="dac_0_dac_ifft_din_last">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ifft_0" PORT="ifft_dout_last"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="dac_ifft_din_Index" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_ifft_din_Index">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ifft_0" PORT="ifft_dout_Index"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="dac_ifft_dout_rdy" SIGIS="undef" SIGNAME="dac_0_dac_ifft_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ifft_0" PORT="ifft_din_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="dac_train_din" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_train_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="symbol_train_0" PORT="train_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="dac_train_din_vld" SIGIS="undef" SIGNAME="dac_0_dac_train_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="symbol_train_0" PORT="train_dout_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="dac_train_din_last" SIGIS="undef" SIGNAME="dac_0_dac_train_din_last">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="symbol_train_0" PORT="train_dout_last"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="8" NAME="dac_train_din_Index" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_train_din_Index">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="symbol_train_0" PORT="train_dout_Index"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="dac_train_dout_rdy" SIGIS="undef" SIGNAME="dac_0_dac_train_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="symbol_train_0" PORT="train_din_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="dac_din_rdy" SIGIS="undef" SIGNAME="External_Ports_dac_din_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dac_din_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="dac_dout" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dac_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="dac_dout_vld" SIGIS="undef" SIGNAME="dac_0_dac_dout_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dac_dout_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="dac_dout_last" SIGIS="undef" SIGNAME="dac_0_dac_dout_last">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dac_dout_last"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="8" NAME="dac_dout_Index" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_dout_Index">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dac_dout_Index"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="ifft_0_m_axis_ifft" NAME="s_axis_ifft_dac" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="8"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="dac_ifft_din"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="dac_ifft_din_last"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="dac_ifft_din_Index"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="dac_ifft_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="dac_ifft_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="symbol_train_0_m_axis_train" NAME="s_axis_train_dac" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="9"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="dac_train_din"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="dac_train_din_last"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="dac_train_din_Index"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="dac_train_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="dac_train_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="m_axis_dac" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="9"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="dac_dout"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="dac_dout_last"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="dac_dout_Index"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="dac_dout_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="dac_din_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/ifft_0" HWVERSION="1.0" INSTANCE="ifft_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ifft" VLNV="xilinx.com:module_ref:ifft:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_ifft_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_125m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="ifft_din" RIGHT="0" SIGIS="undef" SIGNAME="ifft_0_ifft_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pilot_0" PORT="pilot_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ifft_din_vld" SIGIS="undef" SIGNAME="ifft_0_ifft_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pilot_0" PORT="pilot_dout_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ifft_din_rdy" SIGIS="undef" SIGNAME="dac_0_dac_ifft_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_0" PORT="dac_ifft_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ifft_din_last" SIGIS="undef" SIGNAME="ifft_0_ifft_din_last">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pilot_0" PORT="pilot_dout_last"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="ifft_dout" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_ifft_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_0" PORT="dac_ifft_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ifft_dout_vld" SIGIS="undef" SIGNAME="dac_0_dac_ifft_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_0" PORT="dac_ifft_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ifft_dout_rdy" SIGIS="undef" SIGNAME="ifft_0_ifft_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pilot_0" PORT="pilot_din_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ifft_dout_last" SIGIS="undef" SIGNAME="dac_0_dac_ifft_din_last">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_0" PORT="dac_ifft_din_last"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="ifft_dout_Index" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_ifft_din_Index">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_0" PORT="dac_ifft_din_Index"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="pilot_0_m_axis_pilot" NAME="s_axis_ifft" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="ifft_din"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="ifft_din_last"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="ifft_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="ifft_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="ifft_0_m_axis_ifft" NAME="m_axis_ifft" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="8"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="ifft_dout"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="ifft_dout_last"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="ifft_dout_Index"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="ifft_dout_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="ifft_din_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/interleaver_1_0" HWVERSION="1.0" INSTANCE="interleaver_1_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="interleaver_1" VLNV="xilinx.com:module_ref:interleaver_1:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_interleaver_1_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_125m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="intv1_din" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="puncture_0" PORT="punt_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="intv1_din_vld" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="puncture_0" PORT="punt_dout_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="intv1_din_rdy" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_din_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_2_0" PORT="intv2_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="intv1_din_sig_flag" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_din_sig_flag">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="puncture_0" PORT="punt_dout_sig_flag"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="intv1_din_Map_Type" RIGHT="0" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_din_Map_Type">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="puncture_0" PORT="punt_dout_Map_Type"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="intv1_dout" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_2_0" PORT="intv2_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="intv1_dout_vld" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_dout_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_2_0" PORT="intv2_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="intv1_dout_rdy" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="puncture_0" PORT="punt_din_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="intv1_dout_sig_flag" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_dout_sig_flag">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_2_0" PORT="intv2_din_sig_flag"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="intv1_dout_Map_Type" RIGHT="0" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_dout_Map_Type">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_2_0" PORT="intv2_din_Map_Type"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="puncture_0_m_axis_punt" NAME="s_axis_intv1" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="2"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="intv1_din_Map_Type"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="intv1_din"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="intv1_din_sig_flag"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="intv1_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="intv1_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="interleaver_1_0_m_axis_intv1" NAME="m_axis_intv1" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="2"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="intv1_dout_Map_Type"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="intv1_dout"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="intv1_dout_sig_flag"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="intv1_dout_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="intv1_din_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/interleaver_2_0" HWVERSION="1.0" INSTANCE="interleaver_2_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="interleaver_2" VLNV="xilinx.com:module_ref:interleaver_2:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_interleaver_2_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_125m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="intv2_din" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_1_0" PORT="intv1_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="intv2_din_vld" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_dout_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_1_0" PORT="intv1_dout_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="intv2_din_rdy" SIGIS="undef" SIGNAME="interleaver_2_0_intv2_din_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maping_0" PORT="map_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="intv2_din_sig_flag" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_dout_sig_flag">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_1_0" PORT="intv1_dout_sig_flag"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="intv2_din_Map_Type" RIGHT="0" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_dout_Map_Type">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_1_0" PORT="intv1_dout_Map_Type"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="intv2_dout" SIGIS="undef" SIGNAME="interleaver_2_0_intv2_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maping_0" PORT="map_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="intv2_dout_vld" SIGIS="undef" SIGNAME="interleaver_2_0_intv2_dout_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maping_0" PORT="map_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="intv2_dout_rdy" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_din_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_1_0" PORT="intv1_din_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="intv2_dout_Map_Type" RIGHT="0" SIGIS="undef" SIGNAME="interleaver_2_0_intv2_dout_Map_Type">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maping_0" PORT="map_din_Map_Type"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="interleaver_1_0_m_axis_intv1" NAME="s_axis_intv2" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="2"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="intv2_din_Map_Type"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="intv2_din"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="intv2_din_sig_flag"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="intv2_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="intv2_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="interleaver_2_0_m_axis_intv2" NAME="m_axis_intv2" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="2"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="intv2_dout_Map_Type"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="intv2_dout"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="intv2_dout_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="intv2_din_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/maping_0" HWVERSION="1.0" INSTANCE="maping_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="maping" VLNV="xilinx.com:module_ref:maping:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_maping_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_125m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="map_din" SIGIS="undef" SIGNAME="interleaver_2_0_intv2_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_2_0" PORT="intv2_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="map_din_vld" SIGIS="undef" SIGNAME="interleaver_2_0_intv2_dout_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_2_0" PORT="intv2_dout_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="map_din_rdy" SIGIS="undef" SIGNAME="maping_0_map_din_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pilot_0" PORT="pilot_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="map_din_Map_Type" RIGHT="0" SIGIS="undef" SIGNAME="interleaver_2_0_intv2_dout_Map_Type">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_2_0" PORT="intv2_dout_Map_Type"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="map_dout" RIGHT="0" SIGIS="undef" SIGNAME="maping_0_map_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pilot_0" PORT="pilot_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="map_dout_vld" SIGIS="undef" SIGNAME="maping_0_map_dout_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pilot_0" PORT="pilot_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="map_dout_rdy" SIGIS="undef" SIGNAME="interleaver_2_0_intv2_din_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_2_0" PORT="intv2_din_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="map_dout_Index" RIGHT="0" SIGIS="undef" SIGNAME="maping_0_map_dout_Index">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pilot_0" PORT="pilot_din_Index"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="interleaver_2_0_m_axis_intv2" NAME="s_axis_map" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="2"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="map_din_Map_Type"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="map_din"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="map_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="map_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="maping_0_m_axis_map" NAME="m_axis_map" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="6"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="map_dout"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="map_dout_Index"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="map_dout_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="map_din_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/pilot_0" HWVERSION="1.0" INSTANCE="pilot_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="pilot" VLNV="xilinx.com:module_ref:pilot:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_pilot_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_125m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="5" NAME="pilot_din_Index" RIGHT="0" SIGIS="undef" SIGNAME="maping_0_map_dout_Index">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maping_0" PORT="map_dout_Index"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="pilot_din" RIGHT="0" SIGIS="undef" SIGNAME="maping_0_map_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maping_0" PORT="map_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="pilot_din_vld" SIGIS="undef" SIGNAME="maping_0_map_dout_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maping_0" PORT="map_dout_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="pilot_din_rdy" SIGIS="undef" SIGNAME="ifft_0_ifft_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ifft_0" PORT="ifft_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="pilot_dout" RIGHT="0" SIGIS="undef" SIGNAME="ifft_0_ifft_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ifft_0" PORT="ifft_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="pilot_dout_vld" SIGIS="undef" SIGNAME="ifft_0_ifft_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ifft_0" PORT="ifft_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="pilot_dout_rdy" SIGIS="undef" SIGNAME="maping_0_map_din_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="maping_0" PORT="map_din_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="pilot_dout_last" SIGIS="undef" SIGNAME="ifft_0_ifft_din_last">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ifft_0" PORT="ifft_din_last"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="maping_0_m_axis_map" NAME="s_axis_pilot" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="6"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="pilot_din"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="pilot_din_Index"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="pilot_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="pilot_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="pilot_0_m_axis_pilot" NAME="m_axis_pilot" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="pilot_dout"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="pilot_dout_last"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="pilot_dout_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="pilot_din_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/puncture_0" HWVERSION="1.0" INSTANCE="puncture_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="puncture" VLNV="xilinx.com:module_ref:puncture:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_puncture_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_125m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="punt_din" RIGHT="0" SIGIS="undef" SIGNAME="convenc_0_conv_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="convenc_0" PORT="conv_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="punt_din_vld" SIGIS="undef" SIGNAME="convenc_0_conv_dout_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="convenc_0" PORT="conv_dout_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="punt_din_rdy" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_1_0" PORT="intv1_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="punt_din_sig_flag" SIGIS="undef" SIGNAME="convenc_0_conv_dout_sig_flag">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="convenc_0" PORT="conv_dout_sig_flag"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="punt_din_rate_con" RIGHT="0" SIGIS="undef" SIGNAME="convenc_0_conv_dout_rate_con">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="convenc_0" PORT="conv_dout_rate_con"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="punt_dout" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_1_0" PORT="intv1_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="punt_dout_vld" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_1_0" PORT="intv1_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="punt_dout_rdy" SIGIS="undef" SIGNAME="convenc_0_conv_din_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="convenc_0" PORT="conv_din_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="punt_dout_sig_flag" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_din_sig_flag">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_1_0" PORT="intv1_din_sig_flag"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="punt_dout_Map_Type" RIGHT="0" SIGIS="undef" SIGNAME="interleaver_1_0_intv1_din_Map_Type">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="interleaver_1_0" PORT="intv1_din_Map_Type"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="convenc_0_m_axis_conv" NAME="s_axis_punt" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="4"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="punt_din_rate_con"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="punt_din"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="punt_din_sig_flag"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="punt_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="punt_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="puncture_0_m_axis_punt" NAME="m_axis_punt" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="2"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="punt_dout_Map_Type"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="punt_dout"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="punt_dout_sig_flag"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="punt_dout_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="punt_din_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/scramler_0" HWVERSION="1.0" INSTANCE="scramler_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="scramler" VLNV="xilinx.com:module_ref:scramler:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_scramler_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_125m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="scram_seed" RIGHT="0" SIGIS="undef" SIGNAME="tx_mcu_0_mcu_dout_scram_seed">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_dout_scram_seed"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="scram_load" SIGIS="undef" SIGNAME="tx_mcu_0_mcu_dout_scram_load">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_dout_scram_load"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="scram_din" SIGIS="undef" SIGNAME="scramler_0_scram_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="scram_din_vld" SIGIS="undef" SIGNAME="scramler_0_scram_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_dout_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="scram_din_rdy" SIGIS="undef" SIGNAME="convenc_0_conv_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="convenc_0" PORT="conv_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="scram_din_sig_flag" SIGIS="undef" SIGNAME="scramler_0_scram_din_sig_flag">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_dout_sig_flag"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="scram_din_rate_con" RIGHT="0" SIGIS="undef" SIGNAME="scramler_0_scram_din_rate_con">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_dout_rate_con"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="scram_dout" SIGIS="undef" SIGNAME="convenc_0_conv_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="convenc_0" PORT="conv_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="scram_dout_vld" SIGIS="undef" SIGNAME="convenc_0_conv_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="convenc_0" PORT="conv_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="scram_dout_rdy" SIGIS="undef" SIGNAME="scramler_0_scram_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_din_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="scram_dout_sig_flag" SIGIS="undef" SIGNAME="convenc_0_conv_din_sig_flag">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="convenc_0" PORT="conv_din_sig_flag"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="scram_dout_rate_con" RIGHT="0" SIGIS="undef" SIGNAME="convenc_0_conv_din_rate_con">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="convenc_0" PORT="conv_din_rate_con"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="tx_mcu_0_m_axis_mcu" NAME="s_axis_scram" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="4"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="scram_din_rate_con"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="scram_din"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="scram_din_sig_flag"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="scram_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="scram_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="scramler_0_m_axis_scram" NAME="m_axis_scram" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="4"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="scram_dout_rate_con"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="scram_dout"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="scram_dout_sig_flag"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="scram_dout_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="scram_din_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/symbol_train_0" HWVERSION="1.0" INSTANCE="symbol_train_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="symbol_train" VLNV="xilinx.com:module_ref:symbol_train:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_symbol_train_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_125m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="train_din_rdy" SIGIS="undef" SIGNAME="dac_0_dac_train_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_0" PORT="dac_train_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="train_dout" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_train_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_0" PORT="dac_train_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="train_dout_vld" SIGIS="undef" SIGNAME="dac_0_dac_train_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_0" PORT="dac_train_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="train_dout_last" SIGIS="undef" SIGNAME="dac_0_dac_train_din_last">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_0" PORT="dac_train_din_last"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="8" NAME="train_dout_Index" RIGHT="0" SIGIS="undef" SIGNAME="dac_0_dac_train_din_Index">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_0" PORT="dac_train_din_Index"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="symbol_train_0_m_axis_train" NAME="m_axis_train" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="9"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="train_dout"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="train_dout_last"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="train_dout_Index"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="train_dout_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="train_din_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/tx_mcu_0" HWVERSION="1.0" INSTANCE="tx_mcu_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="tx_mcu" VLNV="xilinx.com:module_ref:tx_mcu:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="SEED" VALUE="&quot;1011101&quot;"/>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_tx_mcu_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_125m"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_locked">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="locked"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="20" NAME="mcu_config_din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_mcu_config_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mcu_config_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="mcu_config_din_vld" SIGIS="undef" SIGNAME="External_Ports_mcu_config_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mcu_config_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="mcu_config_din_start" SIGIS="undef" SIGNAME="External_Ports_mcu_config_din_start">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mcu_config_din_start"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="mcu_config_dout_rdy" SIGIS="undef" SIGNAME="tx_mcu_0_mcu_config_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mcu_config_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="mcu_mac_din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_mcu_mac_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mcu_mac_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="mcu_mac_din_vld" SIGIS="undef" SIGNAME="External_Ports_mcu_mac_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mcu_mac_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="mcu_mac_dout_rdy" SIGIS="undef" SIGNAME="tx_mcu_0_mcu_mac_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mcu_mac_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="mcu_din_rdy" SIGIS="undef" SIGNAME="scramler_0_scram_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="mcu_dout" SIGIS="undef" SIGNAME="scramler_0_scram_din">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="mcu_dout_vld" SIGIS="undef" SIGNAME="scramler_0_scram_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="mcu_dout_sig_flag" SIGIS="undef" SIGNAME="scramler_0_scram_din_sig_flag">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_din_sig_flag"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="mcu_dout_rate_con" RIGHT="0" SIGIS="undef" SIGNAME="scramler_0_scram_din_rate_con">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_din_rate_con"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="mcu_dout_scram_seed" RIGHT="0" SIGIS="undef" SIGNAME="tx_mcu_0_mcu_dout_scram_seed">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_seed"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="mcu_dout_scram_load" SIGIS="undef" SIGNAME="tx_mcu_0_mcu_dout_scram_load">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="scram_load"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="phy_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="tx_mcu_0_phy_rst_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tx_end" SIGIS="undef" SIGNAME="External_Ports_tx_end">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="tx_end"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="TxPWR" RIGHT="0" SIGIS="undef" SIGNAME="tx_mcu_0_TxPWR">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="TxPWR"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="s_axis_mcu_config" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="mcu_config_din"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="mcu_config_din_start"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="mcu_config_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="mcu_config_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="s_axis_mcu_mac" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="1"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="mcu_mac_din"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="mcu_mac_din_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="mcu_mac_dout_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="tx_mcu_0_m_axis_mcu" NAME="m_axis_mcu" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="0"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="4"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="125000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="ofdm_tx_clk_0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TID" PHYSICAL="mcu_dout_rate_con"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="mcu_dout"/>
+            <PORTMAP LOGICAL="TSTRB" PHYSICAL="mcu_dout_sig_flag"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="mcu_dout_vld"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="mcu_din_rdy"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/util_vector_logic_0" HWVERSION="2.0" INSTANCE="util_vector_logic_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="and"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_util_vector_logic_0_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_andgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_locked">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="locked"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="undef" SIGNAME="tx_mcu_0_phy_rst_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tx_mcu_0" PORT="phy_rst_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="scramler_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="convenc_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="puncture_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="interleaver_1_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="interleaver_2_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="maping_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="pilot_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="symbol_train_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="ifft_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="dac_0" PORT="rst_n"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>
