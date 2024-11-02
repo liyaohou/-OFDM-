@@ -78,7 +78,7 @@ task automatic udp;
         tx_rgmii(2,16'd1234);
         tx_rgmii(2,16'd1234);
         tx_rgmii(2,BYTE_COUNTER + 8);
-        tx_rgmii(2,0);
+        tx_rgmii(2,16'h8da4);
         for(i=0;i<BYTE_COUNTER;i=i+1) begin
             tx_rgmii(1,i);
         end
@@ -90,11 +90,11 @@ task automatic ip;
     begin
         tx_rgmii(2,16'h4500);//版本
         tx_rgmii(2,BYTE_COUNTER + 28);//长度
-        tx_rgmii(2,0);//标识
+        tx_rgmii(2,16'h48df);//标识
         tx_rgmii(2,0);//片
         tx_rgmii(1,64);//生存时间
         tx_rgmii(1,17);//协议
-        tx_rgmii(2,0);//首部校验和
+        tx_rgmii(2,16'hada0);//首部校验和
         tx_rgmii(4,32'hc0a80141);
         tx_rgmii(4,32'hc0a80180);
         udp(BYTE_COUNTER);
@@ -114,10 +114,10 @@ task automatic eth;
         end
         tx_rgmii(1,8'hD5);
         tx_rgmii(6,48'h112233445566);
-        tx_rgmii(6,48'h665544332211);//mac
+        tx_rgmii(6,48'h6c1ff709fa24);//mac
         tx_rgmii(2,16'h0800);
         ip(BYTE_COUNTER);
-        tx_rgmii(4,32'h11111111);//crc
+        tx_rgmii(4,32'hae017646);//crc
         rgmii_rx_ctl = 0;
     end
 endtask
@@ -125,6 +125,7 @@ endtask
 initial begin
     #16;
     sys_rst_n = 1;
+    
 end
 
 always #4 rgmii_rxc = ~rgmii_rxc;
