@@ -25,9 +25,13 @@ wire        ddr3_odt   ;
 wire [1:0]  ddr3_dm    ;
 // wire        dacClk;
 
-wire [1:0]   ddr3_dqsP;
-wire [1:0]   ddr3_dqsN;
-wire [15:0]  ddr3_dq;
+wire [1:0]  ddr3_dqsP;
+wire [1:0]  ddr3_dqsN;
+wire [15:0] ddr3_dq;
+wire        dac_valid;
+wire        dac_payload_last;
+wire [15:0] dac_payload_fragment;
+reg         dac_ready = 0;
 // wire        txEnd;
 // wire [15:0] dacData;
 
@@ -55,7 +59,11 @@ TxTop TxTop_u(
     .ddr3_dm        (ddr3_dm    ),
     .ddr3_dqsP      (ddr3_dqsP),
     .ddr3_dqsN      (ddr3_dqsN),
-    .ddr3_dq        (ddr3_dq)
+    .ddr3_dq        (ddr3_dq),
+    .dac_valid      (dac_valid),
+    .dac_payload_last      (dac_payload_last),
+    .dac_payload_fragment      (dac_payload_fragment),
+    .dac_ready      (dac_ready)
     // .txEnd          (txEnd),
     // .dacClk         (dacClk),
     // .dacData        (dacData)
@@ -163,22 +171,22 @@ task automatic eth_config;
         tx_rgmii(2,16'h0800);
         tx_rgmii(2,16'h4500);//版本
         tx_rgmii(2,31);//长度
-        tx_rgmii(2,16'h1d45);//标识
+        tx_rgmii(2,16'hde6c);//标识
         tx_rgmii(2,0);//片
         tx_rgmii(1,64);//生存时间
         tx_rgmii(1,17);//协议
-        tx_rgmii(2,16'hd977);//首部校验和
+        tx_rgmii(2,16'h1850);//首部校验和
         tx_rgmii(4,32'hc0a80141);
         tx_rgmii(4,32'hc0a80180);
         tx_rgmii(2,16'd1234);
         tx_rgmii(2,16'd1234);
         tx_rgmii(2,11);
         tx_rgmii(2,16'h4221);
-        tx_rgmii(3,12'h100120);
+        tx_rgmii(3,24'h200110);
         for(i=0;i<15;i=i+1) begin
             tx_rgmii(1,0);
         end
-        tx_rgmii(4,32'ha5172f9a);//crc
+        tx_rgmii(4,32'he610ebd8);//crc
         rgmii_rx_ctl = 0;
     end
 endtask
@@ -214,6 +222,7 @@ endtask
 initial begin
     #16;
     sys_rst_n = 1;
+    dac_ready = 1;
     
 end
 always #10 sys_clk = ~sys_clk;
@@ -232,7 +241,8 @@ initial begin
     #1600;
     eth(64);
     #1600;
-    eth(3);
+    // eth(3);
+    eth_config;
 end
 
 parameter CLC = 32;

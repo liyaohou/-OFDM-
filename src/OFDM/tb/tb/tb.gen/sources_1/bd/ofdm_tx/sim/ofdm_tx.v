@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-//Date        : Sat Nov  2 21:41:42 2024
+//Date        : Mon Nov  4 14:44:12 2024
 //Host        : LAPTOP-Q21U1JRJ running 64-bit major release  (build 9200)
 //Command     : generate_target ofdm_tx.bd
 //Design      : ofdm_tx
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "ofdm_tx,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=ofdm_tx,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=12,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=11,numPkgbdBlks=0,bdsource=USER,da_board_cnt=4,da_clkrst_cnt=21,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "ofdm_tx.hwdef" *) 
+(* CORE_GENERATION_INFO = "ofdm_tx,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=ofdm_tx,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=13,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=11,numPkgbdBlks=0,bdsource=USER,da_board_cnt=4,da_clkrst_cnt=21,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "ofdm_tx.hwdef" *) 
 module ofdm_tx
    (TxPWR,
     clk_125m,
@@ -115,6 +115,7 @@ module ofdm_tx
   wire tx_mcu_0_mcu_mac_dout_rdy;
   wire tx_mcu_0_phy_rst_n;
   wire [0:0]util_vector_logic_0_Res;
+  wire [0:0]util_vector_logic_1_Res;
 
   assign TxPWR[2:0] = tx_mcu_0_TxPWR;
   assign clk_0_1 = clk_125m;
@@ -164,6 +165,7 @@ module ofdm_tx
         .dac_train_din_last(symbol_train_0_m_axis_train_TLAST),
         .dac_train_din_vld(symbol_train_0_m_axis_train_TVALID),
         .dac_train_dout_rdy(symbol_train_0_m_axis_train_TREADY),
+        .mcu_config(util_vector_logic_1_Res),
         .rst_n(util_vector_logic_0_Res));
   ofdm_tx_ifft_0_0 ifft_0
        (.clk(clk_0_1),
@@ -284,4 +286,8 @@ module ofdm_tx
        (.Op1(rst_n_0_1),
         .Op2(tx_mcu_0_phy_rst_n),
         .Res(util_vector_logic_0_Res));
+  ofdm_tx_util_vector_logic_1_0 util_vector_logic_1
+       (.Op1(mcu_config_din_vld_0_1),
+        .Op2(tx_mcu_0_mcu_config_dout_rdy),
+        .Res(util_vector_logic_1_Res));
 endmodule

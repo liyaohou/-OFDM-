@@ -76,7 +76,7 @@ module ofdm_tx_tx_mcu_0_0 (
   TxPWR
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF s_axis_mcu_config:s_axis_mcu_mac:m_axis_mcu, FREQ_HZ 125000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF s_axis_mcu_config:s_axis_mcu_mac:m_axis_mcu, FREQ_HZ 125000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN ofdm_tx_clk_0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
@@ -88,14 +88,14 @@ input wire [20 : 0] mcu_config_din;
 input wire mcu_config_din_vld;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_mcu_config TSTRB" *)
 input wire mcu_config_din_start;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axis_mcu_config, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 125000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axis_mcu_config, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 125000000, PHASE 0.0, CLK_DOMAIN ofdm_tx_clk_0, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_mcu_config TREADY" *)
 output wire mcu_config_dout_rdy;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_mcu_mac TDATA" *)
 input wire [7 : 0] mcu_mac_din;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_mcu_mac TVALID" *)
 input wire mcu_mac_din_vld;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axis_mcu_mac, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 125000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axis_mcu_mac, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 125000000, PHASE 0.0, CLK_DOMAIN ofdm_tx_clk_0, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_mcu_mac TREADY" *)
 output wire mcu_mac_dout_rdy;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_mcu TREADY" *)
@@ -106,7 +106,7 @@ output wire mcu_dout;
 output wire mcu_dout_vld;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_mcu TSTRB" *)
 output wire mcu_dout_sig_flag;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_mcu, TDATA_NUM_BYTES 0, TDEST_WIDTH 0, TID_WIDTH 4, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 125000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_mcu, TDATA_NUM_BYTES 0, TDEST_WIDTH 0, TID_WIDTH 4, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 125000000, PHASE 0.0, CLK_DOMAIN ofdm_tx_clk_0, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_mcu TID" *)
 output wire [3 : 0] mcu_dout_rate_con;
 output wire [6 : 0] mcu_dout_scram_seed;

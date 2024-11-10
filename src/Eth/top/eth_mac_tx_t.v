@@ -5,7 +5,7 @@ module eth_mac_tx_t(
     input           gtx_clk90,
     input           port_udp_tx_hdr_valid,
     output          port_udp_tx_hdr_ready,
-    input           port_udp_tx_dest_ip,
+    input [31:0]    port_udp_tx_dest_ip,
     input [9:0]     port_udp_tx_length,
     input           port_udp_tx_axis_valid,
     output          port_udp_tx_axis_ready,

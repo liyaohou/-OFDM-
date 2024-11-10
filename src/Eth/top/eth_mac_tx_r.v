@@ -12,7 +12,7 @@ module eth_mac_tx_r(
     output          rgmii_rst_n,
     output          port_udp_rx_hdr_valid,
     input           port_udp_rx_hdr_ready,
-    output          port_udp_rx_source_ip,
+    output [31:0]   port_udp_rx_source_ip,
     output [9:0]    port_udp_rx_length,
     output          port_udp_rx_axis_valid,
     input           port_udp_rx_axis_ready,

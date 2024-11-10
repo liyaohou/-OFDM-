@@ -4,8 +4,6 @@ verilog xil_defaultlib  --include "../../../../tb.ip_user_files/ipstatic" \
 "../../../../../v/Ser2Par.v" \
 "../../../../../v/counter.v" \
 "../../../../../v/interleaver_2.v" \
-"../../../../../v/tx_gen_pkt_sig.v" \
-"../../../../../v/tx_mcu.v" \
 "../../../../../v/counter_in.v" \
 "../../../../../v/interleaver_1.v" \
 "../../../../../v/convenc.v" \
@@ -17,12 +15,12 @@ verilog xil_defaultlib  --include "../../../../tb.ip_user_files/ipstatic" \
 "../../../../../v/symbol_train.v" \
 "../../../../tb.gen/sources_1/ip/pilot_ram/sim/pilot_ram.v" \
 "../../../../../v/pilot.v" \
-"../../../../tb.gen/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
 "../../../../../v/edge_detection.v" \
-"../../../../../v/dac.v" \
 "../../../../../v/ifft.v" \
+"../../../../../v/tx_gen_pkt_sig.v" \
+"../../../../../v/tx_mcu.v" \
+"../../../../../v/dac.v" \
 "../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_interleaver_2_0_0/sim/ofdm_tx_interleaver_2_0_0.v" \
-"../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_tx_mcu_0_0/sim/ofdm_tx_tx_mcu_0_0.v" \
 "../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_interleaver_1_0_0/sim/ofdm_tx_interleaver_1_0_0.v" \
 "../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_convenc_0_0/sim/ofdm_tx_convenc_0_0.v" \
 "../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_scramler_0_0/sim/ofdm_tx_scramler_0_0.v" \
@@ -30,9 +28,11 @@ verilog xil_defaultlib  --include "../../../../tb.ip_user_files/ipstatic" \
 "../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_puncture_0_0/sim/ofdm_tx_puncture_0_0.v" \
 "../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_symbol_train_0_0/sim/ofdm_tx_symbol_train_0_0.v" \
 "../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_pilot_0_0/sim/ofdm_tx_pilot_0_0.v" \
-"../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_dac_0_0/sim/ofdm_tx_dac_0_0.v" \
 "../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_ifft_0_0/sim/ofdm_tx_ifft_0_0.v" \
 "../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_util_vector_logic_0_0/sim/ofdm_tx_util_vector_logic_0_0.v" \
+"../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_tx_mcu_0_0/sim/ofdm_tx_tx_mcu_0_0.v" \
+"../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_dac_0_0/sim/ofdm_tx_dac_0_0.v" \
+"../../../../tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_util_vector_logic_1_0/sim/ofdm_tx_util_vector_logic_1_0.v" \
 "../../../../tb.ip_user_files/bd/ofdm_tx/sim/ofdm_tx.v" \
 "../../../../tb.gen/sources_1/ip/pll_clk/pll_clk_clk_wiz.v" \
 "../../../../tb.gen/sources_1/ip/pll_clk/pll_clk.v" \

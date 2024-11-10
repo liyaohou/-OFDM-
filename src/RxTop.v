@@ -301,7 +301,7 @@ module RxTop (
     .port_udp_tx_axis_payload_last (workClockArea_harMatch_io_axiOut_payload_last       ), //i
     .port_udp_tx_axis_payload_user (workClockArea_ethMacTx_port_udp_tx_axis_payload_user), //i
     .port_udp_tx_length            (workClockArea_ddr3AxisTxIf_io_lengthOut[9:0]        ), //i
-    .port_udp_tx_dest_ip           (32'hc0a80184                                        )  //i
+    .port_udp_tx_dest_ip           (32'hc0a80141                                        )  //i
   );
   assign rstN = (sys_rst_n && pll_clk_1_locked);
   assign axisIn_ready = workClockArea_axisRxRateCtrl_io_axiIn_ready;
@@ -2274,7 +2274,7 @@ module Axi4StreamToBmb (
   wire       [3:0]    adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_fragment_mask;
   wire       [3:0]    adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_fragment_context;
   wire                adapter_bmbClockArea_bmbRdGen_io_end;
-  wire                io_writeEnd_ready_buffercc_io_dataOut;
+  wire                adapter_writeEndHistory_buffercc_io_dataOut;
   wire                adapter_bmbClockArea_BmbMux_buffercc_io_dataOut;
   wire                adapter_bmbClockArea_bmbRdGen_io_end_buffercc_io_dataOut;
   wire       [28:0]   _zz_axisToBmbBridge_cmd_bmbAddr;
@@ -2309,16 +2309,16 @@ module Axi4StreamToBmb (
   wire       [7:0]    axisToBmbBridge_bmbBridge_rsp_payload_fragment_data;
   (* async_reg = "true" *) reg        [28:0]   axisToBmbBridge_cmd_bmbAddr;
   reg                 readEnd_regNext;
-  wire                when_Axi4StreamToBmb_l43;
+  wire                when_Axi4StreamToBmb_l44;
   wire                axisToBmbBridge_cmd_fifo_valid;
   wire                axisToBmbBridge_cmd_fifo_ready;
   wire       [7:0]    axisToBmbBridge_cmd_fifo_payload_data;
   wire                axisToBmbBridge_cmd_fifo_payload_last;
   wire       [0:0]    axisToBmbBridge_cmd_fifo_payload_user;
   wire                axisToBmbBridge_cmd_fifo_fire;
-  wire                when_Axi4StreamToBmb_l46;
+  wire                when_Axi4StreamToBmb_l47;
   reg                 axisToBmbBridge_cmd_error;
-  wire                when_Axi4StreamToBmb_l58;
+  wire                when_Axi4StreamToBmb_l59;
   reg                 axisToBmbBridge_rsp_lastCounter_willIncrement;
   reg                 axisToBmbBridge_rsp_lastCounter_willClear;
   reg        [9:0]    axisToBmbBridge_rsp_lastCounter_valueNext;
@@ -2332,7 +2332,7 @@ module Axi4StreamToBmb (
   wire                axisToBmbBridge_rsp_tailCounter_willOverflowIfInc;
   wire                axisToBmbBridge_rsp_tailCounter_willOverflow;
   reg                 readEnd_regNext_1;
-  wire                when_Axi4StreamToBmb_l65;
+  wire                when_Axi4StreamToBmb_l66;
   wire                axisToBmbBridge_rsp_fifo_valid;
   wire                axisToBmbBridge_rsp_fifo_ready;
   wire       [7:0]    axisToBmbBridge_rsp_fifo_payload_data;
@@ -2340,15 +2340,20 @@ module Axi4StreamToBmb (
   wire       [0:0]    axisToBmbBridge_rsp_fifo_payload_user;
   wire                axisToBmbBridge_rsp_fifo_fire;
   reg                 adapter_endFlag;
+  wire                _zz_adapter_writeEndHistory;
+  reg                 _zz_adapter_writeEndHistory_1;
+  reg                 _zz_adapter_writeEndHistory_2;
+  reg                 _zz_adapter_writeEndHistory_3;
+  wire                adapter_writeEndHistory;
   reg                 adapter_bmbClockArea_BmbMux;
   reg                 adapter_bmbClockArea_BmbMux_regNext;
-  reg                 _zz_when_Axi4StreamToBmb_l95;
-  wire                when_Axi4StreamToBmb_l95;
+  reg                 _zz_when_Axi4StreamToBmb_l100;
+  wire                when_Axi4StreamToBmb_l102;
   wire                adapter_bmbCCDomain_io_output_cmd_fire;
-  wire                when_Axi4StreamToBmb_l95_1;
+  wire                when_Axi4StreamToBmb_l100;
   wire                _zz_io_writeEnd_valid;
   reg                 _zz_io_writeEnd_valid_1;
-  wire                when_Axi4StreamToBmb_l105;
+  wire                when_Axi4StreamToBmb_l116;
   wire                axiOut_fire;
   wire                _zz_when_Stream_l393;
   wire                _zz_io_input_rsp_ready;
@@ -2505,11 +2510,11 @@ module Axi4StreamToBmb (
     .clk_out4                           (clk_out4                                                              ), //i
     .rstN                               (rstN                                                                  )  //i
   );
-  (* keep_hierarchy = "TRUE" *) BufferCC_8 io_writeEnd_ready_buffercc (
-    .io_dataIn  (io_writeEnd_ready                    ), //i
-    .io_dataOut (io_writeEnd_ready_buffercc_io_dataOut), //o
-    .clk_out4   (clk_out4                             ), //i
-    .rstN       (rstN                                 )  //i
+  (* keep_hierarchy = "TRUE" *) BufferCC_8 adapter_writeEndHistory_buffercc (
+    .io_dataIn  (adapter_writeEndHistory                    ), //i
+    .io_dataOut (adapter_writeEndHistory_buffercc_io_dataOut), //o
+    .clk_out4   (clk_out4                                   ), //i
+    .rstN       (rstN                                       )  //i
   );
   (* keep_hierarchy = "TRUE" *) BufferCC_4 adapter_bmbClockArea_BmbMux_buffercc (
     .io_dataIn  (adapter_bmbClockArea_BmbMux                    ), //i
@@ -2523,7 +2528,7 @@ module Axi4StreamToBmb (
     .clk_out1   (clk_out1                                                ), //i
     .rstN       (rstN                                                    )  //i
   );
-  assign when_Axi4StreamToBmb_l43 = (readEnd && (! readEnd_regNext));
+  assign when_Axi4StreamToBmb_l44 = (readEnd && (! readEnd_regNext));
   assign io_axiIn_ready = io_axiIn_fifo_io_push_ready;
   assign io_axiIn_fifo_io_push_payload_user[0 : 0] = io_axiIn_payload_user[0 : 0];
   assign axisToBmbBridge_cmd_fifo_valid = io_axiIn_fifo_io_pop_valid;
@@ -2531,7 +2536,7 @@ module Axi4StreamToBmb (
   assign axisToBmbBridge_cmd_fifo_payload_last = io_axiIn_fifo_io_pop_payload_last;
   assign axisToBmbBridge_cmd_fifo_payload_user[0 : 0] = io_axiIn_fifo_io_pop_payload_user[0 : 0];
   assign axisToBmbBridge_cmd_fifo_fire = (axisToBmbBridge_cmd_fifo_valid && axisToBmbBridge_cmd_fifo_ready);
-  assign when_Axi4StreamToBmb_l46 = (axisToBmbBridge_cmd_fifo_payload_last && axisToBmbBridge_cmd_fifo_fire);
+  assign when_Axi4StreamToBmb_l47 = (axisToBmbBridge_cmd_fifo_payload_last && axisToBmbBridge_cmd_fifo_fire);
   assign axisToBmbBridge_bmbBridge_cmd_valid = axisToBmbBridge_cmd_fifo_valid;
   assign axisToBmbBridge_cmd_fifo_ready = axisToBmbBridge_bmbBridge_cmd_ready;
   assign axisToBmbBridge_bmbBridge_cmd_payload_fragment_data = axisToBmbBridge_cmd_fifo_payload_data;
@@ -2540,7 +2545,7 @@ module Axi4StreamToBmb (
   assign axisToBmbBridge_bmbBridge_cmd_payload_fragment_address = axisToBmbBridge_cmd_bmbAddr;
   assign axisToBmbBridge_bmbBridge_cmd_payload_fragment_mask = 1'b0;
   assign axisToBmbBridge_bmbBridge_cmd_payload_fragment_opcode = 1'b1;
-  assign when_Axi4StreamToBmb_l58 = ((axisToBmbBridge_cmd_fifo_payload_last && axisToBmbBridge_cmd_fifo_fire) && axisToBmbBridge_cmd_fifo_payload_user[0]);
+  assign when_Axi4StreamToBmb_l59 = ((axisToBmbBridge_cmd_fifo_payload_last && axisToBmbBridge_cmd_fifo_fire) && axisToBmbBridge_cmd_fifo_payload_user[0]);
   assign io_error = axisToBmbBridge_cmd_error;
   always @(*) begin
     axisToBmbBridge_rsp_lastCounter_willIncrement = 1'b0;
@@ -2551,7 +2556,7 @@ module Axi4StreamToBmb (
 
   always @(*) begin
     axisToBmbBridge_rsp_lastCounter_willClear = 1'b0;
-    if(when_Axi4StreamToBmb_l65) begin
+    if(when_Axi4StreamToBmb_l66) begin
       axisToBmbBridge_rsp_lastCounter_willClear = 1'b1;
     end
   end
@@ -2574,7 +2579,7 @@ module Axi4StreamToBmb (
 
   always @(*) begin
     axisToBmbBridge_rsp_tailCounter_willClear = 1'b0;
-    if(when_Axi4StreamToBmb_l65) begin
+    if(when_Axi4StreamToBmb_l66) begin
       axisToBmbBridge_rsp_tailCounter_willClear = 1'b1;
     end
   end
@@ -2588,7 +2593,7 @@ module Axi4StreamToBmb (
     end
   end
 
-  assign when_Axi4StreamToBmb_l65 = (readEnd && (! readEnd_regNext_1));
+  assign when_Axi4StreamToBmb_l66 = (readEnd && (! readEnd_regNext_1));
   assign axisToBmbBridge_rsp_fifo_fire = (axisToBmbBridge_rsp_fifo_valid && axisToBmbBridge_rsp_fifo_ready);
   assign axisToBmbBridge_rsp_fifo_valid = axisToBmbBridge_bmbBridge_rsp_valid;
   assign axisToBmbBridge_bmbBridge_rsp_ready = axisToBmbBridge_rsp_fifo_ready;
@@ -2605,6 +2610,8 @@ module Axi4StreamToBmb (
   assign axisToBmbBridge_bmbBridge_rsp_payload_last = axisToBmbBridge_bmbBridge_upSizer_io_input_rsp_payload_last;
   assign axisToBmbBridge_bmbBridge_rsp_payload_fragment_opcode = axisToBmbBridge_bmbBridge_upSizer_io_input_rsp_payload_fragment_opcode;
   assign axisToBmbBridge_bmbBridge_rsp_payload_fragment_data = axisToBmbBridge_bmbBridge_upSizer_io_input_rsp_payload_fragment_data;
+  assign _zz_adapter_writeEndHistory = io_writeEnd_ready;
+  assign adapter_writeEndHistory = (|{_zz_adapter_writeEndHistory_3,{_zz_adapter_writeEndHistory_2,{_zz_adapter_writeEndHistory_1,_zz_adapter_writeEndHistory}}});
   assign adapter_bmbClockArea_bmbRdGen_io_start = (adapter_bmbClockArea_BmbMux && (! adapter_bmbClockArea_BmbMux_regNext));
   assign io_bmb_cmd_valid = (adapter_bmbClockArea_BmbMux ? adapter_bmbClockArea_bmbRdGen_io_bmbCmd_valid : adapter_bmbCCDomain_io_output_cmd_valid);
   assign io_bmb_cmd_payload_last = (adapter_bmbClockArea_BmbMux ? adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_last : adapter_bmbCCDomain_io_output_cmd_payload_last);
@@ -2614,13 +2621,13 @@ module Axi4StreamToBmb (
   assign io_bmb_cmd_payload_fragment_data = (adapter_bmbClockArea_BmbMux ? adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_fragment_data : adapter_bmbCCDomain_io_output_cmd_payload_fragment_data);
   assign io_bmb_cmd_payload_fragment_mask = (adapter_bmbClockArea_BmbMux ? adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_fragment_mask : adapter_bmbCCDomain_io_output_cmd_payload_fragment_mask);
   assign io_bmb_cmd_payload_fragment_context = (adapter_bmbClockArea_BmbMux ? adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_fragment_context : adapter_bmbCCDomain_io_output_cmd_payload_fragment_context);
-  assign when_Axi4StreamToBmb_l95 = io_writeEnd_ready_buffercc_io_dataOut;
+  assign when_Axi4StreamToBmb_l102 = adapter_writeEndHistory_buffercc_io_dataOut;
   assign adapter_bmbCCDomain_io_output_cmd_fire = (adapter_bmbCCDomain_io_output_cmd_valid && io_bmb_cmd_ready);
-  assign when_Axi4StreamToBmb_l95_1 = (_zz_when_Axi4StreamToBmb_l95 && (adapter_bmbCCDomain_io_output_cmd_fire && adapter_bmbCCDomain_io_output_cmd_payload_last));
+  assign when_Axi4StreamToBmb_l100 = (_zz_when_Axi4StreamToBmb_l100 && (adapter_bmbCCDomain_io_output_cmd_fire && adapter_bmbCCDomain_io_output_cmd_payload_last));
   assign io_bmb_rsp_ready = adapter_bmbCCDomain_io_output_rsp_ready;
   assign _zz_io_writeEnd_valid = adapter_bmbClockArea_BmbMux_buffercc_io_dataOut;
   assign io_writeEnd_valid = (_zz_io_writeEnd_valid && (! _zz_io_writeEnd_valid_1));
-  assign when_Axi4StreamToBmb_l105 = adapter_bmbClockArea_bmbRdGen_io_end_buffercc_io_dataOut;
+  assign when_Axi4StreamToBmb_l116 = adapter_bmbClockArea_bmbRdGen_io_end_buffercc_io_dataOut;
   assign axiOut_fire = (axiOut_valid && axiOut_ready);
   assign readEnd = (adapter_endFlag && (axiOut_payload_last && axiOut_fire));
   assign io_rdCtr_ready = adapter_headCCDomain_io_input_ready;
@@ -2665,18 +2672,18 @@ module Axi4StreamToBmb (
       _zz_io_output_rsp_payload_last_1 <= 1'b1;
       _zz_when_Stream_l393_2 <= 1'b0;
     end else begin
-      if(when_Axi4StreamToBmb_l43) begin
+      if(when_Axi4StreamToBmb_l44) begin
         axisToBmbBridge_cmd_bmbAddr <= 29'h0;
       end
-      if(when_Axi4StreamToBmb_l46) begin
+      if(when_Axi4StreamToBmb_l47) begin
         axisToBmbBridge_cmd_bmbAddr <= (axisToBmbBridge_cmd_bmbAddr + _zz_axisToBmbBridge_cmd_bmbAddr);
       end
-      if(when_Axi4StreamToBmb_l58) begin
+      if(when_Axi4StreamToBmb_l59) begin
         axisToBmbBridge_cmd_error <= 1'b1;
       end
       axisToBmbBridge_rsp_lastCounter_value <= axisToBmbBridge_rsp_lastCounter_valueNext;
       axisToBmbBridge_rsp_tailCounter_value <= axisToBmbBridge_rsp_tailCounter_valueNext;
-      if(when_Axi4StreamToBmb_l105) begin
+      if(when_Axi4StreamToBmb_l116) begin
         adapter_endFlag <= 1'b1;
       end
       if(readEnd) begin
@@ -2697,6 +2704,9 @@ module Axi4StreamToBmb (
   always @(posedge clk_out1) begin
     readEnd_regNext <= readEnd;
     readEnd_regNext_1 <= readEnd;
+    _zz_adapter_writeEndHistory_1 <= _zz_adapter_writeEndHistory;
+    _zz_adapter_writeEndHistory_2 <= _zz_adapter_writeEndHistory_1;
+    _zz_adapter_writeEndHistory_3 <= _zz_adapter_writeEndHistory_2;
     _zz_io_writeEnd_valid_1 <= _zz_io_writeEnd_valid;
     if(_zz_io_input_rsp_ready) begin
       _zz_io_output_rsp_payload_last_2 <= _zz_io_output_rsp_payload_last;
@@ -2716,7 +2726,7 @@ module Axi4StreamToBmb (
     if(!rstN) begin
       adapter_bmbClockArea_BmbMux <= 1'b0;
     end else begin
-      if(when_Axi4StreamToBmb_l95_1) begin
+      if(when_Axi4StreamToBmb_l100) begin
         adapter_bmbClockArea_BmbMux <= 1'b1;
       end
       if(adapter_bmbClockArea_bmbRdGen_io_end) begin
@@ -2727,11 +2737,11 @@ module Axi4StreamToBmb (
 
   always @(posedge clk_out4) begin
     adapter_bmbClockArea_BmbMux_regNext <= adapter_bmbClockArea_BmbMux;
-    if(when_Axi4StreamToBmb_l95) begin
-      _zz_when_Axi4StreamToBmb_l95 <= 1'b1;
+    if(when_Axi4StreamToBmb_l102) begin
+      _zz_when_Axi4StreamToBmb_l100 <= 1'b1;
     end
     if(adapter_bmbClockArea_bmbRdGen_io_end) begin
-      _zz_when_Axi4StreamToBmb_l95 <= 1'b0;
+      _zz_when_Axi4StreamToBmb_l100 <= 1'b0;
     end
   end
 

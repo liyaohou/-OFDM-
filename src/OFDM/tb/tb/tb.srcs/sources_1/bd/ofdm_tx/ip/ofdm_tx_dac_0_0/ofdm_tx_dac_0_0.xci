@@ -53,7 +53,9 @@
         "dac_dout": [ { "direction": "out", "size_left": "15", "size_right": "0" } ],
         "dac_dout_vld": [ { "direction": "out" } ],
         "dac_dout_last": [ { "direction": "out" } ],
-        "dac_dout_Index": [ { "direction": "out", "size_left": "8", "size_right": "0" } ]
+        "dac_dout_Index": [ { "direction": "out", "size_left": "8", "size_right": "0" } ],
+        "mcu_config": [ { "direction": "in" } ],
+        "mcu_config_r": [ { "direction": "out" } ]
       },
       "interfaces": {
         "s_axis_ifft_dac": {

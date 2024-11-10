@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="test_TxTop_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="test_TxTop" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="75,510.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="77,698.001 ns"></ZoomEndTime>
+      <Cursor1Time time="76,144.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="411"></NameColumnWidth>
+      <ValueColumnWidth column_width="112"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="168" />
+   <wvobject fp_name="/test_TxTop/sys_clk" type="logic">
+      <obj_property name="ElementShortName">sys_clk</obj_property>
+      <obj_property name="ObjectShortName">sys_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/sys_rst_n" type="logic">
+      <obj_property name="ElementShortName">sys_rst_n</obj_property>
+      <obj_property name="ObjectShortName">sys_rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/rgmii_rxc" type="logic">
+      <obj_property name="ElementShortName">rgmii_rxc</obj_property>
+      <obj_property name="ObjectShortName">rgmii_rxc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/rgmii_rxd" type="array">
+      <obj_property name="ElementShortName">rgmii_rxd[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rgmii_rxd[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/rgmii_rx_ctl" type="logic">
+      <obj_property name="ElementShortName">rgmii_rx_ctl</obj_property>
+      <obj_property name="ObjectShortName">rgmii_rx_ctl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/rgmii_txc" type="logic">
+      <obj_property name="ElementShortName">rgmii_txc</obj_property>
+      <obj_property name="ObjectShortName">rgmii_txc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/rgmii_txd" type="logic">
+      <obj_property name="ElementShortName">rgmii_txd</obj_property>
+      <obj_property name="ObjectShortName">rgmii_txd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/rgmii_tx_ctl" type="array">
+      <obj_property name="ElementShortName">rgmii_tx_ctl[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rgmii_tx_ctl[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/rgmii_rst_n" type="logic">
+      <obj_property name="ElementShortName">rgmii_rst_n</obj_property>
+      <obj_property name="ObjectShortName">rgmii_rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_ckP" type="logic">
+      <obj_property name="ElementShortName">ddr3_ckP</obj_property>
+      <obj_property name="ObjectShortName">ddr3_ckP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_ckN" type="logic">
+      <obj_property name="ElementShortName">ddr3_ckN</obj_property>
+      <obj_property name="ObjectShortName">ddr3_ckN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_cke" type="logic">
+      <obj_property name="ElementShortName">ddr3_cke</obj_property>
+      <obj_property name="ObjectShortName">ddr3_cke</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_resetN" type="logic">
+      <obj_property name="ElementShortName">ddr3_resetN</obj_property>
+      <obj_property name="ObjectShortName">ddr3_resetN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_rasN" type="logic">
+      <obj_property name="ElementShortName">ddr3_rasN</obj_property>
+      <obj_property name="ObjectShortName">ddr3_rasN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_casN" type="logic">
+      <obj_property name="ElementShortName">ddr3_casN</obj_property>
+      <obj_property name="ObjectShortName">ddr3_casN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_weN" type="logic">
+      <obj_property name="ElementShortName">ddr3_weN</obj_property>
+      <obj_property name="ObjectShortName">ddr3_weN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_csN" type="logic">
+      <obj_property name="ElementShortName">ddr3_csN</obj_property>
+      <obj_property name="ObjectShortName">ddr3_csN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_ba" type="array">
+      <obj_property name="ElementShortName">ddr3_ba[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ddr3_ba[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_addr" type="array">
+      <obj_property name="ElementShortName">ddr3_addr[14:0]</obj_property>
+      <obj_property name="ObjectShortName">ddr3_addr[14:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_odt" type="logic">
+      <obj_property name="ElementShortName">ddr3_odt</obj_property>
+      <obj_property name="ObjectShortName">ddr3_odt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_dm" type="array">
+      <obj_property name="ElementShortName">ddr3_dm[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ddr3_dm[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_dqsP" type="array">
+      <obj_property name="ElementShortName">ddr3_dqsP[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ddr3_dqsP[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_dqsN" type="array">
+      <obj_property name="ElementShortName">ddr3_dqsN[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ddr3_dqsN[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/ddr3_dq" type="array">
+      <obj_property name="ElementShortName">ddr3_dq[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ddr3_dq[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_axisTxRateCtrl/io_config_valid" type="logic">
+      <obj_property name="ElementShortName">io_config_valid</obj_property>
+      <obj_property name="ObjectShortName">io_config_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_axisTxRateCtrl/io_config_ready" type="logic">
+      <obj_property name="ElementShortName">io_config_ready</obj_property>
+      <obj_property name="ObjectShortName">io_config_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_axisTxRateCtrl/io_cfgStart" type="logic">
+      <obj_property name="ElementShortName">io_cfgStart</obj_property>
+      <obj_property name="ObjectShortName">io_cfgStart</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_axisTxRateCtrl/io_start" type="logic">
+      <obj_property name="ElementShortName">io_start</obj_property>
+      <obj_property name="ObjectShortName">io_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_axisTxRateCtrl/io_rxEnd" type="logic">
+      <obj_property name="ElementShortName">io_rxEnd</obj_property>
+      <obj_property name="ObjectShortName">io_rxEnd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_axisTxRateCtrl/io_txEnd" type="logic">
+      <obj_property name="ElementShortName">io_txEnd</obj_property>
+      <obj_property name="ObjectShortName">io_txEnd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/TxPWR" type="array">
+      <obj_property name="ElementShortName">TxPWR[2:0]</obj_property>
+      <obj_property name="ObjectShortName">TxPWR[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_din_rdy" type="logic">
+      <obj_property name="ElementShortName">dac_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">dac_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_dout" type="array">
+      <obj_property name="ElementShortName">dac_dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dac_dout[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_dout_Index" type="array">
+      <obj_property name="ElementShortName">dac_dout_Index[8:0]</obj_property>
+      <obj_property name="ObjectShortName">dac_dout_Index[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_dout_last" type="logic">
+      <obj_property name="ElementShortName">dac_dout_last</obj_property>
+      <obj_property name="ObjectShortName">dac_dout_last</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_dout_vld" type="logic">
+      <obj_property name="ElementShortName">dac_dout_vld</obj_property>
+      <obj_property name="ObjectShortName">dac_dout_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/locked" type="logic">
+      <obj_property name="ElementShortName">locked</obj_property>
+      <obj_property name="ObjectShortName">locked</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_udpAxisIn_valid" type="logic">
+      <obj_property name="ElementShortName">io_udpAxisIn_valid</obj_property>
+      <obj_property name="ObjectShortName">io_udpAxisIn_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_udpAxisIn_ready" type="logic">
+      <obj_property name="ElementShortName">io_udpAxisIn_ready</obj_property>
+      <obj_property name="ObjectShortName">io_udpAxisIn_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_udpAxisIn_payload_data" type="array">
+      <obj_property name="ElementShortName">io_udpAxisIn_payload_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">io_udpAxisIn_payload_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_udpAxisIn_payload_last" type="logic">
+      <obj_property name="ElementShortName">io_udpAxisIn_payload_last</obj_property>
+      <obj_property name="ObjectShortName">io_udpAxisIn_payload_last</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_udpAxisIn_payload_user" type="array">
+      <obj_property name="ElementShortName">io_udpAxisIn_payload_user[0:0]</obj_property>
+      <obj_property name="ObjectShortName">io_udpAxisIn_payload_user[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_udpAxisOut_valid" type="logic">
+      <obj_property name="ElementShortName">io_udpAxisOut_valid</obj_property>
+      <obj_property name="ObjectShortName">io_udpAxisOut_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_udpAxisOut_ready" type="logic">
+      <obj_property name="ElementShortName">io_udpAxisOut_ready</obj_property>
+      <obj_property name="ObjectShortName">io_udpAxisOut_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_udpAxisOut_payload_data" type="array">
+      <obj_property name="ElementShortName">io_udpAxisOut_payload_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">io_udpAxisOut_payload_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_udpAxisOut_payload_last" type="logic">
+      <obj_property name="ElementShortName">io_udpAxisOut_payload_last</obj_property>
+      <obj_property name="ObjectShortName">io_udpAxisOut_payload_last</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_udpAxisOut_payload_user" type="array">
+      <obj_property name="ElementShortName">io_udpAxisOut_payload_user[0:0]</obj_property>
+      <obj_property name="ObjectShortName">io_udpAxisOut_payload_user[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_config" type="array">
+      <obj_property name="ElementShortName">io_config[20:0]</obj_property>
+      <obj_property name="ObjectShortName">io_config[20:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/config_1" type="array">
+      <obj_property name="ElementShortName">config_1[23:0]</obj_property>
+      <obj_property name="ObjectShortName">config_1[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/counter_value" type="array">
+      <obj_property name="ElementShortName">counter_value[1:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_value[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/counter_willOverflow" type="logic">
+      <obj_property name="ElementShortName">counter_willOverflow</obj_property>
+      <obj_property name="ObjectShortName">counter_willOverflow</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/counter_willOverflowIfInc" type="logic">
+      <obj_property name="ElementShortName">counter_willOverflowIfInc</obj_property>
+      <obj_property name="ObjectShortName">counter_willOverflowIfInc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_configRx/io_end" type="logic">
+      <obj_property name="ElementShortName">io_end</obj_property>
+      <obj_property name="ObjectShortName">io_end</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ddr3AxisTxIf/io_writeEnd_ready" type="logic">
+      <obj_property name="ElementShortName">io_writeEnd_ready</obj_property>
+      <obj_property name="ObjectShortName">io_writeEnd_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ddr3AxisTxIf/axi4StreamToBmb_1/adapter_bmbClockArea_BmbMux_buffercc_io_dataOut" type="logic">
+      <obj_property name="ElementShortName">adapter_bmbClockArea_BmbMux_buffercc_io_dataOut</obj_property>
+      <obj_property name="ObjectShortName">adapter_bmbClockArea_BmbMux_buffercc_io_dataOut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ddr3AxisTxIf/axi4StreamToBmb_1/adapter_bmbClockArea_BmbMux" type="logic">
+      <obj_property name="ElementShortName">adapter_bmbClockArea_BmbMux</obj_property>
+      <obj_property name="ObjectShortName">adapter_bmbClockArea_BmbMux</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ddr3AxisTxIf/io_writeEnd_valid" type="logic">
+      <obj_property name="ElementShortName">io_writeEnd_valid</obj_property>
+      <obj_property name="ObjectShortName">io_writeEnd_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_axisTxRateCtrl/fsm_stateReg" type="array">
+      <obj_property name="ElementShortName">fsm_stateReg[2:0]</obj_property>
+      <obj_property name="ObjectShortName">fsm_stateReg[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_axisTxRateCtrl/fsm_cfgFlag" type="logic">
+      <obj_property name="ElementShortName">fsm_cfgFlag</obj_property>
+      <obj_property name="ObjectShortName">fsm_cfgFlag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/dac_valid" type="logic">
+      <obj_property name="ElementShortName">dac_valid</obj_property>
+      <obj_property name="ObjectShortName">dac_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/dac_payload_last" type="logic">
+      <obj_property name="ElementShortName">dac_payload_last</obj_property>
+      <obj_property name="ObjectShortName">dac_payload_last</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/dac_payload_fragment" type="array">
+      <obj_property name="ElementShortName">dac_payload_fragment[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dac_payload_fragment[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/dac_ready" type="logic">
+      <obj_property name="ElementShortName">dac_ready</obj_property>
+      <obj_property name="ObjectShortName">dac_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/mcu_config_din" type="array">
+      <obj_property name="ElementShortName">mcu_config_din[20:0]</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_din[20:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/mcu_config_din_start" type="logic">
+      <obj_property name="ElementShortName">mcu_config_din_start</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_din_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/mcu_config_din_vld" type="logic">
+      <obj_property name="ElementShortName">mcu_config_din_vld</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_din_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/mcu_config_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">mcu_config_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/mcu_mac_din" type="array">
+      <obj_property name="ElementShortName">mcu_mac_din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mcu_mac_din[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/mcu_mac_din_vld" type="logic">
+      <obj_property name="ElementShortName">mcu_mac_din_vld</obj_property>
+      <obj_property name="ObjectShortName">mcu_mac_din_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/mcu_mac_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">mcu_mac_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">mcu_mac_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_end" type="logic">
+      <obj_property name="ElementShortName">tx_end</obj_property>
+      <obj_property name="ObjectShortName">tx_end</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_config_din" type="array">
+      <obj_property name="ElementShortName">mcu_config_din[20:0]</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_din[20:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_config_din_start" type="logic">
+      <obj_property name="ElementShortName">mcu_config_din_start</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_din_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_config_din_vld" type="logic">
+      <obj_property name="ElementShortName">mcu_config_din_vld</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_din_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_config_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">mcu_config_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_mac_din" type="array">
+      <obj_property name="ElementShortName">mcu_mac_din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mcu_mac_din[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_mac_din_vld" type="logic">
+      <obj_property name="ElementShortName">mcu_mac_din_vld</obj_property>
+      <obj_property name="ObjectShortName">mcu_mac_din_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_mac_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">mcu_mac_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">mcu_mac_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_din_rdy" type="logic">
+      <obj_property name="ElementShortName">mcu_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">mcu_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout" type="logic">
+      <obj_property name="ElementShortName">mcu_dout</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout_vld" type="logic">
+      <obj_property name="ElementShortName">mcu_dout_vld</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout_sig_flag" type="logic">
+      <obj_property name="ElementShortName">mcu_dout_sig_flag</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout_sig_flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout_rate_con" type="array">
+      <obj_property name="ElementShortName">mcu_dout_rate_con[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout_rate_con[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout_scram_seed" type="array">
+      <obj_property name="ElementShortName">mcu_dout_scram_seed[6:0]</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout_scram_seed[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout_scram_load" type="logic">
+      <obj_property name="ElementShortName">mcu_dout_scram_load</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout_scram_load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/phy_rst_n" type="logic">
+      <obj_property name="ElementShortName">phy_rst_n</obj_property>
+      <obj_property name="ObjectShortName">phy_rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/tx_end" type="logic">
+      <obj_property name="ElementShortName">tx_end</obj_property>
+      <obj_property name="ObjectShortName">tx_end</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/TxPWR" type="array">
+      <obj_property name="ElementShortName">TxPWR[2:0]</obj_property>
+      <obj_property name="ObjectShortName">TxPWR[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/m_axis_mcu" type="protoinst">
+      <obj_property name="ElementShortName">m_axis_mcu</obj_property>
+      <obj_property name="ObjectShortName">m_axis_mcu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/sig_din_tx_rate" type="array">
+      <obj_property name="ElementShortName">sig_din_tx_rate[5:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_din_tx_rate[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/sig_din_tx_length" type="array">
+      <obj_property name="ElementShortName">sig_din_tx_length[11:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_din_tx_length[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/sig_din_vld" type="logic">
+      <obj_property name="ElementShortName">sig_din_vld</obj_property>
+      <obj_property name="ObjectShortName">sig_din_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/sig_din_rdy" type="logic">
+      <obj_property name="ElementShortName">sig_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">sig_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/sig_dout" type="array">
+      <obj_property name="ElementShortName">sig_dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_dout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/sig_dout_vld" type="logic">
+      <obj_property name="ElementShortName">sig_dout_vld</obj_property>
+      <obj_property name="ObjectShortName">sig_dout_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/sig_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">sig_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">sig_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/sig_dout_rate_con" type="array">
+      <obj_property name="ElementShortName">sig_dout_rate_con[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_dout_rate_con[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/sig_dout_last" type="logic">
+      <obj_property name="ElementShortName">sig_dout_last</obj_property>
+      <obj_property name="ObjectShortName">sig_dout_last</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/sig_dout_sig_flag" type="logic">
+      <obj_property name="ElementShortName">sig_dout_sig_flag</obj_property>
+      <obj_property name="ObjectShortName">sig_dout_sig_flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/P2S_din" type="array">
+      <obj_property name="ElementShortName">P2S_din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">P2S_din[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/P2S_din_vld" type="logic">
+      <obj_property name="ElementShortName">P2S_din_vld</obj_property>
+      <obj_property name="ObjectShortName">P2S_din_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/P2S_din_rdy" type="logic">
+      <obj_property name="ElementShortName">P2S_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">P2S_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/P2S_dout" type="logic">
+      <obj_property name="ElementShortName">P2S_dout</obj_property>
+      <obj_property name="ObjectShortName">P2S_dout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/P2S_dout_vld" type="logic">
+      <obj_property name="ElementShortName">P2S_dout_vld</obj_property>
+      <obj_property name="ObjectShortName">P2S_dout_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/P2S_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">P2S_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">P2S_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/En_cnt" type="logic">
+      <obj_property name="ElementShortName">En_cnt</obj_property>
+      <obj_property name="ObjectShortName">En_cnt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/cnt_last" type="logic">
+      <obj_property name="ElementShortName">cnt_last</obj_property>
+      <obj_property name="ObjectShortName">cnt_last</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/inst/cnt" type="logic">
+      <obj_property name="ElementShortName">cnt</obj_property>
+      <obj_property name="ObjectShortName">cnt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_config_din" type="array">
+      <obj_property name="ElementShortName">mcu_config_din[20:0]</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_din[20:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_config_din_vld" type="logic">
+      <obj_property name="ElementShortName">mcu_config_din_vld</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_din_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_config_din_start" type="logic">
+      <obj_property name="ElementShortName">mcu_config_din_start</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_din_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_config_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">mcu_config_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_mac_din" type="array">
+      <obj_property name="ElementShortName">mcu_mac_din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mcu_mac_din[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_mac_din_vld" type="logic">
+      <obj_property name="ElementShortName">mcu_mac_din_vld</obj_property>
+      <obj_property name="ObjectShortName">mcu_mac_din_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_mac_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">mcu_mac_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">mcu_mac_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_din_rdy" type="logic">
+      <obj_property name="ElementShortName">mcu_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">mcu_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout" type="logic">
+      <obj_property name="ElementShortName">mcu_dout</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout_vld" type="logic">
+      <obj_property name="ElementShortName">mcu_dout_vld</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout_sig_flag" type="logic">
+      <obj_property name="ElementShortName">mcu_dout_sig_flag</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout_sig_flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout_rate_con" type="array">
+      <obj_property name="ElementShortName">mcu_dout_rate_con[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout_rate_con[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout_scram_seed" type="array">
+      <obj_property name="ElementShortName">mcu_dout_scram_seed[6:0]</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout_scram_seed[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/mcu_dout_scram_load" type="logic">
+      <obj_property name="ElementShortName">mcu_dout_scram_load</obj_property>
+      <obj_property name="ObjectShortName">mcu_dout_scram_load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/phy_rst_n" type="logic">
+      <obj_property name="ElementShortName">phy_rst_n</obj_property>
+      <obj_property name="ObjectShortName">phy_rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/tx_end" type="logic">
+      <obj_property name="ElementShortName">tx_end</obj_property>
+      <obj_property name="ObjectShortName">tx_end</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/TxPWR" type="array">
+      <obj_property name="ElementShortName">TxPWR[2:0]</obj_property>
+      <obj_property name="ObjectShortName">TxPWR[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/tx_mcu_0/m_axis_mcu" type="protoinst">
+      <obj_property name="ElementShortName">m_axis_mcu</obj_property>
+      <obj_property name="ObjectShortName">m_axis_mcu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/scramler_0/scram_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">scram_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">scram_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/scramler_0/scram_din_rdy" type="logic">
+      <obj_property name="ElementShortName">scram_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">scram_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/convenc_0/conv_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">conv_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">conv_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/convenc_0/conv_din_rdy" type="logic">
+      <obj_property name="ElementShortName">conv_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">conv_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/puncture_0/punt_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">punt_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">punt_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/puncture_0/punt_din_rdy" type="logic">
+      <obj_property name="ElementShortName">punt_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">punt_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/interleaver_1_0/intv1_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">intv1_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">intv1_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/interleaver_1_0/intv1_din_rdy" type="logic">
+      <obj_property name="ElementShortName">intv1_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">intv1_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/interleaver_2_0/intv2_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">intv2_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">intv2_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/interleaver_2_0/intv2_din_rdy" type="logic">
+      <obj_property name="ElementShortName">intv2_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">intv2_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/maping_0/map_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">map_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">map_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/maping_0/map_din_rdy" type="logic">
+      <obj_property name="ElementShortName">map_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">map_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/pilot_0/pilot_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">pilot_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">pilot_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/pilot_0/pilot_din_rdy" type="logic">
+      <obj_property name="ElementShortName">pilot_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">pilot_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/ifft_0/ifft_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">ifft_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">ifft_dout_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/ifft_0/ifft_din_rdy" type="logic">
+      <obj_property name="ElementShortName">ifft_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">ifft_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/symbol_train_0/train_din_rdy" type="logic">
+      <obj_property name="ElementShortName">train_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">train_din_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/symbol_train_0/train_dout_vld" type="logic">
+      <obj_property name="ElementShortName">train_dout_vld</obj_property>
+      <obj_property name="ObjectShortName">train_dout_vld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/clk_dac" type="logic">
+      <obj_property name="ElementShortName">clk_dac</obj_property>
+      <obj_property name="ObjectShortName">clk_dac</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_ifft_din" type="array">
+      <obj_property name="ElementShortName">dac_ifft_din[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dac_ifft_din[15:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_ifft_din_vld" type="logic">
+      <obj_property name="ElementShortName">dac_ifft_din_vld</obj_property>
+      <obj_property name="ObjectShortName">dac_ifft_din_vld</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_ifft_din_last" type="logic">
+      <obj_property name="ElementShortName">dac_ifft_din_last</obj_property>
+      <obj_property name="ObjectShortName">dac_ifft_din_last</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_ifft_din_Index" type="array">
+      <obj_property name="ElementShortName">dac_ifft_din_Index[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dac_ifft_din_Index[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_ifft_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">dac_ifft_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">dac_ifft_dout_rdy</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_train_din" type="array">
+      <obj_property name="ElementShortName">dac_train_din[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dac_train_din[15:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_train_din_vld" type="logic">
+      <obj_property name="ElementShortName">dac_train_din_vld</obj_property>
+      <obj_property name="ObjectShortName">dac_train_din_vld</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_train_din_last" type="logic">
+      <obj_property name="ElementShortName">dac_train_din_last</obj_property>
+      <obj_property name="ObjectShortName">dac_train_din_last</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_train_din_Index" type="array">
+      <obj_property name="ElementShortName">dac_train_din_Index[8:0]</obj_property>
+      <obj_property name="ObjectShortName">dac_train_din_Index[8:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_train_dout_rdy" type="logic">
+      <obj_property name="ElementShortName">dac_train_dout_rdy</obj_property>
+      <obj_property name="ObjectShortName">dac_train_dout_rdy</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_din_rdy" type="logic">
+      <obj_property name="ElementShortName">dac_din_rdy</obj_property>
+      <obj_property name="ObjectShortName">dac_din_rdy</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_dout" type="array">
+      <obj_property name="ElementShortName">dac_dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dac_dout[15:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_dout_vld" type="logic">
+      <obj_property name="ElementShortName">dac_dout_vld</obj_property>
+      <obj_property name="ObjectShortName">dac_dout_vld</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_dout_last" type="logic">
+      <obj_property name="ElementShortName">dac_dout_last</obj_property>
+      <obj_property name="ObjectShortName">dac_dout_last</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/dac_dout_Index" type="array">
+      <obj_property name="ElementShortName">dac_dout_Index[8:0]</obj_property>
+      <obj_property name="ObjectShortName">dac_dout_Index[8:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/mcu_config" type="logic">
+      <obj_property name="ElementShortName">mcu_config</obj_property>
+      <obj_property name="ObjectShortName">mcu_config</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/mcu_config_r" type="logic">
+      <obj_property name="ElementShortName">mcu_config_r</obj_property>
+      <obj_property name="ObjectShortName">mcu_config_r</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+</wave_config>

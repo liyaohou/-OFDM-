@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="pll_clk_synth_1" LaunchPart="xc7k325tffg676-2" LaunchTime="1730554802">
   <File Type="PA-TCL" Name="pll_clk.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="pll_clk_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="pll_clk_reports.tcl"/>
   <File Type="RDS-RDS" Name="pll_clk.vds"/>
   <File Type="RDS-UTIL" Name="pll_clk_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="pll_clk_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="pll_clk.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="pll_clk_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="pll_clk_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pll_clk" RelGenDir="$PGENDIR/pll_clk">
     <File Path="$PSRCDIR/sources_1/ip/pll_clk/pll_clk.xci">
       <FileInfo>
@@ -42,9 +39,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Nov  2 21:41:42 2024" VIVADOVERSION="2023.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Nov  4 14:44:13 2024" VIVADOVERSION="2023.1">
 
   <SYSTEMINFO ARCH="kintex7" DEVICE="7k325t" NAME="ofdm_tx" PACKAGE="ffg676" SPEEDGRADE="-2"/>
 
@@ -17,6 +17,7 @@
     <PORT DIR="I" NAME="mcu_config_din_vld" SIGIS="undef" SIGNAME="External_Ports_mcu_config_din_vld">
       <CONNECTIONS>
         <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_config_din_vld"/>
+        <CONNECTION INSTANCE="util_vector_logic_1" PORT="Op1"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="mcu_config_dout_rdy" SIGIS="undef" SIGNAME="tx_mcu_0_mcu_config_dout_rdy">
@@ -76,17 +77,17 @@
     </PORT>
     <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk_125m" SIGIS="clk" SIGNAME="External_Ports_clk_125m">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="tx_mcu_0" PORT="clk"/>
         <CONNECTION INSTANCE="convenc_0" PORT="clk"/>
         <CONNECTION INSTANCE="scramler_0" PORT="clk"/>
         <CONNECTION INSTANCE="puncture_0" PORT="clk"/>
         <CONNECTION INSTANCE="ifft_0" PORT="clk"/>
         <CONNECTION INSTANCE="pilot_0" PORT="clk"/>
-        <CONNECTION INSTANCE="dac_0" PORT="clk"/>
         <CONNECTION INSTANCE="interleaver_1_0" PORT="clk"/>
         <CONNECTION INSTANCE="interleaver_2_0" PORT="clk"/>
         <CONNECTION INSTANCE="maping_0" PORT="clk"/>
         <CONNECTION INSTANCE="symbol_train_0" PORT="clk"/>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="clk"/>
+        <CONNECTION INSTANCE="dac_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="clk_20m" SIGIS="undef" SIGNAME="External_Ports_clk_20m">
@@ -96,8 +97,8 @@
     </PORT>
     <PORT DIR="I" NAME="locked" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_locked">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="tx_mcu_0" PORT="rst_n"/>
         <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
+        <CONNECTION INSTANCE="tx_mcu_0" PORT="rst_n"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -317,6 +318,12 @@
             <CONNECTION INSTANCE="External_Ports" PORT="dac_dout_Index"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="mcu_config" SIGIS="undef" SIGNAME="util_vector_logic_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_1" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="mcu_config_r" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="ifft_0_m_axis_ifft" NAME="s_axis_ifft_dac" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
@@ -1270,6 +1277,7 @@
         <PORT DIR="O" NAME="mcu_config_dout_rdy" SIGIS="undef" SIGNAME="tx_mcu_0_mcu_config_dout_rdy">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="mcu_config_dout_rdy"/>
+            <CONNECTION INSTANCE="util_vector_logic_1" PORT="Op2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="7" NAME="mcu_mac_din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_mcu_mac_din">
@@ -1436,6 +1444,34 @@
             <CONNECTION INSTANCE="symbol_train_0" PORT="rst_n"/>
             <CONNECTION INSTANCE="ifft_0" PORT="rst_n"/>
             <CONNECTION INSTANCE="dac_0" PORT="rst_n"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/util_vector_logic_1" HWVERSION="2.0" INSTANCE="util_vector_logic_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="and"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="ofdm_tx_util_vector_logic_1_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_andgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_mcu_config_din_vld">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="mcu_config_din_vld"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="tx_mcu_0_mcu_config_dout_rdy">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tx_mcu_0" PORT="mcu_config_dout_rdy"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dac_0" PORT="mcu_config"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

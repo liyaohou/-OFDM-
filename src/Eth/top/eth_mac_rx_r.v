@@ -5,7 +5,7 @@ module eth_mac_rx_r(
     input           gtx_clk90,
     output          port_udp_rx_hdr_valid,
     input           port_udp_rx_hdr_ready,
-    output          port_udp_rx_source_ip,
+    output [31:0]   port_udp_rx_source_ip,
     output [9:0]    port_udp_rx_length,
     output          port_udp_rx_axis_valid,
     input           port_udp_rx_axis_ready,

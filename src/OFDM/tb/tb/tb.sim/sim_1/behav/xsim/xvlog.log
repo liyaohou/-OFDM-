@@ -6,10 +6,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_manageme
 INFO: [VRFC 10-311] analyzing module counter
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/interleaver_2.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module interleaver_2
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/tx_gen_pkt_sig.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_gen_pkt_sig
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/tx_mcu.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_mcu
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/counter_in.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module counter_in
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/interleaver_1.v" into library xil_defaultlib
@@ -32,18 +28,22 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_manageme
 INFO: [VRFC 10-311] analyzing module pilot_ram
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/pilot.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module pilot
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.gen/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fifo_generator_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/edge_detection.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module edge_detection
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module dac
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/ifft.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ifft
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/tx_gen_pkt_sig.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_gen_pkt_sig
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/tx_mcu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_mcu
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dac
+INFO: [VRFC 10-311] analyzing module fifo_generator_1
+INFO: [VRFC 10-311] analyzing module BufferCC_dac2
+INFO: [VRFC 10-311] analyzing module BufferCC_dac1
+INFO: [VRFC 10-311] analyzing module BufferCC_dac
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_interleaver_2_0_0/sim/ofdm_tx_interleaver_2_0_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ofdm_tx_interleaver_2_0_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_tx_mcu_0_0/sim/ofdm_tx_tx_mcu_0_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ofdm_tx_tx_mcu_0_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_interleaver_1_0_0/sim/ofdm_tx_interleaver_1_0_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ofdm_tx_interleaver_1_0_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_convenc_0_0/sim/ofdm_tx_convenc_0_0.v" into library xil_defaultlib
@@ -58,12 +58,16 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_manageme
 INFO: [VRFC 10-311] analyzing module ofdm_tx_symbol_train_0_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_pilot_0_0/sim/ofdm_tx_pilot_0_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ofdm_tx_pilot_0_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_dac_0_0/sim/ofdm_tx_dac_0_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ofdm_tx_dac_0_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_ifft_0_0/sim/ofdm_tx_ifft_0_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ofdm_tx_ifft_0_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_util_vector_logic_0_0/sim/ofdm_tx_util_vector_logic_0_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ofdm_tx_util_vector_logic_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_tx_mcu_0_0/sim/ofdm_tx_tx_mcu_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ofdm_tx_tx_mcu_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_dac_0_0/sim/ofdm_tx_dac_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ofdm_tx_dac_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/ip/ofdm_tx_util_vector_logic_1_0/sim/ofdm_tx_util_vector_logic_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ofdm_tx_util_vector_logic_1_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.ip_user_files/bd/ofdm_tx/sim/ofdm_tx.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ofdm_tx
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.gen/sources_1/ip/pll_clk/pll_clk_clk_wiz.v" into library xil_defaultlib

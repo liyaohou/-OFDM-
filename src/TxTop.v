@@ -306,7 +306,7 @@ module TxTop (
     .dac_dout_last        (workClockArea_ofdmTx_dac_dout_last      ), //o
     .dac_dout             (workClockArea_ofdmTx_dac_dout[15:0]     ), //o
     .dac_dout_Index       (workClockArea_ofdmTx_dac_dout_Index[8:0]), //o
-    .tx_end               (1'b1                                    )  //i
+    .tx_end               (workClockArea_axisTxRateCtrl_io_txEnd   )  //i
   );
   assign rstN = (sys_rst_n && pll_clk_1_locked);
   assign rgmii_txc = workClockArea_ethMacRx_rgmii_txc;
@@ -411,19 +411,20 @@ module AxisTxRateCtrl (
   wire                fsm_wantExit;
   reg                 fsm_wantStart;
   wire                fsm_wantKill;
+  reg                 fsm_cfgFlag;
   wire                _zz_io_axiOut_valid;
   wire       [0:0]    _zz_io_axiOut_payload_user;
   reg        [2:0]    fsm_stateReg;
   reg        [2:0]    fsm_stateNext;
   reg                 io_start_regNext;
-  wire                when_AxisTxRateCtrl_l37;
+  wire                when_AxisTxRateCtrl_l38;
   reg                 _zz_1;
-  wire                fifo_io_pop_fire;
-  wire                when_AxisTxRateCtrl_l53;
-  wire                when_AxisTxRateCtrl_l60;
-  wire                when_AxisTxRateCtrl_l63;
-  wire                when_AxisTxRateCtrl_l64;
-  wire                when_AxisTxRateCtrl_l66;
+  wire                fifo_io_push_fire;
+  wire                when_AxisTxRateCtrl_l55;
+  wire                when_AxisTxRateCtrl_l67;
+  wire                when_AxisTxRateCtrl_l70;
+  wire                when_AxisTxRateCtrl_l71;
+  wire                when_AxisTxRateCtrl_l73;
   wire                fsm_onExit_BOOT;
   wire                fsm_onExit_idle;
   wire                fsm_onExit_cfg;
@@ -541,7 +542,7 @@ module AxisTxRateCtrl (
   end
 
   assign fsm_wantKill = 1'b0;
-  assign _zz_io_axiOut_valid = (! (fsm_stateReg == fsm_enumDef_2_rxd));
+  assign _zz_io_axiOut_valid = (! (((fsm_stateReg == fsm_enumDef_2_rxd) || (fsm_stateReg == fsm_enumDef_2_need)) || (fsm_stateReg == fsm_enumDef_2_cfg)));
   assign fifo_io_pop_ready = (io_axiOut_ready && _zz_io_axiOut_valid);
   assign _zz_io_axiOut_payload_user[0 : 0] = fifo_io_pop_payload_user[0 : 0];
   assign io_axiOut_valid = (fifo_io_pop_valid && _zz_io_axiOut_valid);
@@ -569,7 +570,7 @@ module AxisTxRateCtrl (
       fsm_enumDef_2_txd : begin
       end
       fsm_enumDef_2_end_1 : begin
-        if(when_AxisTxRateCtrl_l66) begin
+        if(when_AxisTxRateCtrl_l73) begin
           io_txEnd = 1'b1;
         end
       end
@@ -582,39 +583,43 @@ module AxisTxRateCtrl (
     fsm_stateNext = fsm_stateReg;
     case(fsm_stateReg)
       fsm_enumDef_2_idle : begin
-        if(when_AxisTxRateCtrl_l37) begin
-          fsm_stateNext = fsm_enumDef_2_cfg;
+        if(when_AxisTxRateCtrl_l38) begin
+          fsm_stateNext = fsm_enumDef_2_need;
         end
       end
       fsm_enumDef_2_cfg : begin
         if(io_config_ready) begin
-          fsm_stateNext = fsm_enumDef_2_need;
+          fsm_stateNext = fsm_enumDef_2_txd;
         end
       end
       fsm_enumDef_2_need : begin
         if(_zz_1) begin
           fsm_stateNext = fsm_enumDef_2_rxd;
         end else begin
-          if(when_AxisTxRateCtrl_l53) begin
-            fsm_stateNext = fsm_enumDef_2_txd;
+          if(when_AxisTxRateCtrl_l55) begin
+            if(fsm_cfgFlag) begin
+              fsm_stateNext = fsm_enumDef_2_cfg;
+            end else begin
+              fsm_stateNext = fsm_enumDef_2_txd;
+            end
           end
         end
       end
       fsm_enumDef_2_rxd : begin
-        if(when_AxisTxRateCtrl_l60) begin
+        if(when_AxisTxRateCtrl_l67) begin
           fsm_stateNext = fsm_enumDef_2_need;
         end
       end
       fsm_enumDef_2_txd : begin
-        if(when_AxisTxRateCtrl_l63) begin
+        if(when_AxisTxRateCtrl_l70) begin
           fsm_stateNext = fsm_enumDef_2_need;
         end
-        if(when_AxisTxRateCtrl_l64) begin
+        if(when_AxisTxRateCtrl_l71) begin
           fsm_stateNext = fsm_enumDef_2_end_1;
         end
       end
       fsm_enumDef_2_end_1 : begin
-        if(when_AxisTxRateCtrl_l66) begin
+        if(when_AxisTxRateCtrl_l73) begin
           fsm_stateNext = fsm_enumDef_2_idle;
         end
       end
@@ -629,13 +634,13 @@ module AxisTxRateCtrl (
     end
   end
 
-  assign when_AxisTxRateCtrl_l37 = (io_start && (! io_start_regNext));
-  assign fifo_io_pop_fire = (fifo_io_pop_valid && fifo_io_pop_ready);
-  assign when_AxisTxRateCtrl_l53 = (fifo_io_pop_payload_last && fifo_io_pop_fire);
-  assign when_AxisTxRateCtrl_l60 = (12'h41c <= fifo_io_occupancy);
-  assign when_AxisTxRateCtrl_l63 = (fifo_io_occupancy <= 12'h41c);
-  assign when_AxisTxRateCtrl_l64 = (io_rxEnd || rxEndFlag);
-  assign when_AxisTxRateCtrl_l66 = (fifo_io_occupancy == 12'h0);
+  assign when_AxisTxRateCtrl_l38 = (io_start && (! io_start_regNext));
+  assign fifo_io_push_fire = (io_axiIn_valid && fifo_io_push_ready);
+  assign when_AxisTxRateCtrl_l55 = (io_axiIn_payload_last && fifo_io_push_fire);
+  assign when_AxisTxRateCtrl_l67 = (12'h41c <= fifo_io_occupancy);
+  assign when_AxisTxRateCtrl_l70 = (fifo_io_occupancy <= 12'h41c);
+  assign when_AxisTxRateCtrl_l71 = (io_rxEnd || rxEndFlag);
+  assign when_AxisTxRateCtrl_l73 = (fifo_io_occupancy == 12'h0);
   assign fsm_onExit_BOOT = ((fsm_stateNext != fsm_enumDef_2_BOOT) && (fsm_stateReg == fsm_enumDef_2_BOOT));
   assign fsm_onExit_idle = ((fsm_stateNext != fsm_enumDef_2_idle) && (fsm_stateReg == fsm_enumDef_2_idle));
   assign fsm_onExit_cfg = ((fsm_stateNext != fsm_enumDef_2_cfg) && (fsm_stateReg == fsm_enumDef_2_cfg));
@@ -654,15 +659,26 @@ module AxisTxRateCtrl (
     if(!rstN) begin
       cfgStart <= 1'b0;
       rxEndFlag <= 1'b0;
+      fsm_cfgFlag <= 1'b0;
       fsm_stateReg <= fsm_enumDef_2_BOOT;
     end else begin
       fsm_stateReg <= fsm_stateNext;
       case(fsm_stateReg)
         fsm_enumDef_2_idle : begin
+          if(when_AxisTxRateCtrl_l38) begin
+            fsm_cfgFlag <= 1'b1;
+          end
         end
         fsm_enumDef_2_cfg : begin
         end
         fsm_enumDef_2_need : begin
+          if(!_zz_1) begin
+            if(when_AxisTxRateCtrl_l55) begin
+              if(fsm_cfgFlag) begin
+                fsm_cfgFlag <= 1'b0;
+              end
+            end
+          end
           if(io_rxEnd) begin
             rxEndFlag <= 1'b1;
           end
@@ -672,7 +688,7 @@ module AxisTxRateCtrl (
         fsm_enumDef_2_txd : begin
         end
         fsm_enumDef_2_end_1 : begin
-          if(when_AxisTxRateCtrl_l66) begin
+          if(when_AxisTxRateCtrl_l73) begin
             cfgStart <= 1'b0;
             rxEndFlag <= 1'b0;
           end
@@ -688,7 +704,7 @@ module AxisTxRateCtrl (
   end
 
   always @(posedge clk_out1) begin
-    _zz_1 <= ((fsm_stateNext != fsm_enumDef_2_cfg) && (fsm_stateReg == fsm_enumDef_2_cfg));
+    _zz_1 <= ((fsm_stateNext != fsm_enumDef_2_idle) && (fsm_stateReg == fsm_enumDef_2_idle));
   end
 
 
@@ -1181,10 +1197,6 @@ module ConfigRx (
   wire       [0:0]    _zz_counter_valueNext_1;
   wire       [4:0]    _zz_config_1;
   reg                 end_1;
-  wire                _zz_io_end;
-  reg                 _zz_io_end_1;
-  reg                 _zz_io_end_2;
-  reg                 _zz_io_end_3;
   wire                io_rxHdr_fire;
   reg        [9:0]    lengthIn;
   reg        [23:0]   config_1;
@@ -1213,8 +1225,7 @@ module ConfigRx (
     end
   end
 
-  assign _zz_io_end = end_1;
-  assign io_end = (|{_zz_io_end_3,{_zz_io_end_2,{_zz_io_end_1,_zz_io_end}}});
+  assign io_end = end_1;
   assign io_rxHdr_ready = 1'b1;
   assign io_rxHdr_fire = (io_rxHdr_valid && io_rxHdr_ready);
   assign hit = (lengthIn == 10'h002);
@@ -1266,9 +1277,6 @@ module ConfigRx (
   assign io_udpAxisOut_payload_last = io_udpAxisIn_thrown_payload_last;
   assign io_udpAxisOut_payload_user[0 : 0] = io_udpAxisIn_thrown_payload_user[0 : 0];
   always @(posedge clk_out1) begin
-    _zz_io_end_1 <= _zz_io_end;
-    _zz_io_end_2 <= _zz_io_end_1;
-    _zz_io_end_3 <= _zz_io_end_2;
     if(io_rxHdr_fire) begin
       lengthIn <= io_lengthIn;
     end
@@ -1955,7 +1963,7 @@ module Axi4StreamToBmb (
   wire       [3:0]    adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_fragment_mask;
   wire       [3:0]    adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_fragment_context;
   wire                adapter_bmbClockArea_bmbRdGen_io_end;
-  wire                io_writeEnd_ready_buffercc_io_dataOut;
+  wire                adapter_writeEndHistory_buffercc_io_dataOut;
   wire                adapter_bmbClockArea_BmbMux_buffercc_io_dataOut;
   wire                adapter_bmbClockArea_bmbRdGen_io_end_buffercc_io_dataOut;
   wire       [28:0]   _zz_axisToBmbBridge_cmd_bmbAddr;
@@ -2021,12 +2029,17 @@ module Axi4StreamToBmb (
   wire       [0:0]    axisToBmbBridge_rsp_fifo_payload_user;
   wire                axisToBmbBridge_rsp_fifo_fire;
   reg                 adapter_endFlag;
+  wire                _zz_adapter_writeEndHistory;
+  reg                 _zz_adapter_writeEndHistory_1;
+  reg                 _zz_adapter_writeEndHistory_2;
+  reg                 _zz_adapter_writeEndHistory_3;
+  wire                adapter_writeEndHistory;
   reg                 adapter_bmbClockArea_BmbMux;
   reg                 adapter_bmbClockArea_BmbMux_regNext;
-  wire                when_Axi4StreamToBmb_l96;
+  wire                when_Axi4StreamToBmb_l97;
   wire                _zz_io_writeEnd_valid;
   reg                 _zz_io_writeEnd_valid_1;
-  wire                when_Axi4StreamToBmb_l115;
+  wire                when_Axi4StreamToBmb_l116;
   wire                axiOut_fire;
   wire                _zz_when_Stream_l393;
   wire                _zz_io_input_rsp_ready;
@@ -2183,11 +2196,11 @@ module Axi4StreamToBmb (
     .clk_out4                           (clk_out4                                                              ), //i
     .rstN                               (rstN                                                                  )  //i
   );
-  (* keep_hierarchy = "TRUE" *) BufferCC_8 io_writeEnd_ready_buffercc (
-    .io_dataIn  (io_writeEnd_ready                    ), //i
-    .io_dataOut (io_writeEnd_ready_buffercc_io_dataOut), //o
-    .clk_out4   (clk_out4                             ), //i
-    .rstN       (rstN                                 )  //i
+  (* keep_hierarchy = "TRUE" *) BufferCC_8 adapter_writeEndHistory_buffercc (
+    .io_dataIn  (adapter_writeEndHistory                    ), //i
+    .io_dataOut (adapter_writeEndHistory_buffercc_io_dataOut), //o
+    .clk_out4   (clk_out4                                   ), //i
+    .rstN       (rstN                                       )  //i
   );
   (* keep_hierarchy = "TRUE" *) BufferCC_4 adapter_bmbClockArea_BmbMux_buffercc (
     .io_dataIn  (adapter_bmbClockArea_BmbMux                    ), //i
@@ -2283,6 +2296,8 @@ module Axi4StreamToBmb (
   assign axisToBmbBridge_bmbBridge_rsp_payload_last = axisToBmbBridge_bmbBridge_upSizer_io_input_rsp_payload_last;
   assign axisToBmbBridge_bmbBridge_rsp_payload_fragment_opcode = axisToBmbBridge_bmbBridge_upSizer_io_input_rsp_payload_fragment_opcode;
   assign axisToBmbBridge_bmbBridge_rsp_payload_fragment_data = axisToBmbBridge_bmbBridge_upSizer_io_input_rsp_payload_fragment_data;
+  assign _zz_adapter_writeEndHistory = io_writeEnd_ready;
+  assign adapter_writeEndHistory = (|{_zz_adapter_writeEndHistory_3,{_zz_adapter_writeEndHistory_2,{_zz_adapter_writeEndHistory_1,_zz_adapter_writeEndHistory}}});
   assign adapter_bmbClockArea_bmbRdGen_io_start = (adapter_bmbClockArea_BmbMux && (! adapter_bmbClockArea_BmbMux_regNext));
   assign io_bmb_cmd_valid = (adapter_bmbClockArea_BmbMux ? adapter_bmbClockArea_bmbRdGen_io_bmbCmd_valid : adapter_bmbCCDomain_io_output_cmd_valid);
   assign io_bmb_cmd_payload_last = (adapter_bmbClockArea_BmbMux ? adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_last : adapter_bmbCCDomain_io_output_cmd_payload_last);
@@ -2292,11 +2307,11 @@ module Axi4StreamToBmb (
   assign io_bmb_cmd_payload_fragment_data = (adapter_bmbClockArea_BmbMux ? adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_fragment_data : adapter_bmbCCDomain_io_output_cmd_payload_fragment_data);
   assign io_bmb_cmd_payload_fragment_mask = (adapter_bmbClockArea_BmbMux ? adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_fragment_mask : adapter_bmbCCDomain_io_output_cmd_payload_fragment_mask);
   assign io_bmb_cmd_payload_fragment_context = (adapter_bmbClockArea_BmbMux ? adapter_bmbClockArea_bmbRdGen_io_bmbCmd_payload_fragment_context : adapter_bmbCCDomain_io_output_cmd_payload_fragment_context);
-  assign when_Axi4StreamToBmb_l96 = io_writeEnd_ready_buffercc_io_dataOut;
+  assign when_Axi4StreamToBmb_l97 = adapter_writeEndHistory_buffercc_io_dataOut;
   assign io_bmb_rsp_ready = adapter_bmbCCDomain_io_output_rsp_ready;
   assign _zz_io_writeEnd_valid = adapter_bmbClockArea_BmbMux_buffercc_io_dataOut;
   assign io_writeEnd_valid = (_zz_io_writeEnd_valid && (! _zz_io_writeEnd_valid_1));
-  assign when_Axi4StreamToBmb_l115 = adapter_bmbClockArea_bmbRdGen_io_end_buffercc_io_dataOut;
+  assign when_Axi4StreamToBmb_l116 = adapter_bmbClockArea_bmbRdGen_io_end_buffercc_io_dataOut;
   assign axiOut_fire = (axiOut_valid && axiOut_ready);
   assign readEnd = (adapter_endFlag && (axiOut_payload_last && axiOut_fire));
   assign io_rdCtr_ready = adapter_headCCDomain_io_input_ready;
@@ -2352,7 +2367,7 @@ module Axi4StreamToBmb (
       end
       axisToBmbBridge_rsp_lastCounter_value <= axisToBmbBridge_rsp_lastCounter_valueNext;
       axisToBmbBridge_rsp_tailCounter_value <= axisToBmbBridge_rsp_tailCounter_valueNext;
-      if(when_Axi4StreamToBmb_l115) begin
+      if(when_Axi4StreamToBmb_l116) begin
         adapter_endFlag <= 1'b1;
       end
       if(readEnd) begin
@@ -2373,6 +2388,9 @@ module Axi4StreamToBmb (
   always @(posedge clk_out1) begin
     readEnd_regNext <= readEnd;
     readEnd_regNext_1 <= readEnd;
+    _zz_adapter_writeEndHistory_1 <= _zz_adapter_writeEndHistory;
+    _zz_adapter_writeEndHistory_2 <= _zz_adapter_writeEndHistory_1;
+    _zz_adapter_writeEndHistory_3 <= _zz_adapter_writeEndHistory_2;
     _zz_io_writeEnd_valid_1 <= _zz_io_writeEnd_valid;
     if(_zz_io_input_rsp_ready) begin
       _zz_io_output_rsp_payload_last_2 <= _zz_io_output_rsp_payload_last;
@@ -2392,7 +2410,7 @@ module Axi4StreamToBmb (
     if(!rstN) begin
       adapter_bmbClockArea_BmbMux <= 1'b0;
     end else begin
-      if(when_Axi4StreamToBmb_l96) begin
+      if(when_Axi4StreamToBmb_l97) begin
         adapter_bmbClockArea_BmbMux <= 1'b1;
       end
       if(adapter_bmbClockArea_bmbRdGen_io_end) begin

@@ -34,6 +34,7 @@ vlog -work util_vector_logic_v2_0_2  -v2k5 -l xpm -l xil_defaultlib -l util_vect
 
 vlog -work xil_defaultlib  -v2k5 -l xpm -l xil_defaultlib -l util_vector_logic_v2_0_2 \
 "../../../bd/ofdm_tx/ip/ofdm_tx_util_vector_logic_0_0/sim/ofdm_tx_util_vector_logic_0_0.v" \
+"../../../bd/ofdm_tx/ip/ofdm_tx_util_vector_logic_1_0/sim/ofdm_tx_util_vector_logic_1_0.v" \
 "../../../bd/ofdm_tx/sim/ofdm_tx.v" \
 
 vlog -work xil_defaultlib \

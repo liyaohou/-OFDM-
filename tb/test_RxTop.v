@@ -68,7 +68,94 @@ RxTop RxTop_u(
     // .dacClk         (dacClk),
     // .dacData        (dacData)
 );
+task automatic tx_rgmii;
+    input [5:0] BYTE_COUNTER; 
+    input [47:0] value;
+    integer i;
+    begin
+        for(i=0;i<BYTE_COUNTER*2;i=i+1) begin
+            rgmii_rxd = (value >> ((BYTE_COUNTER-1-i/2)*8)) >> (4*(i%2));
+            #4;
+        end
+    end
+endtask
 
+task automatic udp;
+    input [9:0] BYTE_COUNTER; 
+    integer i;
+    begin
+        tx_rgmii(2,16'd1234);
+        tx_rgmii(2,16'd1234);
+        tx_rgmii(2,BYTE_COUNTER + 8);
+        if(BYTE_COUNTER == 64)
+        tx_rgmii(2,16'h8da4);
+        if(BYTE_COUNTER == 512)
+        tx_rgmii(2,16'heda8);
+        if(BYTE_COUNTER == 3)
+        tx_rgmii(2,16'h7021);
+        for(i=0;i<BYTE_COUNTER;i=i+1) begin
+            tx_rgmii(1,i[7:0]);
+        end
+        if(BYTE_COUNTER < 18)
+        for(i=0;i<(18-BYTE_COUNTER);i=i+1) begin
+            tx_rgmii(1,0);
+        end
+    end
+endtask
+task automatic ip;
+    input [9:0] BYTE_COUNTER; 
+    begin
+        tx_rgmii(2,16'h4500);//版本
+        tx_rgmii(2,BYTE_COUNTER + 28);//长度
+        if(BYTE_COUNTER == 64)
+        tx_rgmii(2,16'h48df);//标识
+        if(BYTE_COUNTER == 512)
+        tx_rgmii(2,16'h48e2);//标识
+        if(BYTE_COUNTER == 3)
+        tx_rgmii(2,16'h48e3);//标识
+        tx_rgmii(2,0);//片
+        tx_rgmii(1,64);//生存时间
+        tx_rgmii(1,17);//协议
+        if(BYTE_COUNTER == 64)
+        tx_rgmii(2,16'hada0);//首部校验和
+        if(BYTE_COUNTER == 512)
+        tx_rgmii(2,16'habdd);//首部校验和
+        if(BYTE_COUNTER == 3)
+        tx_rgmii(2,16'hadd9);//首部校验和
+        tx_rgmii(4,32'hc0a80141);
+        tx_rgmii(4,32'hc0a80180);
+        udp(BYTE_COUNTER);
+    end
+endtask
+task automatic arp;
+    integer i;
+    begin
+        wait(rgmii_rxc);
+        wait(~rgmii_rxc);
+        #2;
+        rgmii_rx_ctl = 1;
+        for(i=0;i<7;i=i+1) begin
+            tx_rgmii(1,8'h55);
+        end
+        tx_rgmii(1,8'hD5);
+        tx_rgmii(6,48'h665544332211);
+        tx_rgmii(6,48'h6c1ff709fa24);//mac
+        tx_rgmii(2,16'h0806);
+        tx_rgmii(2,1);//硬件类型
+        tx_rgmii(2,16'h0800);//协议类型
+        tx_rgmii(2,16'h0604);//mac/ip长度
+        tx_rgmii(2,2);//ARP响应
+        tx_rgmii(6,48'h6c1ff709fa24);
+        tx_rgmii(4,32'hc0a80141);
+        tx_rgmii(6,48'h665544332211);//mac
+        tx_rgmii(4,32'hc0a80178);
+        for(i=0;i<18;i=i+1) begin
+            tx_rgmii(1,0);
+        end
+        tx_rgmii(4,32'h61253f0f);//crc
+        rgmii_rx_ctl = 0;
+    end
+endtask
 task automatic tx_axis;
     input [5:0] BYTE_COUNTER; 
     input [47:0] value;
@@ -83,7 +170,7 @@ task automatic tx_axis;
     end
 endtask
 
-task automatic udp;
+task automatic udp_axis;
     input [9:0] BYTE_COUNTER; 
     integer i;
     begin
@@ -135,7 +222,7 @@ task automatic udp;
     end
 endtask
 
-task automatic ip;
+task automatic ip_axis;
     input [9:0] BYTE_COUNTER; 
     begin
         wait(~rgmii_rxc);
@@ -159,53 +246,12 @@ task automatic ip;
         tx_axis(2,16'hadd9);//首部校验和
         tx_axis(4,32'hc0a80141);
         tx_axis(4,32'hc0a80180);
-        udp(BYTE_COUNTER);
+        udp_axis(BYTE_COUNTER);
         axisIn_valid = 0;
         axisIn_payload_last = 0;
     end
 endtask
 
-task automatic tx_rgmii;
-    input [5:0] BYTE_COUNTER; 
-    input [47:0] value;
-    integer i;
-    begin
-        for(i=0;i<BYTE_COUNTER*2;i=i+1) begin
-            rgmii_rxd = (value >> ((BYTE_COUNTER-1-i/2)*8)) >> (4*(i%2));
-            #4;
-        end
-    end
-endtask
-
-task automatic arp;
-    integer i;
-    begin
-        wait(rgmii_rxc);
-        wait(~rgmii_rxc);
-        #2;
-        rgmii_rx_ctl = 1;
-        for(i=0;i<7;i=i+1) begin
-            tx_rgmii(1,8'h55);
-        end
-        tx_rgmii(1,8'hD5);
-        tx_rgmii(6,48'hffffffffffff);
-        tx_rgmii(6,48'h6c1ff709fa24);//mac
-        tx_rgmii(2,16'h0806);
-        tx_rgmii(2,1);//硬件类型
-        tx_rgmii(2,16'h0800);//协议类型
-        tx_rgmii(2,16'h0604);//mac/ip长度
-        tx_rgmii(2,1);//ARP请求
-        tx_rgmii(6,48'h6c1ff709fa24);//mac
-        tx_rgmii(4,32'hc0a80141);
-        tx_rgmii(6,48'd0);
-        tx_rgmii(4,32'hc0a80180);
-        for(i=0;i<18;i=i+1) begin
-            tx_rgmii(1,0);
-        end
-        tx_rgmii(4,32'h5f711a1a);//crc
-        rgmii_rx_ctl = 0;
-    end
-endtask
 initial begin
     #16;
     sys_rst_n = 1;
@@ -216,21 +262,28 @@ always #4 rgmii_rxc = ~rgmii_rxc;
 initial begin
     #1600;
     #3200;
-    ip(512);
+    ip_axis(512);
     #1600;
-    ip(512);
+    ip_axis(512);
     #1600;
-    ip(512);
+    ip_axis(512);
     #1600;
-    ip(512);
+    ip_axis(512);
     #1600;
-    ip(64);
+    ip_axis(64);
     #80;
     rxEnd = 1;
     #8;
     rxEnd = 0;
     // #1600;
     // eth(3);
+end
+
+initial begin
+    wait(rgmii_tx_ctl);
+    #4000;
+    arp;
+    
 end
 
 parameter CLC = 32;

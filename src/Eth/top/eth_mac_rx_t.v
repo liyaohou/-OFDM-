@@ -12,7 +12,7 @@ module eth_mac_rx_t(
     output          rgmii_rst_n,
     input           port_udp_tx_hdr_valid,
     output          port_udp_tx_hdr_ready,
-    input           port_udp_tx_dest_ip,
+    input [31:0]    port_udp_tx_dest_ip,
     input [9:0]     port_udp_tx_length,
     input           port_udp_tx_axis_valid,
     output          port_udp_tx_axis_ready,
@@ -182,8 +182,8 @@ wire tx_udp_payload_axis_tlast;
 wire tx_udp_payload_axis_tuser;
 
 // Configuration
-wire [47:0] local_mac   = 48'h11_22_33_44_55_66;
-wire [31:0] local_ip    = {8'd192, 8'd168, 8'd1,   8'd128};
+wire [47:0] local_mac   = 48'h66_55_44_33_22_11;
+wire [31:0] local_ip    = {8'd192, 8'd168, 8'd1,   8'd120};
 wire [31:0] gateway_ip  = {8'd192, 8'd168, 8'd1,   8'd1};
 wire [31:0] subnet_mask = {8'd255, 8'd255, 8'd255, 8'd0};
 
