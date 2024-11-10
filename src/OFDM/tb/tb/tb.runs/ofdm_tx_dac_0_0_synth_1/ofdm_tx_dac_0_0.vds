@@ -1,0 +1,304 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Nov 10 19:34:14 2024
+# Process ID: 24716
+# Current directory: E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.runs/ofdm_tx_dac_0_0_synth_1
+# Command line: vivado.exe -log ofdm_tx_dac_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ofdm_tx_dac_0_0.tcl
+# Log file: E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.runs/ofdm_tx_dac_0_0_synth_1/ofdm_tx_dac_0_0.vds
+# Journal file: E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.runs/ofdm_tx_dac_0_0_synth_1\vivado.jou
+# Running On: LAPTOP-Q21U1JRJ, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16952 MB
+#-----------------------------------------------------------
+source ofdm_tx_dac_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 463.309 ; gain = 159.598
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/AppData/Xilinx/Vivado/2023.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is e:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.cache/ip 
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ofdm_tx_dac_0_0
+Command: synth_design -top ofdm_tx_dac_0_0 -part xc7k325tffg676-2 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg676-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 20836
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1351.660 ; gain = 409.859
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ofdm_tx_dac_0_0' [e:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.gen/sources_1/bd/ofdm_tx/ip/ofdm_tx_dac_0_0/synth/ofdm_tx_dac_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'dac' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:4]
+INFO: [Synth 8-6157] synthesizing module 'edge_detection' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/edge_detection.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detection' (0#1) [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/edge_detection.v:3]
+INFO: [Synth 8-6157] synthesizing module 'fifo_generator_1' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:132]
+INFO: [Synth 8-6157] synthesizing module 'BufferCC_dac' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:433]
+INFO: [Synth 8-6155] done synthesizing module 'BufferCC_dac' (0#1) [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:433]
+INFO: [Synth 8-6157] synthesizing module 'BufferCC_dac1' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:409]
+INFO: [Synth 8-6155] done synthesizing module 'BufferCC_dac1' (0#1) [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:409]
+INFO: [Synth 8-6157] synthesizing module 'BufferCC_dac2' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:385]
+INFO: [Synth 8-6155] done synthesizing module 'BufferCC_dac2' (0#1) [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:385]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_generator_1' (0#1) [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:132]
+WARNING: [Synth 8-689] width (9) of port connection 'io_push_payload_user' does not match port width (2) of module 'fifo_generator_1' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:112]
+WARNING: [Synth 8-689] width (9) of port connection 'io_pop_payload_user' does not match port width (2) of module 'fifo_generator_1' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:117]
+WARNING: [Synth 8-7071] port 'io_pushOccupancy' of module 'fifo_generator_1' is unconnected for instance 'u_fifo' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:107]
+WARNING: [Synth 8-7071] port 'io_popOccupancy' of module 'fifo_generator_1' is unconnected for instance 'u_fifo' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:107]
+WARNING: [Synth 8-7023] instance 'u_fifo' of module 'fifo_generator_1' has 15 connections declared, but only 13 given [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:107]
+INFO: [Synth 8-6155] done synthesizing module 'dac' (0#1) [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'ofdm_tx_dac_0_0' (0#1) [e:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.gen/sources_1/bd/ofdm_tx/ip/ofdm_tx_dac_0_0/synth/ofdm_tx_dac_0_0.v:53]
+WARNING: [Synth 8-6014] Unused sequential element popCC_addressGen_rData_reg was removed.  [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:297]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1446.211 ; gain = 504.410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1446.211 ; gain = 504.410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1446.211 ; gain = 504.410
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1446.211 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1533.785 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1533.785 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg676-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 3     
+	   3 Input   10 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 2     
++---XORs : 
+	   2 Input     10 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 18    
++---Registers : 
+	               19 Bit    Registers := 1     
+	               10 Bit    Registers := 9     
+	                1 Bit    Registers := 9     
++---RAMs : 
+	               9K Bit	(512 X 19 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 2     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3917] design ofdm_tx_dac_0_0 has port dac_dout_Index[8] driven by constant 0
+INFO: [Synth 8-3917] design ofdm_tx_dac_0_0 has port dac_dout_Index[7] driven by constant 0
+INFO: [Synth 8-3917] design ofdm_tx_dac_0_0 has port dac_dout_Index[6] driven by constant 0
+INFO: [Synth 8-3917] design ofdm_tx_dac_0_0 has port dac_dout_Index[5] driven by constant 0
+INFO: [Synth 8-3917] design ofdm_tx_dac_0_0 has port dac_dout_Index[4] driven by constant 0
+INFO: [Synth 8-3917] design ofdm_tx_dac_0_0 has port dac_dout_Index[3] driven by constant 0
+INFO: [Synth 8-3917] design ofdm_tx_dac_0_0 has port dac_dout_Index[2] driven by constant 0
+WARNING: [Synth 8-7129] Port dac_ifft_din_Index[7] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_ifft_din_Index[6] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_ifft_din_Index[5] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_ifft_din_Index[4] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_ifft_din_Index[3] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_ifft_din_Index[2] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_train_din_Index[8] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_train_din_Index[7] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_train_din_Index[6] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_train_din_Index[5] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_train_din_Index[4] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_train_din_Index[3] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dac_train_din_Index[2] in module ofdm_tx_dac_0_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:26 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++----------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name     | RTL Object          | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|ofdm_tx_dac_0_0 | inst/u_fifo/ram_reg | 512 x 19(NO_CHANGE)    | W |   | 512 x 19(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++----------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:34 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:34 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++----------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name     | RTL Object          | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|ofdm_tx_dac_0_0 | inst/u_fifo/ram_reg | 512 x 19(NO_CHANGE)    | W |   | 512 x 19(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++----------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance inst/u_fifo/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:34 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |     6|
+|2     |LUT1     |     8|
+|3     |LUT2     |    31|
+|4     |LUT3     |    12|
+|5     |LUT4     |    12|
+|6     |LUT5     |    27|
+|7     |LUT6     |    11|
+|8     |RAMB18E1 |     1|
+|9     |FDCE     |    83|
+|10    |FDRE     |     5|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1533.785 ; gain = 591.984
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:38 . Memory (MB): peak = 1533.785 ; gain = 504.410
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1533.785 ; gain = 591.984
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1533.785 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1533.785 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 761ad5ff
+INFO: [Common 17-83] Releasing license: Synthesis
+41 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:51 . Memory (MB): peak = 1533.785 ; gain = 1034.934
+INFO: [Common 17-1381] The checkpoint 'E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.runs/ofdm_tx_dac_0_0_synth_1/ofdm_tx_dac_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP ofdm_tx_dac_0_0, cache-ID = 0aa4175f6045edb7
+INFO: [Coretcl 2-1174] Renamed 6 cell refs.
+INFO: [Common 17-1381] The checkpoint 'E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.runs/ofdm_tx_dac_0_0_synth_1/ofdm_tx_dac_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ofdm_tx_dac_0_0_utilization_synth.rpt -pb ofdm_tx_dac_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 10 19:35:21 2024...

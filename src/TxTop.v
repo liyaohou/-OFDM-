@@ -1,6 +1,6 @@
-// Generator : SpinalHDL dev    git head : f13a74bfab8e20a9c8983318fb04e5dd3821a5a0
+// Generator : SpinalHDL dev    git head : 102fc4034eb8f1ce3b4c7bcc2086e352bb227afd
 // Component : TxTop
-// Git hash  : 102fc4034eb8f1ce3b4c7bcc2086e352bb227afd
+// Git hash  : 53ca27853f395a62558e91c1f18cac97282d67b2
 
 `timescale 1ns/1ps
 
@@ -29,10 +29,9 @@ module TxTop (
   inout  wire [1:0]    ddr3_dqsP,
   inout  wire [1:0]    ddr3_dqsN,
   inout  wire [15:0]   ddr3_dq,
-  output wire          dac_valid,
-  input  wire          dac_ready,
-  output wire          dac_payload_last,
-  output wire [15:0]   dac_payload_fragment
+  output wire          dacClk,
+  output wire          dacWrt,
+  output wire [13:0]   dacData
 );
 
   reg                 workClockArea_ethMacRx_port_udp_rx_hdr_ready;
@@ -302,13 +301,15 @@ module TxTop (
     .mcu_mac_dout_rdy     (workClockArea_ofdmTx_mcu_mac_dout_rdy   ), //o
     .mcu_mac_din          (io_axiOut_translated_payload[7:0]       ), //i
     .dac_dout_vld         (workClockArea_ofdmTx_dac_dout_vld       ), //o
-    .dac_din_rdy          (dac_ready                               ), //i
+    .dac_din_rdy          (1'b1                                    ), //i
     .dac_dout_last        (workClockArea_ofdmTx_dac_dout_last      ), //o
     .dac_dout             (workClockArea_ofdmTx_dac_dout[15:0]     ), //o
     .dac_dout_Index       (workClockArea_ofdmTx_dac_dout_Index[8:0]), //o
     .tx_end               (workClockArea_axisTxRateCtrl_io_txEnd   )  //i
   );
   assign rstN = (sys_rst_n && pll_clk_1_locked);
+  assign dacClk = pll_clk_1_clk_out6;
+  assign dacWrt = pll_clk_1_clk_out6;
   assign rgmii_txc = workClockArea_ethMacRx_rgmii_txc;
   assign rgmii_txd = workClockArea_ethMacRx_rgmii_txd;
   assign rgmii_tx_ctl = workClockArea_ethMacRx_rgmii_tx_ctl;
@@ -351,9 +352,7 @@ module TxTop (
   assign io_config_translated_valid = workClockArea_axisTxRateCtrl_io_config_valid;
   assign io_config_translated_payload = workClockArea_configRx_io_config;
   assign io_config_translated_ready = workClockArea_ofdmTx_mcu_config_dout_rdy;
-  assign dac_valid = workClockArea_ofdmTx_dac_dout_vld;
-  assign dac_payload_last = workClockArea_ofdmTx_dac_dout_last;
-  assign dac_payload_fragment = workClockArea_ofdmTx_dac_dout;
+  assign dacData = {workClockArea_ofdmTx_dac_dout[15 : 9],workClockArea_ofdmTx_dac_dout[7 : 1]};
   always @(posedge pll_clk_1_clk_out1 or negedge rstN) begin
     if(!rstN) begin
       port_udp_rx_hdr_rValid <= 1'b0;
@@ -4221,7 +4220,7 @@ module Initialize (
   assign io_control_resetN = control_regNext_resetN;
   always @(posedge clk_out4 or negedge rstN) begin
     if(!rstN) begin
-      refreshTimer <= 23'h0;
+      refreshTimer <= 23'h00493e;
     end else begin
       if(when_Initialize_l51) begin
         refreshTimer <= 23'h0;

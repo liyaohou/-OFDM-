@@ -5,8 +5,9 @@ Running: F:/AppData/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'rgmii_txd' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/tb/test_TxTop.v:45]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'rgmii_tx_ctl' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/tb/test_TxTop.v:46]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'rgmii_txd' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/tb/test_TxTop.v:47]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'rgmii_tx_ctl' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/tb/test_TxTop.v:48]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 14 for port 'dacData' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/tb/test_TxTop.v:72]
 WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'speed' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Eth/top/eth_mac_tx_r.v:332]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 's_axis_tid' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Eth/top/eth_mac_1g_rgmii_fifo.v:282]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 's_axis_tdest' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Eth/top/eth_mac_1g_rgmii_fifo.v:283]
@@ -29,7 +30,7 @@ WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 f
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 's_axis_tkeep' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Eth/udp/udp_checksum_gen.v:219]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 's_axis_tid' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Eth/udp/udp_checksum_gen.v:223]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 's_axis_tdest' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Eth/udp/udp_checksum_gen.v:224]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'dfi_rddata_dnv_o' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/TxTop.v:2771]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'dfi_rddata_dnv_o' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/TxTop.v:2770]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'OCE' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Ddr3/ddr3_dfi_phy.v:365]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'SHIFTIN1' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Ddr3/ddr3_dfi_phy.v:367]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'SHIFTIN2' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Ddr3/ddr3_dfi_phy.v:368]
@@ -282,8 +283,8 @@ WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 fo
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'arp_response_valid' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Eth/udp/IP/ip_complete_lite.v:375]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'arp_response_error' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Eth/udp/IP/ip_complete_lite.v:377]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 48 for port 'arp_response_mac' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Eth/udp/IP/ip_complete_lite.v:378]
-WARNING: [VRFC 10-3091] actual bit length 9 differs from formal bit length 2 for port 'io_push_payload_user' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:89]
-WARNING: [VRFC 10-3091] actual bit length 9 differs from formal bit length 2 for port 'io_pop_payload_user' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:94]
+WARNING: [VRFC 10-3091] actual bit length 9 differs from formal bit length 2 for port 'io_push_payload_user' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:112]
+WARNING: [VRFC 10-3091] actual bit length 9 differs from formal bit length 2 for port 'io_pop_payload_user' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/dac.v:117]
 WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 7 for port 'cnt' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/pilot.v:86]
 WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 9 for port 'cnt' [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/v/tx_mcu.v:105]
 WARNING: [VRFC 10-5021] port 's_pause_req' is not connected on this instance [E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/Eth/top/eth_mac_1g_rgmii_fifo.v:254]

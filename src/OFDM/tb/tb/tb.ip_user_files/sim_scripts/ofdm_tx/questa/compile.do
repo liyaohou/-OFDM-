@@ -18,7 +18,6 @@ vcom -work xpm  -93  \
 
 vlog -work xil_defaultlib  -incr -mfcu  \
 "../../../bd/ofdm_tx/ip/ofdm_tx_interleaver_2_0_0/sim/ofdm_tx_interleaver_2_0_0.v" \
-"../../../bd/ofdm_tx/ip/ofdm_tx_tx_mcu_0_0/sim/ofdm_tx_tx_mcu_0_0.v" \
 "../../../bd/ofdm_tx/ip/ofdm_tx_interleaver_1_0_0/sim/ofdm_tx_interleaver_1_0_0.v" \
 "../../../bd/ofdm_tx/ip/ofdm_tx_convenc_0_0/sim/ofdm_tx_convenc_0_0.v" \
 "../../../bd/ofdm_tx/ip/ofdm_tx_scramler_0_0/sim/ofdm_tx_scramler_0_0.v" \
@@ -26,7 +25,6 @@ vlog -work xil_defaultlib  -incr -mfcu  \
 "../../../bd/ofdm_tx/ip/ofdm_tx_puncture_0_0/sim/ofdm_tx_puncture_0_0.v" \
 "../../../bd/ofdm_tx/ip/ofdm_tx_symbol_train_0_0/sim/ofdm_tx_symbol_train_0_0.v" \
 "../../../bd/ofdm_tx/ip/ofdm_tx_pilot_0_0/sim/ofdm_tx_pilot_0_0.v" \
-"../../../bd/ofdm_tx/ip/ofdm_tx_dac_0_0/sim/ofdm_tx_dac_0_0.v" \
 "../../../bd/ofdm_tx/ip/ofdm_tx_ifft_0_0/sim/ofdm_tx_ifft_0_0.v" \
 
 vlog -work util_vector_logic_v2_0_2  -incr -mfcu  \
@@ -34,6 +32,8 @@ vlog -work util_vector_logic_v2_0_2  -incr -mfcu  \
 
 vlog -work xil_defaultlib  -incr -mfcu  \
 "../../../bd/ofdm_tx/ip/ofdm_tx_util_vector_logic_0_0/sim/ofdm_tx_util_vector_logic_0_0.v" \
+"../../../bd/ofdm_tx/ip/ofdm_tx_tx_mcu_0_0/sim/ofdm_tx_tx_mcu_0_0.v" \
+"../../../bd/ofdm_tx/ip/ofdm_tx_dac_0_0/sim/ofdm_tx_dac_0_0.v" \
 "../../../bd/ofdm_tx/ip/ofdm_tx_util_vector_logic_1_0/sim/ofdm_tx_util_vector_logic_1_0.v" \
 "../../../bd/ofdm_tx/sim/ofdm_tx.v" \
 

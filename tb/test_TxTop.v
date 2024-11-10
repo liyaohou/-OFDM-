@@ -28,12 +28,14 @@ wire [1:0]  ddr3_dm    ;
 wire [1:0]  ddr3_dqsP;
 wire [1:0]  ddr3_dqsN;
 wire [15:0] ddr3_dq;
-wire        dac_valid;
-wire        dac_payload_last;
-wire [15:0] dac_payload_fragment;
-reg         dac_ready = 0;
+// wire        dac_valid;
+// wire        dac_payload_last;
+// wire [15:0] dac_payload_fragment;
+// reg         dac_ready = 0;
 // wire        txEnd;
-// wire [15:0] dacData;
+wire [15:0] dacData;
+wire        dacClk;
+wire        dacWrt;
 
 TxTop TxTop_u(
     .sys_clk        (sys_clk),
@@ -60,13 +62,14 @@ TxTop TxTop_u(
     .ddr3_dqsP      (ddr3_dqsP),
     .ddr3_dqsN      (ddr3_dqsN),
     .ddr3_dq        (ddr3_dq),
-    .dac_valid      (dac_valid),
-    .dac_payload_last      (dac_payload_last),
-    .dac_payload_fragment      (dac_payload_fragment),
-    .dac_ready      (dac_ready)
+    // .dac_valid      (dac_valid),
+    // .dac_payload_last      (dac_payload_last),
+    // .dac_payload_fragment      (dac_payload_fragment),
+    // .dac_ready      (dac_ready)
     // .txEnd          (txEnd),
-    // .dacClk         (dacClk),
-    // .dacData        (dacData)
+    .dacWrt        (dacWrt),
+    .dacClk         (dacClk),
+    .dacData        (dacData)
 );
 
 task automatic tx_rgmii;
@@ -222,7 +225,7 @@ endtask
 initial begin
     #16;
     sys_rst_n = 1;
-    dac_ready = 1;
+    // dac_ready = 1;
     
 end
 always #10 sys_clk = ~sys_clk;

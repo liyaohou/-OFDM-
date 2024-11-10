@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Nov  2 20:53:57 2024
-# Process ID: 27160
+# Start of session at: Sun Nov 10 19:35:26 2024
+# Process ID: 34168
 # Current directory: E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.runs/synth_1
-# Command line: vivado.exe -log ofdm_tx_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ofdm_tx_wrapper.tcl
-# Log file: E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.runs/synth_1/ofdm_tx_wrapper.vds
+# Command line: vivado.exe -log TxTop.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TxTop.tcl
+# Log file: E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.runs/synth_1/TxTop.vds
 # Journal file: E:/86152/FPGA/Verilog/file_management/UDP_OFDM/rtl/UDP_DDR_OFDM/src/OFDM/tb/tb/tb.runs/synth_1\vivado.jou
 # Running On: LAPTOP-Q21U1JRJ, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16952 MB
 #-----------------------------------------------------------
-source ofdm_tx_wrapper.tcl -notrace
+source TxTop.tcl -notrace

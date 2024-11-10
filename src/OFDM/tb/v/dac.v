@@ -13,20 +13,24 @@ module dac(
 	
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_train_dac TDATA" *)	input	[15:0]		dac_train_din    	,//ѵ������
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_train_dac TVALID" *)input				dac_train_din_vld	,//ѵ��������Ч��Ϣ
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_train_dac TLAST" *)	input				dac_train_din_last 	,//ѵ���������һ��
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_train_dac TLAST" *)	input				dac_train_din_last 	,//ѵ���������һ��?
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_train_dac TUSER" *)	input	[8:0]		dac_train_din_Index	,//ѵ��������������
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis_train_dac TREADY" *)output				dac_train_dout_rdy	,//�ȴ�ѵ����������
   
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_dac TREADY" *)  	input				dac_din_rdy			,//���������ź�
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_dac TDATA" *)		output	[15:0]dac_dout    		,//���16λ���ݣ�������ʱ20Mbit
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_dac TVALID" *)		output			dac_dout_vld		,//�����Ч
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_dac TLAST" *)		output				dac_dout_last  		,//���һλ����
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_dac TUSER" *)		output	[8:0]	dac_dout_Index , 	 //�������
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_dac TDATA" *)		output	[15:0]dac_dout    		,//���?16λ���ݣ�������ʱ20Mbit
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_dac TVALID" *)		output			dac_dout_vld		,//������?
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_dac TLAST" *)		output				dac_dout_last  		,//���һλ����?
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_dac TUSER" *)		output	[8:0]	dac_dout_Index , 	 //�������?
 
                                                                             input         mcu_config,
-                                                                            output         mcu_config_r
+                                                                            output  reg   mcu_config_r
 
 );
+reg             mcu_config_d0;
+reg             mcu_config_d1;
+reg             dac_dout_vld_d0;
+reg             dac_dout_vld_d1;
 
 //fifo
 wire 			s_axis_tvalid       ;
@@ -40,8 +44,12 @@ wire 	[15:0] 	m_axis_tdata        ;
 wire 			m_axis_tlast        ;
 wire 	[8:0] 	m_axis_tuser        ;
 
-wire			dac_train_din_last_edge_pluse;//���һ�����ݸյ���
-//���ѵ�����������ϱ�־��������
+wire			dac_train_din_last_edge_pluse;//���һ�����ݸյ���?
+
+wire                    dac_dout_vld_n;
+
+assign dac_dout_vld_n = ~dac_dout_vld_d0 & dac_dout_vld_d1;
+//���ѵ�����������ϱ�־��������?
 edge_detection #(.POSEDGE(1'b1))
 u_edge_detection (
 .clk			(clk							),	
@@ -49,9 +57,9 @@ u_edge_detection (
 .edge_pluse     (dac_train_din_last_edge_pluse	)
 );
 
-//��������ѵ�����к���ѵ���������һλ�յ���ʱ
+//��������ѵ�����к���ѵ���������һλ�յ����?
 //ѵ���������һ�������signal���һ�������ӣ�����ǰ�涼����������һλ���˴�ֻ����ӣ������Ӵ�������
-//��û�����ѵ������,�����ѵ������
+//��û�����ѵ������?,�����ѵ������?
 assign	s_axis_tdata	= dac_train_din_last ? dac_train_din_last_edge_pluse ?	
 							{dac_ifft_din[15:8] + dac_train_din[15:8],
 							dac_ifft_din[7:0] + dac_train_din[7:0]}: 
@@ -75,8 +83,23 @@ assign	s_axis_tuser	= dac_train_din_last ? 	dac_ifft_din_Index	: dac_train_din_I
 
 
 // wire mcu_config_r;
-assign mcu_config_r = mcu_config ? 1: mcu_config_r;
-
+// mcu_config_r = mcu_config ? 1: mcu_config_r;
+ always @(posedge clk) begin
+        mcu_config_d0 <= mcu_config;
+        mcu_config_d1 <= mcu_config_d0;
+        dac_dout_vld_d0 <= dac_dout_vld;
+        dac_dout_vld_d1 <= dac_dout_vld_d0;
+  end
+ always @(posedge clk or negedge rst_n) begin
+    if(!rst_n) begin
+     mcu_config_r <= 0;
+     end else if(mcu_config_d1) begin
+        mcu_config_r <= 1;
+     end else if(dac_dout_vld_n) begin
+         mcu_config_r <= 0;
+     end else
+     mcu_config_r <= mcu_config_r;
+  end
 assign	dac_ifft_dout_rdy  = dac_train_din_last ? s_axis_tready : 1'b0;
 // assign	dac_train_dout_rdy = dac_train_din_last ? 1'b0 : s_axis_tready;
 assign	dac_train_dout_rdy = (dac_train_din_last | ~mcu_config_r )? 1'b0 : s_axis_tready;

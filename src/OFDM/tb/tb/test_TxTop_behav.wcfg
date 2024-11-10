@@ -12,13 +12,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="75,510.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="77,698.001 ns"></ZoomEndTime>
-      <Cursor1Time time="76,144.000 ns"></Cursor1Time>
+      <ZoomStartTime time="75,931.900 ns"></ZoomStartTime>
+      <ZoomEndTime time="76,088.501 ns"></ZoomEndTime>
+      <Cursor1Time time="75,958.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="411"></NameColumnWidth>
-      <ValueColumnWidth column_width="112"></ValueColumnWidth>
+      <ValueColumnWidth column_width="107"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="168" />
    <wvobject fp_name="/test_TxTop/sys_clk" type="logic">
@@ -256,23 +256,6 @@
    <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_axisTxRateCtrl/fsm_cfgFlag" type="logic">
       <obj_property name="ElementShortName">fsm_cfgFlag</obj_property>
       <obj_property name="ObjectShortName">fsm_cfgFlag</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_TxTop/dac_valid" type="logic">
-      <obj_property name="ElementShortName">dac_valid</obj_property>
-      <obj_property name="ObjectShortName">dac_valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_TxTop/dac_payload_last" type="logic">
-      <obj_property name="ElementShortName">dac_payload_last</obj_property>
-      <obj_property name="ObjectShortName">dac_payload_last</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_TxTop/dac_payload_fragment" type="array">
-      <obj_property name="ElementShortName">dac_payload_fragment[15:0]</obj_property>
-      <obj_property name="ObjectShortName">dac_payload_fragment[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test_TxTop/dac_ready" type="logic">
-      <obj_property name="ElementShortName">dac_ready</obj_property>
-      <obj_property name="ObjectShortName">dac_ready</obj_property>
    </wvobject>
    <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/mcu_config_din" type="array">
       <obj_property name="ElementShortName">mcu_config_din[20:0]</obj_property>
@@ -721,6 +704,22 @@
       <obj_property name="ObjectShortName">dac_dout_Index[8:0]</obj_property>
       <obj_property name="CustomSignalColor">#FFFF00</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/inst/s_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/inst/s_axis_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/inst/m_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/inst/m_axis_tready" type="logic">
+      <obj_property name="ElementShortName">m_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tready</obj_property>
    </wvobject>
    <wvobject fp_name="/test_TxTop/TxTop_u/workClockArea_ofdmTx/dac_0/mcu_config" type="logic">
       <obj_property name="ElementShortName">mcu_config</obj_property>

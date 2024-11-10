@@ -22,8 +22,8 @@
       "ifft_0": "",
       "util_vector_logic_0": "",
       "tx_mcu_0": "",
-      "dac_0": "",
-      "util_vector_logic_1": ""
+      "util_vector_logic_1": "",
+      "dac_0": ""
     },
     "ports": {
       "mcu_config_din": {
@@ -2027,6 +2027,17 @@
           }
         }
       },
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "ofdm_tx_util_vector_logic_1_0",
+        "xci_path": "ip\\ofdm_tx_util_vector_logic_1_0\\ofdm_tx_util_vector_logic_1_0.xci",
+        "inst_hier_path": "util_vector_logic_1",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
       "dac_0": {
         "vlnv": "xilinx.com:module_ref:dac:1.0",
         "xci_name": "ofdm_tx_dac_0_0",
@@ -2319,17 +2330,6 @@
           },
           "mcu_config_r": {
             "direction": "O"
-          }
-        }
-      },
-      "util_vector_logic_1": {
-        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "ofdm_tx_util_vector_logic_1_0",
-        "xci_path": "ip\\ofdm_tx_util_vector_logic_1_0\\ofdm_tx_util_vector_logic_1_0.xci",
-        "inst_hier_path": "util_vector_logic_1",
-        "parameters": {
-          "C_SIZE": {
-            "value": "1"
           }
         }
       }

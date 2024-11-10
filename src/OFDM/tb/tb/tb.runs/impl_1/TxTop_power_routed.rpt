@@ -1,0 +1,255 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date             : Sun Nov 10 19:40:02 2024
+| Host             : LAPTOP-Q21U1JRJ running 64-bit major release  (build 9200)
+| Command          : report_power -file TxTop_power_routed.rpt -pb TxTop_power_summary_routed.pb -rpx TxTop_power_routed.rpx
+| Design           : TxTop
+| Device           : xc7k325tffg676-2
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+-----------------------------------+
+| Total On-Chip Power (W)  | 132.856 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                      |
+| Power Budget Margin (W)  | NA                                |
+| Dynamic (W)              | 129.349                           |
+| Device Static (W)        | 3.507                             |
+| Effective TJA (C/W)      | 1.9                               |
+| Max Ambient (C)          | 0.0                               |
+| Junction Temperature (C) | 125.0                             |
+| Confidence Level         | Low                               |
+| Setting File             | ---                               |
+| Simulation Activity File | ---                               |
+| Design Nets Matched      | NA                                |
++--------------------------+-----------------------------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Slice Logic              |    29.125 |    16355 |       --- |             --- |
+|   LUT as Logic           |    24.262 |     5457 |    203800 |            2.68 |
+|   Register               |     1.985 |     7606 |    407600 |            1.87 |
+|   CARRY4                 |     1.749 |      461 |     50950 |            0.90 |
+|   LUT as Distributed RAM |     0.879 |      722 |     64000 |            1.13 |
+|   LUT as Shift Register  |     0.134 |       98 |     64000 |            0.15 |
+|   F7/F8 Muxes            |     0.065 |      164 |    203800 |            0.08 |
+|   BUFG                   |     0.052 |        9 |        32 |           28.13 |
+|   Others                 |     0.000 |      552 |       --- |             --- |
+|   BUFR                   |     0.000 |        1 |       208 |            0.48 |
+| Signals                  |    34.300 |    11930 |       --- |             --- |
+| Block RAM                |     1.877 |       13 |       445 |            2.92 |
+| PLL                      |     5.862 |        1 |        10 |           10.00 |
+| DSPs                     |    10.573 |        9 |       840 |            1.07 |
+| I/O                      |    47.612 |       80 |       400 |           20.00 |
+| Static Power             |     3.507 |          |           |                 |
+| Total                    |   132.856 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Vccint    |       1.000 |    81.965 |      78.940 |      3.025 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     5.027 |       4.833 |      0.194 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |    11.952 |      11.951 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.230 |       0.229 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco15    |       1.500 |     0.970 |       0.969 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccaux_io |       2.000 |     0.156 |       0.156 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.181 |       0.091 |      0.090 |       NA    | Unspecified | NA         |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 1.9                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 3.4                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------+
+| Name                                                                                                                                    | Power (W) |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------+
+| TxTop                                                                                                                                   |   129.349 |
+|   axi4StreamToBmb_1/io_axiIn_fifo/fifo/logic_ram_reg_0_63_0_2                                                                           |     0.002 |
+|   axi4StreamToBmb_1/io_axiIn_fifo/fifo/logic_ram_reg_0_63_3_5                                                                           |     0.002 |
+|   axi4StreamToBmb_1/io_axiIn_fifo/fifo/logic_ram_reg_0_63_6_8                                                                           |     0.002 |
+|   axi4StreamToBmb_1/io_axiIn_fifo/fifo/logic_ram_reg_64_127_0_2                                                                         |     0.002 |
+|   axi4StreamToBmb_1/io_axiIn_fifo/fifo/logic_ram_reg_64_127_3_5                                                                         |     0.001 |
+|   axi4StreamToBmb_1/io_axiIn_fifo/fifo/logic_ram_reg_64_127_6_8                                                                         |     0.003 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_12_14             |     0.020 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_15_17             |     0.012 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_18_20             |     0.012 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_21_23             |     0.011 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_24_26             |     0.011 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_27_29             |     0.011 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_30_32             |     0.006 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_33_35             |     0.009 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_36_38             |     0.013 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_39_41             |     0.012 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_3_5               |     0.003 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_42_44             |     0.006 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_45_47             |     0.007 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_48_50             |     0.001 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_6_8               |     0.011 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_cmd_fifo/fifo/logic_ram_reg_0_63_9_11              |     0.014 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_rsp_fifo/fifo/logic_ram_reg_0_63_0_2               |     0.003 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_rsp_fifo/fifo/logic_ram_reg_0_63_33_35             |     0.018 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_rsp_fifo/fifo/logic_ram_reg_0_63_36_38             |     0.034 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_rsp_fifo/fifo/logic_ram_reg_0_63_39_41             |     0.040 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_rsp_fifo/fifo/logic_ram_reg_0_63_42_44             |     0.037 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_rsp_fifo/fifo/logic_ram_reg_0_63_45_47             |     0.022 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_rsp_fifo/fifo/logic_ram_reg_0_63_48_50             |     0.021 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_0_2         |     0.006 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_12_14       |     0.006 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_15_17       |     0.006 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_18_20       |     0.006 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_21_23       |     0.007 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_24_26       |     0.008 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_27_29       |     0.008 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_30_32       |     0.007 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_33_35       |     0.007 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_3_5         |     0.006 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_6_8         |     0.006 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/bmbAdapter_1/io_output_writeData_fifo/fifo/logic_ram_reg_0_63_9_11        |     0.006 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/bmbBridge_1/maketask_1/banksRow_reg_0_7_0_5                                           |     0.009 |
+|   bmbClockArea_bmbDfiDdr3/clockArea_dfiController/control_1/radata_rddatarxd/rspPipeline_input_toStream_fifo/fifo/logic_ram_reg_0_3_0_5 |     0.001 |
+|   pll_clk_1                                                                                                                             |     6.444 |
+|     inst                                                                                                                                |     6.444 |
+|   workClockArea_axisTxRateCtrl                                                                                                          |     2.862 |
+|     fifo                                                                                                                                |     2.815 |
+|       fifo                                                                                                                              |     2.815 |
+|   workClockArea_configRx                                                                                                                |     0.029 |
+|   workClockArea_ddr3AxisTxIf                                                                                                            |    16.980 |
+|     axi4StreamToBmb_1                                                                                                                   |     5.354 |
+|       adapter_bmbCCDomain                                                                                                               |     2.184 |
+|       adapter_bmbClockArea_bmbRdGen                                                                                                     |     0.996 |
+|       adapter_headCCDomain                                                                                                              |     0.010 |
+|       axisToBmbBridge_bmbBridge_upSizer                                                                                                 |     0.661 |
+|       io_axiIn_fifo                                                                                                                     |     0.437 |
+|     bmbClockArea_bmbDfiDdr3                                                                                                             |    11.626 |
+|       clockArea_dfiController                                                                                                           |     8.938 |
+|       ddr3_dfi_phy_0                                                                                                                    |     2.186 |
+|   workClockArea_ethMacRx                                                                                                                |    12.049 |
+|     eth_axis_rx_inst                                                                                                                    |     0.522 |
+|     eth_axis_tx_inst                                                                                                                    |     0.478 |
+|     eth_mac_1g_rgmii_fifo_inst                                                                                                          |     6.867 |
+|       eth_mac_1g_rgmii_inst                                                                                                             |     5.054 |
+|       rx_fifo                                                                                                                           |     1.402 |
+|       tx_fifo                                                                                                                           |     0.411 |
+|     udp_complete_inst                                                                                                                   |     4.161 |
+|       ip_arb_mux_inst                                                                                                                   |     0.023 |
+|       ip_complete_inst                                                                                                                  |     3.655 |
+|       udp_inst                                                                                                                          |     0.483 |
+|   workClockArea_ethMacTx                                                                                                                |     4.266 |
+|     udp_complete__lite_inst                                                                                                             |     4.258 |
+|       ip_arb_mux_inst                                                                                                                   |     0.054 |
+|       ip_complete_inst                                                                                                                  |     1.945 |
+|       udp_inst                                                                                                                          |     2.260 |
+|   workClockArea_harMatch                                                                                                                |     0.336 |
+|     io_signalIn_fifo                                                                                                                    |     0.336 |
+|       logic_ram_reg_0_15_0_5                                                                                                            |     0.074 |
+|       logic_ram_reg_0_15_6_10                                                                                                           |     0.025 |
+|   workClockArea_ofdmTx                                                                                                                  |    40.205 |
+|     convenc_0                                                                                                                           |     0.037 |
+|       inst                                                                                                                              |     0.037 |
+|     dac_0                                                                                                                               |     1.513 |
+|       inst                                                                                                                              |     1.513 |
+|     ifft_0                                                                                                                              |    31.993 |
+|       inst                                                                                                                              |    31.993 |
+|     interleaver_1_0                                                                                                                     |     4.391 |
+|       inst                                                                                                                              |     4.391 |
+|     interleaver_2_0                                                                                                                     |     0.210 |
+|       inst                                                                                                                              |     0.210 |
+|     maping_0                                                                                                                            |     0.169 |
+|       inst                                                                                                                              |     0.169 |
+|     pilot_0                                                                                                                             |     0.539 |
+|       inst                                                                                                                              |     0.539 |
+|     puncture_0                                                                                                                          |     0.201 |
+|       inst                                                                                                                              |     0.201 |
+|     scramler_0                                                                                                                          |     0.030 |
+|       inst                                                                                                                              |     0.030 |
+|     symbol_train_0                                                                                                                      |     0.665 |
+|       inst                                                                                                                              |     0.665 |
+|     tx_mcu_0                                                                                                                            |     0.434 |
+|       inst                                                                                                                              |     0.434 |
+|     util_vector_logic_0                                                                                                                 |     0.023 |
++-----------------------------------------------------------------------------------------------------------------------------------------+-----------+
+
+
